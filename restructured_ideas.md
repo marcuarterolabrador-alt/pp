@@ -8,14 +8,14 @@ This document restructures the project proposal for the **Interactive Web Applic
 
 *   **Project Title:** *To Be Defined (e.g., Connemara Oyster Restoration Portal)*
 *   **Target Audience:** Postgraduate Students (M.Sc./Ph.D.), Marine Ecologists, Environmental Stakeholders.
-*   **Primary Objective:** Create a high-fidelity, interactive educational web application that showcases the multidisciplinary scientific methodologies, ecological benefits, and localized research efforts in restoring the European flat oyster (*Ostrea edulis*) within the Connemara region (specifically Kilkieran/Kilkiran and Birterbuy/Bertrabhouy bays).
+*   **Primary Objective:** Create a high-fidelity, interactive educational web application that showcases the multidisciplinary scientific methodologies, ecological benefits, and localized research efforts in restoring the European flat oyster (*Ostrea edulis*) within the Connemara region (specifically Kilkieran and Bertrabhouy bays).
 
 ---
 
 ## 2. Core Terminology Glossary
 
 ### 2.1. Marine Biology & Ecological Terms
-*   ***Ostrea edulis***: The European flat oyster, a native biogenic reef-building bivalve mollusc.
+*   ***Ostrea edulis***: The European native oyster, a native biogenic reef-building bivalve mollusc.
 *   ***Bonamia ostreae***: A lethal haplosporidian protozoan parasite affecting *Ostrea edulis*, causing microcell disease.
 *   ***Benthic-Pelagic Coupling***: The ecological processes linking the water column (pelagic zone) with the seafloor (benthic zone), particularly through oyster filtration (nutrient cycling and biodeposition).
 *   ***Biogenic Matrix / Habitat***: A physical structure created by living organisms (oysters) that increases habitat complexity.
@@ -210,19 +210,17 @@ This document restructures the project proposal for the **Interactive Web Applic
 
 #### Submodule A: Zooplankton Sampling & Phenology Timeline
 *   **UI/UX Specification:**
-    *   A slider spanning the summer spawning season (June to August).
-    *   Moving the slider updates:
-        1.  *Plankton Tow Methodology:* Brief descriptive text of the net mesh size and towing duration.
-        2.  *Larval Density Graph:* Time-series peak showing larval concentrations (veliger stages) matching temperature peaks from Module 3.
+    *   Animation of the methodology to sample zooplankton from a boat: 
+            1. When clicking over the net: show mesh size 
+            2. Flowmeter explanation when clicking over the flowmeter
+            3. Tow duration in meters when clicking over the boat. 
+  
 
-#### Submodule B: Quantitative Recruitment Monitoring (Microscope quadrat)
+#### Submodule B: Quantitative Recruitment Monitoring (Microscope view)
 *   **UI/UX Specification:**
-    *   A virtual microscope viewport displaying high-definition photos of retrieved substrates.
-    *   A movable/resizable grid quadrat overlay.
-    *   **Interactivity:** Hovering over individual settled oyster spats within the quadrat highlights the spat and reveals pop-up metrics:
-        *   Growth Rate (mm/week)
-        *   Spat Age
-        *   Spatial Distribution Coefficient
+    *   A virtual microscope viewport displaying high-definition photos of larval samples.
+    *  The date of the sampling will be displayed in a separate field.
+    *   **Interactivity:** Click over the oyster larvae to score points. Display a check if it is correct, and a cross if something clicked is not an oyster larvae. At the end, score obtained and total number of oysters in the picture.
 
 ---
 
