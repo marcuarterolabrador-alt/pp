@@ -38,10 +38,12 @@ Depth range: 0-80m
 
 "Oyster reefs are often referred to as the temperate functional equivalent of coral reefs (Ritter von Hamm1881), forming elevated three-dimensional structures over largeareas (Williams 1837; zu Ermgassen et al. 2012)" ( https://doi.org/10.1111/conl.13068)
 
-O. edulis are large-scale biogenic reef builders
+O. edulis are large-scale biogenic reef builders.
 
-
-Occurs with Maerl reefs in Ireland
+Reef-building species demonstrate three-dimensional structural complexity, vertical relief, and a gregarious
+nature, and include bivalves, annelids and corals, among other taxa. These biogenic structures typically support
+a plethora of other life. They also influence their surrounding environment through their filter feeding and the
+presence of a solid, raised habitat that provides shelter and food for other species.
 
 
 
@@ -58,3 +60,16 @@ Using the IUCN RedList of Ecosystems Framework, we conclude the European native 
 Bottom trawling and dredging activities have occurred for centuries, but the use of these fishing gears
 expanded and intensified with the onset of the Industrial Revolution. The early and widespread nature of these
 activities means some of the most dramatic changes to populations or habitats were not scientifically observed. (Source:https://www.nature.com/articles/s41597-024-04048-8)
+
+
+
+#### Projects: 
+
+Native Oyster Restoration Alliance (NORA): https://www.nativeoysterrecovery.org/join-nora
+
+OISRE: 
+https://mfrc-atu.ie/projects/conservation/oisre-conamara/
+
+BRICONS: https://mfrc-atu.ie/projects/conservation/bricons-building-resilient-irish-coasts-through-oyster-restoration-a-nature-based-solution-for-enhancing-marine-biodiversity-and-ecosystems/
+
+https://www.researchgate.net/project/BRICONS
