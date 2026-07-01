@@ -41,6 +41,9 @@ Depth range: 0-80m
 O. edulis are large-scale biogenic reef builders
 
 
+Occurs with Maerl reefs in Ireland
+
+
 
 
 #### Conservation status
