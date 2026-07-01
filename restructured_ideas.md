@@ -8,7 +8,7 @@ This document restructures the project proposal for the **Interactive Web Applic
 
 *   **Project Title:** *To Be Defined (e.g., Connemara Oyster Restoration Portal)*
 *   **Target Audience:** Postgraduate Students (M.Sc./Ph.D.), Marine Ecologists, Environmental Stakeholders.
-*   **Primary Objective:** Create a high-fidelity, interactive educational web application that showcases the multidisciplinary scientific methodologies, ecological benefits, and localized research efforts in restoring the European flat oyster (*Ostrea edulis*) within the Connemara region (specifically Kilkieran and Bertrabhouy bays).
+*   **Primary Objective:** Create a high-fidelity, interactive educational web application that showcases the multidisciplinary scientific methodologies, ecological benefits, and localized research efforts in restoring the European flat oyster (*Ostrea edulis*) within the Connemara region (specifically Kilkieran and Bertraghboy bays).
 
 ---
 
@@ -93,7 +93,7 @@ This document restructures the project proposal for the **Interactive Web Applic
     *   *Pre-Industrial Era:* High abundance of wild oyster beds.
     *   *Overexploitation Era:* Sharp decline due to uncontrolled commercial harvesting.
     *   *Disease Epizootic Era:* Introduction of the *Bonamia ostreae* parasite, decimating remaining wild stocks.
-    *   *Modern Recovery Era:* Highlighting the critically endangered wild beds remaining in Connemara (Kilkiran and Bertrabhouy bays).
+    *   *Modern Recovery Era:* Highlighting the critically endangered wild beds remaining in Connemara (Kilkiran and Bertraghboy bays).
 
 #### Component E: Project Resource Portal
 *   **Content:** Links to major active restoration research projects in the region:
@@ -114,7 +114,7 @@ This document restructures the project proposal for the **Interactive Web Applic
 *   **Level 1: Institution (MFRC Node)**
     *   *Marker:* Marine and Freshwater Research Centre (MFRC) headquarters.
     *   *Sidebar Content:* Institutional introduction, mission statement, and central laboratory overview.
-*   **Level 2: Macro-Bay Level (Kilkiran & Bertrabhouy Bays)**
+*   **Level 2: Macro-Bay Level (Kilkiran & Bertraghboy Bays)**
     *   *Markers:* Regional polygon outlines defining the two primary research bays.
     *   *Sidebar Content:* Comparative physical geography, environmental profiles, and histories of the sampling bays.
 *   **Level 3: Micro-Site Level (Deployment Sites)**
