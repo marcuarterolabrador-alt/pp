@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion'
-import { Leaf, ShieldCheck, TrendingUp } from 'lucide-react'
+import { Leaf, Shell, TrendingUp } from 'lucide-react'
 
 const pillars = [
   {
-    icon: TrendingUp,
-    title: 'Enabling Sustainability',
-    text: 'Collecting and interpreting ecological data to ensure the long-term, sustainable management of commercial fisheries and marine ecosystems.',
+    icon: Shell,
+    title: "Species Knowledge",
+    text: "Generating and integrating knowledge on the native oyster (Ostrea edulis) to better adapt restoration methodologies.",
   },
   {
-    icon: Leaf,
-    title: 'Conserving Biodiversity',
-    text: 'Assessing how aquatic species and habitats respond to accelerating human impacts and climate-induced environmental stressors.',
+    icon: Shell,
+    title: "Restoration Measures",
+    text: "Designing and implementing ecological restoration actions to recover degraded habitats and improve ecosystem functionality.",
   },
   {
-    icon: ShieldCheck,
-    title: 'Improving Productivity',
-    text: 'Working alongside the seafood sector to identify and implement innovative technologies that optimise production while safeguarding ecological integrity.',
+    icon: Shell,
+    title: "Restoration Success Assessment",
+    text: "Monitoring and analysing the outcomes of restoration actions to evaluate their effectiveness.",
   },
-]
+];
 
 export default function Hero() {
   return (
@@ -51,11 +51,9 @@ export default function Hero() {
         style={{ maxWidth: 780 }}
       >
         <span className="pill">Marine &amp; Freshwater Research Centre &middot; ATU Galway</span>
-        <h1 style={{ marginTop: '1rem' }}>Connemara Oyster Restoration Portal</h1>
+        <h1 style={{ marginTop: '1rem' }}>Connemara Oyster Restoration Portal </h1>
         <p style={{ fontSize: '1.15rem', color: 'var(--text-dim)', maxWidth: 620 }}>
-          Restoring the European native oyster (<em>Ostrea edulis</em>) — a critically declining
-          biogenic reef-builder — across the wild beds of Kilkieran and Bertraghboy Bays,
-          Connemara, Ireland.
+          A science communication platform for the restoration of native oyster (<em>Ostrea edulis</em>) populations across Kilkieran and Bertraghboy Bays, Connemara, Ireland.
         </p>
       </motion.div>
 
