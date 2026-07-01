@@ -42,3 +42,22 @@ co-management.
 
 
 
+
+
+##### Restoration points: 
+
+Punt (Name),Longitud (X),Latitud (Y),Altitud (metres), Bay (Name), Area (Name)
+1,-9.659690,53.370393,7.75, KILKIERAN, Leckeen 
+2,-9.661488,53.345062,0.47, KILKIERAN, Duilicin
+3,-9.653333,53.329140,0.45, KILKIERAN, 
+4,-9.722282,53.256506,10.62, KILKIERAN, Casheen
+5,-9.699839,53.329240,30.71, KILKIERAN, Greeve Island
+6,-9.826062,53.406491,6.91, BERTRAGHBUY, Oyster Bank
+7,-9.838672,53.393531,7.43, BERTRAGHBUY, Rosroe
+8,-9.885251,53.399803,0.55, BERTRAGHBUY, Cloone Island
+9,-9.820284,53.417370,-1.73, BERTRAGHBUY, Upper Cashel
+10,-9.844647,53.379095,-0.05, BERTRAGHBUY, Glynsk
+
+
+
+
