@@ -33,11 +33,11 @@ co-management.
 
 
 
-### Bertraghboy Bay: 53°23′18″ N, 9°51′10″ W
+#### Bertraghboy Bay: 53°23′18″ N, 9°51′10″ W
 
 
 
-### Kilkieran Bay: 53°17′55″ N, 9°44′22″ W
+#### Kilkieran Bay: 53°17′55″ N, 9°44′22″ W
 
 
 
