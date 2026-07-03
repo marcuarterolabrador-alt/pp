@@ -33,14 +33,14 @@ export default function MapSection() {
     <div className="grid-2" style={{ alignItems: 'stretch', gridTemplateColumns: '1.4fr 1fr' }}>
       <div className="glass" style={{ overflow: 'hidden', minHeight: 480 }}>
         <MapContainer
-          center={[53.34, -9.78]}
-          zoom={11}
+          center={[53.32, -9.43]}
+          zoom={10}
           scrollWheelZoom={false}
           style={{ height: '100%', minHeight: 480, width: '100%' }}
         >
           <TileLayer
             attribution='&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; OpenStreetMap contributors'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
 
           {bays.map((bay) => (

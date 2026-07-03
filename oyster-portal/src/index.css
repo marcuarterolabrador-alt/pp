@@ -207,7 +207,7 @@ button {
 
 .nav-link:hover {
   background: rgba(14, 165, 233, 0.12);
-  color: var(--text-h);
+  color: #ffffff;
 }
 
 @media (max-width: 780px) {

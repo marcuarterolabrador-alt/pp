@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 import { Leaf, Shell, TrendingUp } from 'lucide-react'
+import heroBg from '../assets/oisre_bertra_jff.webp'
+import mfrcLogo from '../assets/mfrc_logo.png'
+import atuLogo from '../assets/ATU-Logo-removebg-preview.png'
+import imbrseaLogo from '../assets/IMBRSea_logo.png'
 
 const pillars = [
   {
@@ -38,12 +42,33 @@ export default function Hero() {
           position: 'absolute',
           inset: 0,
           backgroundImage:
-            "linear-gradient(180deg, rgba(10,25,47,0.55) 0%, rgba(10,25,47,0.92) 100%), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80')",
+            `linear-gradient(180deg, rgba(15, 32, 39, 0.4) 0%, rgba(32, 58, 67, 0.75) 100%), url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: -1,
         }}
       />
+      <div
+        style={{
+          position: 'absolute',
+          top: '1.5rem',
+          right: '1.5rem',
+          display: 'flex',
+          gap: '1rem',
+          alignItems: 'center',
+          zIndex: 10,
+          background: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(8px)',
+          padding: '6px 12px',
+          borderRadius: '8px',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+        }}
+        className="nav-desktop"
+      >
+        <img src={mfrcLogo} alt="MFRC Logo" style={{ height: '64px', width: 'auto' }} />
+        <img src={atuLogo} alt="ATU Logo" style={{ height: '64px', width: 'auto' }} />
+        <img src={imbrseaLogo} alt="IMBRSea Logo" style={{ height: '64px', width: 'auto' }} />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,8 +76,8 @@ export default function Hero() {
         style={{ maxWidth: 780 }}
       >
         <span className="pill">Marine &amp; Freshwater Research Centre &middot; ATU Galway</span>
-        <h1 style={{ marginTop: '1rem' }}>Connemara Oyster Restoration Portal </h1>
-        <p style={{ fontSize: '1.15rem', color: 'var(--text-dim)', maxWidth: 620 }}>
+        <h1 style={{ marginTop: '1rem', color: '#ffffff', textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)' }}>Connemara Oyster Restoration Portal </h1>
+        <p style={{ fontSize: '1.15rem', color: '#cbd5e1', maxWidth: 620, textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)' }}>
           A science communication platform for the restoration of native oyster (<em>Ostrea edulis</em>) populations across Kilkieran and Bertraghboy Bays, Connemara, Ireland.
         </p>
       </motion.div>

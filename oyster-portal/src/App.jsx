@@ -1,6 +1,8 @@
-import ParticleBackground from './components/ParticleBackground'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import mfrcLogo from './assets/mfrc_logo.png'
+import atuLogo from './assets/ATU-Logo-removebg-preview.png'
+import imbrseaLogo from './assets/IMBRSea_logo.png'
 import AnatomicalViewer from './components/AnatomicalViewer'
 import EcosystemEngineer from './components/EcosystemEngineer'
 import DeclineTimeline from './components/DeclineTimeline'
@@ -26,7 +28,6 @@ function SectionHeader({ kicker, title }) {
 function App() {
   return (
     <>
-      <ParticleBackground />
       <Nav />
       <Hero />
 
@@ -78,8 +79,18 @@ function App() {
         <BiodiversityMatrix />
       </section>
 
-      <footer style={{ textAlign: 'center', padding: '3rem 1.5rem', color: 'var(--text-dim)', fontSize: '0.8rem' }}>
-        Connemara Oyster Restoration Portal &mdash; Marine and Freshwater Research Centre, ATU Galway
+      <footer style={{ textAlign: 'center', padding: '4rem 1.5rem 3rem', color: 'var(--text-dim)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
+        <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+          <img src={mfrcLogo} alt="MFRC Logo" style={{ height: '76px', width: 'auto', opacity: 0.8 }} />
+          <img src={atuLogo} alt="ATU Logo" style={{ height: '76px', width: 'auto', opacity: 0.8 }} />
+          <img src={imbrseaLogo} alt="IMBRSea Logo" style={{ height: '76px', width: 'auto', opacity: 0.8 }} />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+          <span>Connemara Oyster Restoration Portal &mdash; Marine and Freshwater Research Centre, ATU Galway</span>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>
+            &copy; 2026 Developed by Mar Cuartero Labrador (Research Intern at MFRC)
+          </span>
+        </div>
       </footer>
     </>
   )

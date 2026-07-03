@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Waves, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import logo from '../assets/logo_project-removebg-preview.png'
 
 const links = [
   { id: 'intro', label: 'Species & Biology' },
@@ -50,8 +51,8 @@ export default function Nav() {
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-h)', fontWeight: 700 }}>
-          <Waves size={22} color="var(--cyan)" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#ffffff', fontWeight: 700 }}>
+          <img src={logo} alt="Connemara Oyster Restoration Logo" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
           Connemara Oyster Restoration
         </div>
         <nav style={{ display: 'flex', gap: 4 }} className="nav-desktop">
@@ -62,7 +63,7 @@ export default function Nav() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: 'var(--text)',
+                color: '#cbd5e1',
                 padding: '8px 12px',
                 borderRadius: 8,
                 fontSize: '0.85rem',
@@ -77,7 +78,7 @@ export default function Nav() {
         <button
           className="nav-toggle"
           onClick={() => setOpen((o) => !o)}
-          style={{ background: 'transparent', border: 'none', color: 'var(--text-h)' }}
+          style={{ background: 'transparent', border: 'none', color: '#ffffff' }}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -91,7 +92,7 @@ export default function Nav() {
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: 'var(--text)',
+                color: '#cbd5e1',
                 padding: '10px 0',
                 textAlign: 'left',
                 fontSize: '0.95rem',
