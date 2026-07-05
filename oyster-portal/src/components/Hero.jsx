@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Leaf, Shell, TrendingUp } from 'lucide-react'
-import heroBg from '../assets/oisre_bertra_jff.webp'
+import heroBg from '../assets/portal_aquarela.png'
 import mfrcLogo from '../assets/mfrc_logo.png'
 import atuLogo from '../assets/ATU-Logo-removebg-preview.png'
 import imbrseaLogo from '../assets/IMBRSea_logo.png'
@@ -75,7 +75,17 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         style={{ maxWidth: 780 }}
       >
-        <span className="pill">Marine &amp; Freshwater Research Centre &middot; ATU Galway</span>
+        <span
+          className="pill"
+          style={{
+            color: '#f0f9ff',
+            background: 'rgba(240, 249, 255, 0.18)',
+            borderColor: 'rgba(240, 249, 255, 0.35)',
+            textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+          }}
+        >
+          Marine &amp; Freshwater Research Centre &middot; ATU Galway
+        </span>
         <h1 style={{ marginTop: '1rem', color: '#ffffff', textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)' }}>Connemara Oyster Restoration Portal </h1>
         <p style={{ fontSize: '1.15rem', color: '#cbd5e1', maxWidth: 620, textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)' }}>
           A science communication platform for the restoration of native oyster (<em>Ostrea edulis</em>) populations across Kilkieran and Bertraghboy Bays, Connemara, Ireland.
@@ -97,6 +107,19 @@ export default function Hero() {
           </div>
         ))}
       </motion.div>
+      <span
+        style={{
+          position: 'absolute',
+          bottom: '1.25rem',
+          left: '1.5rem',
+          color: 'rgba(255, 255, 255, 0.75)',
+          fontSize: '0.75rem',
+          textShadow: '0 1px 4px rgba(0, 0, 0, 0.6)',
+          zIndex: 10,
+        }}
+      >
+        Picture generated with AI (Gemini)
+      </span>
     </section>
   )
 }

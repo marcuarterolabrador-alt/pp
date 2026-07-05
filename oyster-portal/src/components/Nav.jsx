@@ -4,10 +4,10 @@ import logo from '../assets/logo_project-removebg-preview.png'
 
 const links = [
   { id: 'intro', label: 'Species & Biology' },
-  { id: 'map', label: 'Field Map' },
-  { id: 'methodology', label: 'Methodology' },
+  { id: 'map', label: 'Study Location' },
+  { id: 'methodology', label: 'Environmental Characterisation' },
   { id: 'substrates', label: 'Cultch' },
-  { id: 'zooplankton', label: 'Zooplankton' },
+  { id: 'larvae-sampling', label: 'Larvae Sampling' },
   { id: 'biodiversity', label: 'Biodiversity' },
 ]
 
@@ -52,7 +52,7 @@ export default function Nav() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#ffffff', fontWeight: 700 }}>
-          <img src={logo} alt="Connemara Oyster Restoration Logo" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
+          <img src={logo} alt="Connemara Oyster Restoration Logo" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} />
           Connemara Oyster Restoration
         </div>
         <nav style={{ display: 'flex', gap: 4 }} className="nav-desktop">

@@ -4,6 +4,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapPin, Building2, Waves } from 'lucide-react'
 import { mfrc, bays, restorationPoints } from '../data/mapData'
+import bertraImg from '../assets/bertra.JPEG'
 
 function pinIcon(color, size = 26) {
   return L.divIcon({
@@ -98,10 +99,16 @@ export default function MapSection() {
             </div>
             <h3>{selected.data.name}</h3>
             <p style={{ color: 'var(--text-dim)' }}>{selected.data.dms}</p>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>
-              {restorationPoints.filter((p) => p.bay === selected.data.id).length} restoration points deployed
-              within this bay.
-            </p>
+
+            {selected.data.id === 'bertraghboy' && (
+              <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
+                <img
+                  src={bertraImg}
+                  alt="Bertraghboy Bay overview"
+                  style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            )}
           </>
         )}
 
@@ -119,23 +126,18 @@ export default function MapSection() {
                   {selected.data.bay === 'kilkieran' ? 'Kilkieran Bay' : 'Bertraghboy Bay'}
                 </dd>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--panel-border)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
                 <dt>Coordinates</dt>
                 <dd style={{ margin: 0, color: 'var(--text)' }}>
                   {selected.data.lat.toFixed(5)}, {selected.data.lon.toFixed(5)}
                 </dd>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
-                <dt>Altitude</dt>
-                <dd style={{ margin: 0, color: 'var(--text)' }}>{selected.data.altitude} m</dd>
               </div>
             </dl>
           </>
         )}
 
         <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 'auto' }}>
-          Bay boundaries are illustrative overlays derived from restoration point clusters, centred on
-          published bay coordinates.
+          Bay boundaries are illustrative overlays derived from sampling point clusters.
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { organs } from '../data/organs'
-import anatomyImg from '../assets/ostrea_edulis_anatomy.png'
+import anatomyImg from '../assets/ostrea_edulis_organs-removebg-preview.png'
 
 export default function AnatomicalViewer() {
   const [activeId, setActiveId] = useState(organs[0].id)
@@ -40,21 +40,8 @@ export default function AnatomicalViewer() {
               </g>
             ))}
           </svg>
-          <figcaption style={{ fontSize: '0.7rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '0.75rem', lineHeight: '1.4' }}>
-            Image adapted from "Oyster's anatomy" by{' '}
-            <a href="https://www.francenaissain.uk/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cyan)' }}>
-              France Naissain
-            </a>{' '}
-            (
-            <a
-              href="https://www.francenaissain.uk/oyster-bivalve/the-anatomy-of-the-oyster"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'var(--cyan)' }}
-            >
-              Original source
-            </a>
-            ).
+          <figcaption style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textAlign: 'center', marginTop: '0.75rem', lineHeight: '1.4' }}>
+            Image: FAO / P. Goulletquer (2009).
           </figcaption>
         </figure>
         <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-dim)', marginTop: '0.5rem', marginBottom: 0 }}>

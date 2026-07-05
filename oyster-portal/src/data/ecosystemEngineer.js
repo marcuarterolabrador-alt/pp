@@ -1,18 +1,29 @@
 export const ecosystemHotspots = [
   {
-    id: 'benthic-pelagic',
-    title: 'Benthic-Pelagic Coupling',
-    x: 30,
-    y: 55,
+    id: 'niche-diversification',
+    title: 'Niche Diversification',
+    emoji: '🦀',
+    x: 48,
+    y: 52,
     description:
-      'The ecological process linking the water column (pelagic zone) with the seafloor (benthic zone) through oyster filtration. A single adult oyster filters up to 190 litres of water per day, driving nutrient cycling and biodeposition.',
+      'Reef interstitial spaces act as vital refuges from wave action and predators, helping sustain high-abundance macroinvertebrate communities.',
   },
   {
-    id: 'structural-matrix',
-    title: 'Structural Matrix',
-    x: 68,
-    y: 60,
+    id: 'benthic-pelagic',
+    title: 'Benthic-Pelagic Coupling',
+    emoji: '🤝',
+    x: 22,
+    y: 38,
     description:
-      'The three-dimensional biogenic shell matrix built by O. edulis acts as nursery grounds, foraging habitat, and predator refuge for juvenile fish and mobile macrofauna, raising local biodiversity far above bare sediment.',
+      'Oysters filter plankton from the water column and deposit organic nutrients onto the sediment, enriching the surrounding food web.',
+  },
+  {
+    id: 'coastal-stabilization',
+    title: 'Coastal Stabilization',
+    emoji: '🛡️',
+    x: 74,
+    y: 65,
+    description:
+      'Biogenic structures absorb wave energy and bind sediments, reducing shoreline erosion and fostering seagrass colonization nearby.',
   },
 ]

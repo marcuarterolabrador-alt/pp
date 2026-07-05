@@ -18,7 +18,7 @@ export const organs = [
     name: 'Adductor Muscle',
     function:
       'A single powerful muscle that clamps the two valves shut, protecting the animal from predation and desiccation at low tide, and relaxing to allow the shell to gape open for feeding.',
-    coordinates: { x: 62, y: 46 },
+    coordinates: { x: 58, y: 53 },
   },
   {
     id: 'mantle',

@@ -10,11 +10,9 @@ import ProjectPortal from './components/ProjectPortal'
 import MapSection from './components/MapSection'
 import MethodologyPipeline from './components/MethodologyPipeline'
 import TEKCard from './components/TEKCard'
-import TelemetryChart from './components/TelemetryChart'
 import SubstrateGrid from './components/SubstrateGrid'
-import ZooplanktonModule from './components/ZooplanktonModule'
-import MicroscopeGame from './components/MicroscopeGame'
-import BiodiversityMatrix from './components/BiodiversityMatrix'
+import LarvaeObservation from './components/LarvaeObservation'
+import EcosystemServices from './components/EcosystemServices'
 
 function SectionHeader({ kicker, title }) {
   return (
@@ -48,16 +46,15 @@ function App() {
       </section>
 
       <section id="map">
-        <SectionHeader kicker="Module 2" title="GIS &amp; Fieldwork Map" />
+        <SectionHeader kicker="Module 2" title="Study Location" />
         <MapSection />
       </section>
 
       <section id="methodology">
-        <SectionHeader kicker="Module 3" title="Methodology &amp; Telemetry" />
+        <SectionHeader kicker="Module 3" title="Environmental Characterisation" />
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <MethodologyPipeline />
           <TEKCard />
-          <TelemetryChart />
         </div>
       </section>
 
@@ -66,17 +63,14 @@ function App() {
         <SubstrateGrid />
       </section>
 
-      <section id="zooplankton">
-        <SectionHeader kicker="Module 5" title="Zooplankton Sampling &amp; Microscope Game" />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <ZooplanktonModule />
-          <MicroscopeGame />
-        </div>
+      <section id="larvae-sampling">
+        <SectionHeader kicker="Module 5" title="Larvae Sampling &amp; Observation" />
+        <LarvaeObservation />
       </section>
 
       <section id="biodiversity">
-        <SectionHeader kicker="Module 6" title="Benthic Biodiversity Assessment" />
-        <BiodiversityMatrix />
+        <SectionHeader kicker="Module 6" title="Macroinvertebrates &amp; Ecosystem Services" />
+        <EcosystemServices />
       </section>
 
       <footer style={{ textAlign: 'center', padding: '4rem 1.5rem 3rem', color: 'var(--text-dim)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
