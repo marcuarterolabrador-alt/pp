@@ -141,7 +141,7 @@ export default function SubstrateGrid() {
               onClick={() => setSelectedSpat('native')}
               style={{
                 position: 'absolute',
-                left: '35%',
+                left: '45%',
                 top: '45%',
                 transform: 'translate(-50%, -50%)',
                 width: '16px',
@@ -163,7 +163,7 @@ export default function SubstrateGrid() {
               onClick={() => setSelectedSpat('saddle')}
               style={{
                 position: 'absolute',
-                left: '65%',
+                left: '75%',
                 top: '55%',
                 transform: 'translate(-50%, -50%)',
                 width: '16px',
