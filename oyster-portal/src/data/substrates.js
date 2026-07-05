@@ -45,7 +45,7 @@ export const substrates = [
   },
   {
     id: 'biomodules',
-    name: 'Limestone / Biomodules',
+    name: 'Biomodules',
     latin: 'Lollipop biomodule',
     settlement: 'Pending',
     stability: 'Pending',
