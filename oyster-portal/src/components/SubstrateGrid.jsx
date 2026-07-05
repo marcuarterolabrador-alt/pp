@@ -23,6 +23,14 @@ const spatDetails = {
 export default function SubstrateGrid() {
   const [flipped, setFlipped] = useState({})
   const [selectedSpat, setSelectedSpat] = useState('native')
+  const [answers, setAnswers] = useState({ native: '', saddle: '' })
+
+  const handleInputChange = (val) => {
+    setAnswers((prev) => ({ ...prev, [selectedSpat]: val.trim() }))
+  }
+
+  const currentVal = answers[selectedSpat]
+  const isCorrect = selectedSpat === 'native' ? currentVal === '1' : currentVal === '9'
 
   const toggle = (id) => setFlipped((f) => ({ ...f, [id]: !f[id] }))
 
@@ -113,8 +121,46 @@ export default function SubstrateGrid() {
                 {spatDetails[selectedSpat].description}
               </p>
             </div>
+
+            {/* Counting Challenge Box */}
+            <div className="glass" style={{ padding: '1.25rem', background: 'rgba(15, 23, 42, 0.15)', border: '1px solid rgba(148, 163, 184, 0.12)', borderRadius: '10px' }}>
+              <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.88rem', fontWeight: '600', color: 'var(--text-h)' }}>
+                How many can you count in this picture?
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <input
+                  type="text"
+                  placeholder="Enter number..."
+                  value={currentVal}
+                  onChange={(e) => handleInputChange(e.target.value)}
+                  style={{
+                    width: '120px',
+                    padding: '6px 12px',
+                    borderRadius: '6px',
+                    border: '1px solid var(--panel-border)',
+                    background: 'var(--panel)',
+                    color: 'var(--text)',
+                    fontSize: '0.85rem',
+                    outline: 'none',
+                  }}
+                />
+                {currentVal !== '' && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem' }}>
+                    {isCorrect ? (
+                      <span style={{ color: 'var(--teal)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: 4 }}>
+                        ✓ Correct
+                      </span>
+                    ) : (
+                      <span style={{ color: 'var(--coral)', fontWeight: '600' }}>
+                        ✗ Incorrect
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
             
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', margin: 0, fontStyle: 'italic' }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', margin: '0.5rem 0 0 0', fontStyle: 'italic' }}>
               * Click on the labels overlaying the image to inspect and identify each species on the collector tiles.
             </p>
           </div>
