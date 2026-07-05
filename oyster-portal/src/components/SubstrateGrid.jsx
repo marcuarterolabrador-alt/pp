@@ -1,9 +1,28 @@
 import { useState } from 'react'
 import { substrates, enhancementCues } from '../data/substrates'
 import { substrateIcons } from './SubstrateIcons'
+import spatImg from '../assets/spat_native_oyster_tiles.jpeg'
+
+const spatDetails = {
+  native: {
+    title: 'Native Oyster Spat (Ostrea edulis)',
+    scientific: 'Ostrea edulis',
+    abundance: 'Target Species',
+    description:
+      'The primary target of restoration efforts. These juvenile oysters settle on the clean calcified surfaces of the cultch. Over 1, 2, or more years, they build their permanent shells, forming the base of the biogenic reef matrix.',
+  },
+  saddle: {
+    title: 'Saddle Oyster Spat (Anomia ephippium)',
+    scientific: 'Anomia ephippium',
+    abundance: 'Competitor Species',
+    description:
+      'A common bivalve competitor that also settles on cultch. Unlike the native oyster, saddle oysters have very thin, translucent, pearly shells and do not form three-dimensional reefs. Monitoring their abundance helps evaluate space competition on the cultch.',
+  },
+}
 
 export default function SubstrateGrid() {
   const [flipped, setFlipped] = useState({})
+  const [selectedSpat, setSelectedSpat] = useState('native')
 
   const toggle = (id) => setFlipped((f) => ({ ...f, [id]: !f[id] }))
 
@@ -64,6 +83,107 @@ export default function SubstrateGrid() {
               <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0 }}>{c.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Spat Evaluation & Monitoring Section */}
+      <div className="glass glass-panel" style={{ marginTop: '2.5rem' }}>
+        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 2rem' }}>
+          <span className="pill">Cultch Effectiveness Monitoring</span>
+          <h3 style={{ marginTop: '0.75rem', marginBottom: '0.75rem' }}>Oyster Spat Recruitment Evaluation</h3>
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
+            To measure how well different substrates perform, scientists conduct long-term monitoring. The settled oyster spat (larvae that have successfully attached and metamorphosed) are counted on the cultch after 1, 2, or more years of field deployment.
+          </p>
+        </div>
+
+        <div className="grid-2" style={{ alignItems: 'center' }}>
+          {/* Spat details description */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div className="glass" style={{ padding: '1.5rem', borderLeft: `4px solid ${selectedSpat === 'native' ? 'var(--teal)' : 'var(--cyan)'}` }}>
+              <span className="pill" style={{ background: selectedSpat === 'native' ? 'rgba(20,184,166,0.15)' : 'rgba(14,165,233,0.15)', color: selectedSpat === 'native' ? 'var(--teal)' : 'var(--cyan)' }}>
+                {spatDetails[selectedSpat].abundance}
+              </span>
+              <h4 style={{ margin: '0.5rem 0 0.25rem 0', fontSize: '1.2rem', color: 'var(--text-h)' }}>
+                {spatDetails[selectedSpat].title}
+              </h4>
+              <p style={{ fontStyle: 'italic', fontSize: '0.85rem', color: 'var(--text-dim)', margin: '0 0 1rem 0' }}>
+                {spatDetails[selectedSpat].scientific}
+              </p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text)', lineHeight: '1.6', margin: 0 }}>
+                {spatDetails[selectedSpat].description}
+              </p>
+            </div>
+            
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', margin: 0, fontStyle: 'italic' }}>
+              * Click on the labels overlaying the image to inspect and identify each species on the collector tiles.
+            </p>
+          </div>
+
+          {/* Interactive photo with hotspots */}
+          <div
+            style={{
+              position: 'relative',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              border: '1px solid rgba(148, 163, 184, 0.2)',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
+              display: 'flex',
+            }}
+          >
+            <img
+              src={spatImg}
+              alt="Oyster spat on collector tiles"
+              style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
+            />
+
+            {/* Hotspot 1: Ostrea edulis spat */}
+            <button
+              onClick={() => setSelectedSpat('native')}
+              style={{
+                position: 'absolute',
+                left: '35%',
+                top: '45%',
+                transform: 'translate(-50%, -50%)',
+                background: selectedSpat === 'native' ? 'var(--teal)' : 'rgba(15, 23, 42, 0.85)',
+                color: '#ffffff',
+                border: `2px solid ${selectedSpat === 'native' ? '#ffffff' : 'var(--teal)'}`,
+                borderRadius: '999px',
+                padding: '6px 12px',
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                cursor: 'pointer',
+                transition: 'all 0.25s',
+                zIndex: 10,
+              }}
+            >
+              🐚 Native Oyster Spat
+            </button>
+
+            {/* Hotspot 2: Saddle oyster spat */}
+            <button
+              onClick={() => setSelectedSpat('saddle')}
+              style={{
+                position: 'absolute',
+                left: '65%',
+                top: '55%',
+                transform: 'translate(-50%, -50%)',
+                background: selectedSpat === 'saddle' ? 'var(--cyan)' : 'rgba(15, 23, 42, 0.85)',
+                color: '#ffffff',
+                border: `2px solid ${selectedSpat === 'saddle' ? '#ffffff' : 'var(--cyan)'}`,
+                borderRadius: '999px',
+                padding: '6px 12px',
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                cursor: 'pointer',
+                transition: 'all 0.25s',
+                zIndex: 10,
+              }}
+            >
+              🍳 Saddle Oyster Spat
+            </button>
+          </div>
         </div>
       </div>
     </div>
