@@ -163,8 +163,8 @@ export default function SubstrateGrid() {
               onClick={() => setSelectedSpat('saddle')}
               style={{
                 position: 'absolute',
-                left: '75%',
-                top: '55%',
+                left: '69%',
+                top: '58%',
                 transform: 'translate(-50%, -50%)',
                 width: '16px',
                 height: '16px',
