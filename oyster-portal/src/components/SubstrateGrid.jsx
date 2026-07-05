@@ -135,6 +135,19 @@ export default function SubstrateGrid() {
               alt="Oyster spat on collector tiles"
               style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
             />
+            <span
+              style={{
+                position: 'absolute',
+                bottom: '0.5rem',
+                left: '0.75rem',
+                color: '#ffffff',
+                fontSize: '0.7rem',
+                textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)',
+                zIndex: 10,
+              }}
+            >
+              Image taken by Tiffany Montfort
+            </span>
 
             {/* Hotspot 1: Ostrea edulis spat */}
             <button
