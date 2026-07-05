@@ -144,21 +144,19 @@ export default function SubstrateGrid() {
                 left: '35%',
                 top: '45%',
                 transform: 'translate(-50%, -50%)',
-                background: selectedSpat === 'native' ? 'var(--teal)' : 'rgba(15, 23, 42, 0.85)',
-                color: '#ffffff',
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                background: selectedSpat === 'native' ? 'var(--teal)' : 'rgba(15, 23, 42, 0.75)',
                 border: `2px solid ${selectedSpat === 'native' ? '#ffffff' : 'var(--teal)'}`,
-                borderRadius: '999px',
-                padding: '6px 12px',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                boxShadow: selectedSpat === 'native' ? '0 0 12px var(--teal)' : 'none',
                 cursor: 'pointer',
                 transition: 'all 0.25s',
                 zIndex: 10,
+                padding: 0,
               }}
-            >
-              🐚 Native Oyster Spat
-            </button>
+              title="Native Oyster Spat"
+            />
 
             {/* Hotspot 2: Saddle oyster spat */}
             <button
@@ -168,21 +166,19 @@ export default function SubstrateGrid() {
                 left: '65%',
                 top: '55%',
                 transform: 'translate(-50%, -50%)',
-                background: selectedSpat === 'saddle' ? 'var(--cyan)' : 'rgba(15, 23, 42, 0.85)',
-                color: '#ffffff',
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                background: selectedSpat === 'saddle' ? 'var(--cyan)' : 'rgba(15, 23, 42, 0.75)',
                 border: `2px solid ${selectedSpat === 'saddle' ? '#ffffff' : 'var(--cyan)'}`,
-                borderRadius: '999px',
-                padding: '6px 12px',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                boxShadow: selectedSpat === 'saddle' ? '0 0 12px var(--cyan)' : 'none',
                 cursor: 'pointer',
                 transition: 'all 0.25s',
                 zIndex: 10,
+                padding: 0,
               }}
-            >
-              🍳 Saddle Oyster Spat
-            </button>
+              title="Saddle Oyster Spat"
+            />
           </div>
         </div>
       </div>
