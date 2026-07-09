@@ -87,8 +87,11 @@ export default function Hero() {
           Marine &amp; Freshwater Research Centre &middot; ATU Galway
         </span>
         <h1 style={{ marginTop: '1rem', color: '#ffffff', textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)' }}>Connemara Oyster Restoration Portal </h1>
-        <p style={{ fontSize: '1.15rem', color: '#cbd5e1', maxWidth: 620, textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)' }}>
+        <p style={{ fontSize: '1.15rem', color: '#cbd5e1', maxWidth: 620, textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)', margin: 0 }}>
           A science communication platform for the restoration of native oyster (<em>Ostrea edulis</em>) populations across Kilkieran and Bertraghboy Bays, Connemara, Ireland.
+        </p>
+        <p style={{ fontSize: '0.92rem', color: '#cbd5e1', maxWidth: 620, marginTop: '0.75rem', textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)', opacity: 0.9, lineHeight: '1.5', margin: '0.75rem 0 0' }}>
+          Developed as a Master's degree project following an internship with the Biogenic Habitat group (MFRC), led by Dr. José M. Fariñas-Franco.
         </p>
       </motion.div>
 

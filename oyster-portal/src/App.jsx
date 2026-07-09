@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import mfrcLogo from './assets/mfrc_logo.png'
@@ -13,6 +14,7 @@ import TEKCard from './components/TEKCard'
 import SubstrateGrid from './components/SubstrateGrid'
 import LarvaeObservation from './components/LarvaeObservation'
 import EcosystemServices from './components/EcosystemServices'
+import FoldableSection from './components/FoldableSection'
 
 function SectionHeader({ kicker, title }) {
   return (
@@ -24,13 +26,38 @@ function SectionHeader({ kicker, title }) {
 }
 
 function App() {
+  const [openSections, setOpenSections] = useState({
+    intro: false,
+    map: false,
+    methodology: false,
+    substrates: false,
+    'larvae-sampling': false,
+    biodiversity: false,
+  })
+
+  const toggleSection = (id) => {
+    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }))
+  }
+
+  const handleNavigate = (id) => {
+    setOpenSections((prev) => ({ ...prev, [id]: true }))
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }, 150)
+  }
+
   return (
     <>
-      <Nav />
+      <Nav onNavigate={handleNavigate} />
       <Hero />
 
-      <section id="intro">
-        <SectionHeader kicker="Module 1" title="Species Biology &amp; Ecosystem Function" />
+      <FoldableSection
+        id="intro"
+        kicker="Module 1"
+        title="Species Biology & Ecosystem Function"
+        isOpen={openSections.intro}
+        onToggle={() => toggleSection('intro')}
+      >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           <AnatomicalViewer />
           <EcosystemEngineer />
@@ -43,35 +70,60 @@ function App() {
             <ProjectPortal />
           </div>
         </div>
-      </section>
+      </FoldableSection>
 
-      <section id="map">
-        <SectionHeader kicker="Module 2" title="Study Location" />
+      <FoldableSection
+        id="map"
+        kicker="Module 2"
+        title="Study Location"
+        isOpen={openSections.map}
+        onToggle={() => toggleSection('map')}
+      >
         <MapSection />
-      </section>
+      </FoldableSection>
 
-      <section id="methodology">
-        <SectionHeader kicker="Module 3" title="Environmental Characterisation" />
+      <FoldableSection
+        id="methodology"
+        kicker="Module 3"
+        title="Environmental Characterisation"
+        isOpen={openSections.methodology}
+        onToggle={() => toggleSection('methodology')}
+      >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <MethodologyPipeline />
           <TEKCard />
         </div>
-      </section>
+      </FoldableSection>
 
-      <section id="substrates">
-        <SectionHeader kicker="Module 4" title="Cultch &amp; Settlement Substrates" />
+      <FoldableSection
+        id="substrates"
+        kicker="Module 4"
+        title="Cultch & Settlement Substrates"
+        isOpen={openSections.substrates}
+        onToggle={() => toggleSection('substrates')}
+      >
         <SubstrateGrid />
-      </section>
+      </FoldableSection>
 
-      <section id="larvae-sampling">
-        <SectionHeader kicker="Module 5" title="Larvae Sampling &amp; Observation" />
+      <FoldableSection
+        id="larvae-sampling"
+        kicker="Module 5"
+        title="Larvae Sampling & Observation"
+        isOpen={openSections['larvae-sampling']}
+        onToggle={() => toggleSection('larvae-sampling')}
+      >
         <LarvaeObservation />
-      </section>
+      </FoldableSection>
 
-      <section id="biodiversity">
-        <SectionHeader kicker="Module 6" title="Macroinvertebrates &amp; Ecosystem Services" />
+      <FoldableSection
+        id="biodiversity"
+        kicker="Module 6"
+        title="Macroinvertebrates & Ecosystem Services"
+        isOpen={openSections.biodiversity}
+        onToggle={() => toggleSection('biodiversity')}
+      >
         <EcosystemServices />
-      </section>
+      </FoldableSection>
 
       <footer style={{ textAlign: 'center', padding: '4rem 1.5rem 3rem', color: 'var(--text-dim)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
         <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -91,3 +143,4 @@ function App() {
 }
 
 export default App
+

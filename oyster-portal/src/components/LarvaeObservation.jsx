@@ -99,6 +99,7 @@ export default function LarvaeObservation() {
 
         {/* The Microscope Assembly */}
         <div
+          className="microscope-wrapper"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -114,10 +115,9 @@ export default function LarvaeObservation() {
         >
           {/* Eyepiece / Lens Viewer */}
           <div
+            className="microscope-lens-container"
             style={{
               position: 'relative',
-              width: '280px',
-              height: '280px',
               borderRadius: '50%',
               border: '12px solid #334155',
               boxShadow: 'inset 0 0 30px rgba(0,0,0,0.95), 0 10px 25px rgba(0,0,0,0.5)',

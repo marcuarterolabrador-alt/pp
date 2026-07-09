@@ -12,8 +12,8 @@ export const substrates = [
   },
   {
     id: 'chinese-hats',
-    name: 'Chinese Hats',
-    latin: 'Coupelles',
+    name: 'Coupelles',
+    latin: null,
     settlement: 'Very High',
     stability: 'Medium',
     logistics: 'High effort (manual peeling/handling)',

@@ -1,30 +1,44 @@
 export const organs = [
   {
-    id: 'shell',
-    name: 'Shell (Valves)',
+    id: 'hinge',
+    name: 'Hinge',
     function:
-      "Ostrea edulis has an oval-to-pear-shaped shell with a rough, scaly surface. The left valve is concave and cemented to the substratum, while the right valve is flat and sits inside it. The shell is off-white, yellowish or cream with light brown or bluish concentric bands, growing up to 11 cm long.",
-    coordinates: { x: 50, y: 20 },
+      'The anatomical structure that connects the top and bottom valves at the anterior end of the shell, allowing the shell to open and close via a resilient elastic ligament.',
+    coordinates: { x: 50.0, y: 68.0 },
   },
   {
     id: 'gills',
     name: 'Gills (Ctenidia)',
     function:
-      'Responsible for respiration and filter-feeding, straining microscopic algae and organic particles from the water column. A single adult oyster can filter up to 190 litres of water per day.',
-    coordinates: { x: 34, y: 52 },
+      'Large, ciliated sheet-like structures used for respiration (oxygen exchange) and filter-feeding (straining microscopic phytoplankton and nutrients from seawater).',
+    coordinates: { x: 22.0, y: 55.0 },
+  },
+  {
+    id: 'gonad',
+    name: 'Gonad',
+    function:
+      'The reproductive tissue wrapping the visceral mass. Ostrea edulis is a protandrous hermaphrodite, switching between male and female phases during the spawning season.',
+    coordinates: { x: 41.0, y: 74.0 },
   },
   {
     id: 'adductor',
     name: 'Adductor Muscle',
     function:
-      'A single powerful muscle that clamps the two valves shut, protecting the animal from predation and desiccation at low tide, and relaxing to allow the shell to gape open for feeding.',
-    coordinates: { x: 58, y: 53 },
+      'A large, powerful muscle that closes the valves tight against threat or air exposure. When relaxed, the shell gapes open, allowing current to pass for feeding.',
+    coordinates: { x: 31.0, y: 61.0 },
   },
   {
     id: 'mantle',
     name: 'Mantle',
     function:
-      'The soft tissue lining the inner shell surface; secretes the nacreous (pearly) layer of the shell and encloses the mantle cavity where gametes are brooded during the protandrous hermaphrodite life cycle.',
-    coordinates: { x: 46, y: 68 },
+      'Two fleshy folds of thin tissue covering the internal organs. The mantle secretes calcium carbonate layers to build, repair, and enlarge the outer shell.',
+    coordinates: { x: 18.0, y: 71.0 },
+  },
+  {
+    id: 'shell',
+    name: 'Shell (Valves)',
+    function:
+      'The shell is oval, pear-shaped, or circular. It is irregular, and has a rough, scaly surface with a distinct hooked beak and delicate layers. The left or bottom valve is deeply cup-shaped (concave) and permanently attached to the seabed or rocks. The right or top valve is relatively flat with rougher edges, and sits neatly inside the bottom valve, acting just like a lid.',
+    coordinates: { x: 80.0, y: 48.0 },
   },
 ]

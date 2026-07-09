@@ -1,28 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ecosystemHotspots } from '../data/ecosystemEngineer'
 import reefBg from '../assets/oisre_reef_jff.webp'
 
 export default function EcosystemEngineer() {
   const [openId, setOpenId] = useState('niche-diversification')
-  const [positions, setPositions] = useState({})
-
-  useEffect(() => {
-    // Generate random coordinates inside a safe zone (20-80% x, 25-75% y)
-    // so they are always visible and spaced out.
-    const newPos = {}
-    ecosystemHotspots.forEach((spot, idx) => {
-      // Shuffling coordinates a bit so they don't land directly on top of each other
-      const spacingX = (idx * 22) + 22; // Spread horizontally (22%, 44%, 66%)
-      const randomY = Math.floor(Math.random() * 35) + 30; // 30% to 65%
-      const randomOffset = Math.floor(Math.random() * 10) - 5; // -5 to +5
-      newPos[spot.id] = {
-        x: spacingX + randomOffset,
-        y: randomY,
-      }
-    })
-    setPositions(newPos)
-  }, [])
 
   return (
     <div className="grid-2" style={{ alignItems: 'stretch' }}>
@@ -42,38 +24,50 @@ export default function EcosystemEngineer() {
             pointerEvents: 'none',
           }}
         />
-        {/* Numbered Hotspots linked to the cards */}
-        {ecosystemHotspots.map((spot, idx) => {
-          const isActive = openId === spot.id
-          const pos = positions[spot.id] || { x: spot.x, y: spot.y }
-          return (
-            <button
-              key={spot.id}
-              onClick={() => setOpenId(spot.id)}
-              style={{
-                position: 'absolute',
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
-                transform: 'translate(-50%, -50%)',
-                width: 42,
-                height: 42,
-                borderRadius: '50%',
-                border: `2px solid ${isActive ? 'var(--teal)' : 'rgba(255,255,255,0.85)'}`,
-                background: isActive ? 'var(--teal)' : 'rgba(15, 23, 42, 0.75)',
-                boxShadow: isActive ? '0 0 20px var(--teal)' : '0 0 10px rgba(0,0,0,0.4)',
-                fontSize: '1.25rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                zIndex: 10,
-                transition: 'all 0.3s',
-              }}
-            >
-              {spot.emoji}
-            </button>
-          )
-        })}
+        {/* Emojis Hotspot Selection Bar at the top-right of the image */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '1rem',
+            right: '1rem',
+            display: 'flex',
+            gap: '0.75rem',
+            background: 'rgba(15, 23, 42, 0.65)',
+            backdropFilter: 'blur(8px)',
+            padding: '8px 12px',
+            borderRadius: '24px',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            zIndex: 20,
+          }}
+        >
+          {ecosystemHotspots.map((spot) => {
+            const isActive = openId === spot.id
+            return (
+              <button
+                key={spot.id}
+                onClick={() => setOpenId(spot.id)}
+                style={{
+                  width: 38,
+                  height: 38,
+                  borderRadius: '50%',
+                  border: `2px solid ${isActive ? 'var(--teal)' : 'rgba(255,255,255,0.3)'}`,
+                  background: isActive ? 'var(--teal)' : 'rgba(255, 255, 255, 0.15)',
+                  boxShadow: isActive ? '0 0 12px var(--teal)' : 'none',
+                  fontSize: '1.1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  padding: 0,
+                  transition: 'all 0.25s',
+                }}
+                title={spot.title}
+              >
+                {spot.emoji}
+              </button>
+            )
+          })}
+        </div>
         <span
           style={{
             position: 'absolute',
@@ -85,7 +79,7 @@ export default function EcosystemEngineer() {
             zIndex: 10,
           }}
         >
-          Image taken by José Maria Fariñas Franco in Bertrabhouy bay
+          Image taken by Dr. José M. Fariñas-Franco in Bertraghboy Bay.
         </span>
       </div>
 

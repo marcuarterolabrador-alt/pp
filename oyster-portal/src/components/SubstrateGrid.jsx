@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { substrates, enhancementCues } from '../data/substrates'
 import { substrateIcons } from './SubstrateIcons'
 import spatImg from '../assets/spat_native_oyster_tiles.jpeg'
+import scallopsImg from '../assets/scallops.jpeg'
+import spatScallopImg from '../assets/spat_scallop.jpeg'
+import coupellesImg from '../assets/coupelles.png'
 
 const spatDetails = {
   native: {
@@ -36,6 +39,10 @@ export default function SubstrateGrid() {
 
   return (
     <div>
+      <p style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--text)', fontSize: '1rem', lineHeight: '1.6' }}>
+        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement. Flip each card for more information: 
+      </p>
+
       <div className="grid-auto">
         {substrates.map((s) => {
           const Icon = substrateIcons[s.id]
@@ -55,26 +62,49 @@ export default function SubstrateGrid() {
                   >
                     {s.status}
                   </span>
-                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon />
+                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                    {s.id === 'scallop-shell' ? (
+                      <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                         <img src={scallopsImg} alt="Scallop Shells" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                    ) : s.id === 'chinese-hats' ? (
+                      <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                         <img src={coupellesImg} alt="Coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                    ) : (
+                      <Icon />
+                    )}
                   </div>
-                  <h3 style={{ textAlign: 'center' }}>{s.name}</h3>
-                  {s.latin && (
+                  <h3 style={{ textAlign: 'center', marginTop: (s.id === 'scallop-shell' || s.id === 'chinese-hats') ? '12px' : '0' }}>{s.name}</h3>
+                  {s.latin && s.id !== 'scallop-shell' && (
                     <p style={{ textAlign: 'center', fontStyle: 'italic', color: 'var(--text-dim)', fontSize: '0.8rem' }}>
                       {s.latin}
                     </p>
                   )}
                 </div>
-                <div className="flip-card-back glass">
-                  <dl style={{ margin: 0, fontSize: '0.82rem' }}>
-                    <Row label="Settlement" value={s.settlement} />
-                    <Row label="Stability" value={s.stability} />
-                    <Row label="Logistics" value={s.logistics} />
-                  </dl>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--teal)', marginTop: 10, marginBottom: 2 }}>Pros</p>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.pros}</p>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--coral)', marginTop: 10, marginBottom: 2 }}>Cons</p>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.cons}</p>
+                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }}>
+                  {s.id === 'scallop-shell' ? (
+                    <>
+                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
+                        <img src={spatScallopImg} alt="Spat on scallop shell" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                        Scallop shells, a by-product of scallop fisheries, can be easily deployed and serves as substrate for the native oyster to settle.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <dl style={{ margin: 0, fontSize: '0.82rem' }}>
+                        <Row label="Settlement" value={s.settlement} />
+                        <Row label="Stability" value={s.stability} />
+                        <Row label="Logistics" value={s.logistics} />
+                      </dl>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--teal)', marginTop: 10, marginBottom: 2 }}>Pros</p>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.pros}</p>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--coral)', marginTop: 10, marginBottom: 2 }}>Cons</p>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.cons}</p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

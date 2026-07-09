@@ -5,6 +5,8 @@ import 'leaflet/dist/leaflet.css'
 import { MapPin, Building2, Waves } from 'lucide-react'
 import { mfrc, bays, restorationPoints } from '../data/mapData'
 import bertraImg from '../assets/bertra.JPEG'
+import mfrcImg from '../assets/mfrc.png'
+import kkImg from '../assets/kk.jpeg'
 
 function pinIcon(color, size = 26) {
   return L.divIcon({
@@ -31,13 +33,13 @@ export default function MapSection() {
   const points = useMemo(() => restorationPoints, [])
 
   return (
-    <div className="grid-2" style={{ alignItems: 'stretch', gridTemplateColumns: '1.4fr 1fr' }}>
-      <div className="glass" style={{ overflow: 'hidden', minHeight: 480 }}>
+    <div className="map-section-grid">
+      <div className="glass map-container-wrapper">
         <MapContainer
           center={[53.32, -9.43]}
           zoom={10}
           scrollWheelZoom={false}
-          style={{ height: '100%', minHeight: 480, width: '100%' }}
+          style={{ height: '100%', width: '100%' }}
         >
           <TileLayer
             attribution='&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; OpenStreetMap contributors'
@@ -88,6 +90,16 @@ export default function MapSection() {
             <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
               {selected.data.position[0].toFixed(3)}, {selected.data.position[1].toFixed(3)}
             </p>
+            <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
+              <img
+                src={mfrcImg}
+                alt="MFRC Building"
+                style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <span style={{ fontSize: '0.62rem', color: 'var(--text-dim)', display: 'block', marginTop: '2px' }}>
+              Image source: IMBRSea / Atlantic Technological University (ATU)
+            </span>
           </>
         )}
 
@@ -106,6 +118,16 @@ export default function MapSection() {
                   src={bertraImg}
                   alt="Bertraghboy Bay overview"
                   style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            )}
+
+            {selected.data.id === 'kilkieran' && (
+              <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
+                <img
+                  src={kkImg}
+                  alt="Kilkieran Bay overview"
+                  style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', objectPosition: 'bottom', display: 'block' }}
                 />
               </div>
             )}
@@ -136,9 +158,11 @@ export default function MapSection() {
           </>
         )}
 
-        <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 'auto' }}>
-          Bay boundaries are illustrative overlays derived from sampling point clusters.
-        </p>
+        {selected.type !== 'mfrc' && (
+          <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 'auto' }}>
+            Bay boundaries are illustrative overlays derived from sampling point clusters.
+          </p>
+        )}
       </div>
     </div>
   )

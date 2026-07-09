@@ -28,10 +28,9 @@ export default function EcosystemServices() {
 
           {/* Petri Dish Frame */}
           <div
+            className="petri-dish-frame"
             style={{
               position: 'relative',
-              width: '220px',
-              height: '220px',
               borderRadius: '50%',
               border: '6px solid rgba(148, 163, 184, 0.3)',
               boxShadow: 'inset 0 0 20px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.08)',
@@ -86,10 +85,9 @@ export default function EcosystemServices() {
 
           {/* Petri Dish Frame */}
           <div
+            className="petri-dish-frame"
             style={{
               position: 'relative',
-              width: '220px',
-              height: '220px',
               borderRadius: '50%',
               border: '6px solid var(--teal)',
               boxShadow: 'inset 0 0 20px rgba(20,184,166,0.15), 0 8px 24px rgba(20,184,166,0.12)',

@@ -11,7 +11,7 @@ const links = [
   { id: 'biodiversity', label: 'Biodiversity' },
 ]
 
-export default function Nav() {
+export default function Nav({ onNavigate }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -23,7 +23,11 @@ export default function Nav() {
 
   const scrollTo = (id) => {
     setOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (onNavigate) {
+      onNavigate(id)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -51,7 +55,7 @@ export default function Nav() {
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#ffffff', fontWeight: 700 }}>
+        <div className="nav-logo-container" style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#ffffff', fontWeight: 700 }}>
           <img src={logo} alt="Connemara Oyster Restoration Logo" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} />
           Connemara Oyster Restoration
         </div>
