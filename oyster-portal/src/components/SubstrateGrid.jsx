@@ -80,8 +80,8 @@ export default function SubstrateGrid() {
               onClick={() => toggle(s.id)}
               style={{ cursor: 'pointer' }}
             >
-              <div className="flip-card-inner">
-                <div className="flip-card-front glass" style={{ position: 'relative' }}>
+              <div className="flip-card-inner" style={{ position: 'relative', width: '100%', height: '100%' }}>
+                <div className="flip-card-front glass" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
                   <span
                     className={`pill ${s.status === 'Future Trial' ? 'coral' : ''}`}
                     style={{ alignSelf: 'flex-start' }}
@@ -150,7 +150,7 @@ export default function SubstrateGrid() {
                   )}
                 </div>
                 
-                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', position: 'relative' }}>
+                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
                   {/* Maximize Button Back */}
                   <button
                     onClick={(e) => {
