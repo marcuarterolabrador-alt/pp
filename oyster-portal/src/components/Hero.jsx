@@ -48,33 +48,17 @@ export default function Hero() {
           zIndex: -1,
         }}
       />
-      <div
-        style={{
-          position: 'absolute',
-          top: '1.5rem',
-          right: '1.5rem',
-          display: 'flex',
-          gap: '1rem',
-          alignItems: 'center',
-          zIndex: 10,
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(8px)',
-          padding: '6px 12px',
-          borderRadius: '8px',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-        }}
-        className="nav-desktop"
-      >
-        <img src={mfrcLogo} alt="MFRC Logo" style={{ height: '64px', width: 'auto' }} />
-        <img src={atuLogo} alt="ATU Logo" style={{ height: '64px', width: 'auto' }} />
-        <img src={imbrseaLogo} alt="IMBRSea Logo" style={{ height: '64px', width: 'auto' }} />
-      </div>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         style={{ maxWidth: 780 }}
       >
+        <div className="hero-logos">
+          <img src={mfrcLogo} alt="MFRC Logo" style={{ height: '64px', width: 'auto' }} />
+          <img src={atuLogo} alt="ATU Logo" style={{ height: '64px', width: 'auto' }} />
+          <img src={imbrseaLogo} alt="IMBRSea Logo" style={{ height: '64px', width: 'auto' }} />
+        </div>
         <span
           className="pill"
           style={{

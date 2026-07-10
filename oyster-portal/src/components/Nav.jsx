@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo_project-removebg-preview.png'
 
 const links = [
-  { id: 'intro', label: 'Species & Biology' },
+  { id: 'intro', label: 'Introduction' },
   { id: 'map', label: 'Study Location' },
   { id: 'methodology', label: 'Environmental Characterisation' },
   { id: 'substrates', label: 'Cultch' },
@@ -59,7 +59,7 @@ export default function Nav({ onNavigate }) {
           <img src={logo} alt="Connemara Oyster Restoration Logo" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} />
           Connemara Oyster Restoration
         </div>
-        <nav style={{ display: 'flex', gap: 4 }} className="nav-desktop">
+        <nav className="nav-desktop">
           {links.map((l) => (
             <button
               key={l.id}

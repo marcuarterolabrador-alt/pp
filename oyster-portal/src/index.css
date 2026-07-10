@@ -195,6 +195,38 @@ button {
 .flip-card-back {
   transform: rotateY(180deg);
   justify-content: center;
+  overflow-y: auto;
+}
+
+.petri-dish-frame {
+  width: 240px;
+  height: 240px;
+}
+
+.microscope-lens-container {
+  width: 280px;
+  height: 280px;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 4px;
+}
+
+.hero-logos {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .nav-toggle {
@@ -213,6 +245,26 @@ button {
 @media (max-width: 780px) {
   .nav-desktop {
     display: none;
+  }
+
+  .hero-logos {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    display: flex !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+    width: fit-content !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-logos img {
+    height: 48px !important;
   }
 
   .nav-toggle {
@@ -375,4 +427,59 @@ canvas.particle-bg {
   body {
     font-size: 14px;
   }
+}
+
+/* Mobile Module Selector styling */
+.mobile-module-selector-wrapper {
+  margin: 1.5rem 0.75rem;
+}
+
+.mobile-module-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--glow), 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+
+.mobile-module-banner:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--teal);
+}
+
+.mobile-module-dropdown {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), var(--glow);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  margin-top: 0.5rem;
+}
+
+.mobile-dropdown-item {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.mobile-dropdown-item:not(:last-child) {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.mobile-dropdown-item:hover {
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.mobile-dropdown-item.active {
+  background: rgba(20, 184, 166, 0.06);
+  border-left-color: var(--teal);
 }
