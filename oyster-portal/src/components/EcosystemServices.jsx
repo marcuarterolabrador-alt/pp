@@ -29,7 +29,6 @@ export default function EcosystemServices() {
           <div
             style={{
               width: '100%',
-              aspectRatio: '16 / 10',
               borderRadius: '12px',
               border: '1px solid rgba(148, 163, 184, 0.2)',
               overflow: 'hidden',
@@ -45,8 +44,8 @@ export default function EcosystemServices() {
               alt="Bare Mud Sediment"
               style={{
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
+                height: 'auto',
+                display: 'block',
               }}
             />
           </div>
@@ -73,7 +72,6 @@ export default function EcosystemServices() {
           <div
             style={{
               width: '100%',
-              aspectRatio: '16 / 10',
               borderRadius: '12px',
               border: '1px solid rgba(20, 184, 166, 0.3)',
               overflow: 'hidden',
@@ -89,8 +87,8 @@ export default function EcosystemServices() {
               alt="Oyster Reef Matrix"
               style={{
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
+                height: 'auto',
+                display: 'block',
               }}
             />
           </div>
