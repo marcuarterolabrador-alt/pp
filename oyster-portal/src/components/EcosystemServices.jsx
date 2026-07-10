@@ -1,8 +1,7 @@
 import { Shield, Sparkles } from 'lucide-react'
 
-// Import placeholders that the user will replace with their own photos
-import petriHigh from '../assets/petri_high.png'
-import petriLow from '../assets/petri_low.png'
+import sedimentReef from '../assets/sediment_macrofauna_reef.png'
+import sedimentMud from '../assets/sediment_macrofauna_mud.png'
 
 export default function EcosystemServices() {
   return (
@@ -26,41 +25,28 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Unstructured Soft Bottom</span>
           </div>
 
-          {/* Petri Dish Frame */}
+          {/* Image Container */}
           <div
-            className="petri-dish-frame"
             style={{
-              position: 'relative',
-              borderRadius: '50%',
-              border: '6px solid rgba(148, 163, 184, 0.3)',
-              boxShadow: 'inset 0 0 20px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.08)',
+              width: '100%',
+              aspectRatio: '16 / 10',
+              borderRadius: '12px',
+              border: '1px solid rgba(148, 163, 184, 0.2)',
               overflow: 'hidden',
-              background: '#f1f5f9',
+              background: 'rgba(0, 0, 0, 0.2)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
             <img
-              src={petriLow}
-              alt="Petri dish showing low biodiversity"
+              src={sedimentMud}
+              alt="Bare Mud Sediment"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                opacity: 0.9,
-              }}
-            />
-            {/* Glossy Reflection overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-30%',
-                left: '-30%',
-                width: '160%',
-                height: '160%',
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%)',
-                pointerEvents: 'none',
               }}
             />
           </div>
@@ -83,41 +69,28 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Biogenic Carbonate Reef</span>
           </div>
 
-          {/* Petri Dish Frame */}
+          {/* Image Container */}
           <div
-            className="petri-dish-frame"
             style={{
-              position: 'relative',
-              borderRadius: '50%',
-              border: '6px solid var(--teal)',
-              boxShadow: 'inset 0 0 20px rgba(20,184,166,0.15), 0 8px 24px rgba(20,184,166,0.12)',
+              width: '100%',
+              aspectRatio: '16 / 10',
+              borderRadius: '12px',
+              border: '1px solid rgba(20, 184, 166, 0.3)',
               overflow: 'hidden',
-              background: '#f0fdfa',
+              background: 'rgba(0, 0, 0, 0.2)',
+              boxShadow: '0 4px 20px rgba(20,184,166,0.1)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
             <img
-              src={petriHigh}
-              alt="Petri dish showing high biodiversity"
+              src={sedimentReef}
+              alt="Oyster Reef Matrix"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                opacity: 0.95,
-              }}
-            />
-            {/* Glossy Reflection overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-30%',
-                left: '-30%',
-                width: '160%',
-                height: '160%',
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%)',
-                pointerEvents: 'none',
               }}
             />
           </div>
