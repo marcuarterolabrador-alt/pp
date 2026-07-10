@@ -9,6 +9,7 @@ const links = [
   { id: 'substrates', label: 'Cultch' },
   { id: 'larvae-sampling', label: 'Larvae Sampling' },
   { id: 'biodiversity', label: 'Biodiversity' },
+  { id: 'references', label: 'References' },
 ]
 
 export default function Nav({ onNavigate }) {

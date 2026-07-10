@@ -17,6 +17,7 @@ import SubstrateGrid from './components/SubstrateGrid'
 import LarvaeObservation from './components/LarvaeObservation'
 import EcosystemServices from './components/EcosystemServices'
 import FoldableSection from './components/FoldableSection'
+import References from './components/References'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -30,6 +31,7 @@ function App() {
     substrates: false,
     'larvae-sampling': false,
     biodiversity: false,
+    references: false,
   })
 
   useEffect(() => {
@@ -132,6 +134,12 @@ function App() {
       kicker: 'Module 6',
       title: 'Macroinvertebrates & Ecosystem Services',
       content: <EcosystemServices />
+    },
+    {
+      id: 'references',
+      kicker: 'Module 7',
+      title: 'References & Sources',
+      content: <References />
     }
   ]
 
@@ -251,6 +259,7 @@ function App() {
           </FoldableSection>
         ))
       )}
+
 
       <footer style={{ textAlign: 'center', padding: '4rem 1.5rem 3rem', color: 'var(--text-dim)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
         <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
