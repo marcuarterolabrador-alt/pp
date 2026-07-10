@@ -25,30 +25,16 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Unstructured Soft Bottom</span>
           </div>
 
-          {/* Image Container */}
-          <div
+          <img
+            src={sedimentMud}
+            alt="Bare Mud Sediment"
             style={{
               width: '100%',
+              height: 'auto',
               borderRadius: '12px',
-              border: '1px solid rgba(148, 163, 184, 0.2)',
-              overflow: 'hidden',
-              background: 'rgba(0, 0, 0, 0.2)',
               boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}
-          >
-            <img
-              src={sedimentMud}
-              alt="Bare Mud Sediment"
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-              }}
-            />
-          </div>
+          />
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <h5 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-h)', fontSize: '0.95rem' }}>Sample Characterisation:</h5>
@@ -68,30 +54,16 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Biogenic Carbonate Reef</span>
           </div>
 
-          {/* Image Container */}
-          <div
+          <img
+            src={sedimentReef}
+            alt="Oyster Reef Matrix"
             style={{
               width: '100%',
+              height: 'auto',
               borderRadius: '12px',
-              border: '1px solid rgba(20, 184, 166, 0.3)',
-              overflow: 'hidden',
-              background: 'rgba(0, 0, 0, 0.2)',
-              boxShadow: '0 4px 20px rgba(20,184,166,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
             }}
-          >
-            <img
-              src={sedimentReef}
-              alt="Oyster Reef Matrix"
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-              }}
-            />
-          </div>
+          />
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <h5 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-h)', fontSize: '0.95rem' }}>Sample Characterisation:</h5>
