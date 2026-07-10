@@ -25,16 +25,27 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Unstructured Soft Bottom</span>
           </div>
 
-          <img
-            src={sedimentMud}
-            alt="Bare Mud Sediment"
+          <div
             style={{
               width: '100%',
-              height: 'auto',
+              padding: '10px',
               borderRadius: '12px',
+              border: '1px solid rgba(148, 163, 184, 0.25)',
+              background: '#ffffff',
               boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+              boxSizing: 'border-box',
             }}
-          />
+          >
+            <img
+              src={sedimentMud}
+              alt="Bare Mud Sediment"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <h5 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-h)', fontSize: '0.95rem' }}>Sample Characterisation:</h5>
@@ -54,16 +65,27 @@ export default function EcosystemServices() {
             <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Habitat: Biogenic Carbonate Reef</span>
           </div>
 
-          <img
-            src={sedimentReef}
-            alt="Oyster Reef Matrix"
+          <div
             style={{
               width: '100%',
-              height: 'auto',
+              padding: '10px',
               borderRadius: '12px',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+              border: '1px solid rgba(20, 184, 166, 0.35)',
+              background: '#ffffff',
+              boxShadow: '0 4px 20px rgba(20,184,166,0.12)',
+              boxSizing: 'border-box',
             }}
-          />
+          >
+            <img
+              src={sedimentReef}
+              alt="Oyster Reef Matrix"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <h5 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-h)', fontSize: '0.95rem' }}>Sample Characterisation:</h5>
