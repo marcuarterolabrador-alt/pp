@@ -151,7 +151,7 @@ const larvalStages = [
       position: 'absolute',
       width: '323.0px',
       height: '430.6px',
-      left: '-67.1px',
+      left: '-45.0px',
       top: '-93.9px',
       maxWidth: 'none',
       maxHeight: 'none',
