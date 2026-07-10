@@ -2,38 +2,160 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Compass, Shield } from 'lucide-react'
 
-// Import placeholders that the user will replace with their own photos
-import larvaVeliger from '../assets/larva_veliger.png'
-import larvaUmbonate from '../assets/larva_umbonate.png'
-import larvaPediveliger from '../assets/larva_pediveliger.png'
+// Import microscope photography of larvae
+import larvae0 from '../assets/larvae0.jpeg'
+import larvae1 from '../assets/larvae1.jpeg'
+import larvae2 from '../assets/larvae2.jpeg'
+import larvae3 from '../assets/larvae3.jpeg'
+import larvae4 from '../assets/larvae4.jpeg'
+import larvae5 from '../assets/larvae5.jpeg'
+import larvae6 from '../assets/larvae6.jpeg'
+import larvae7 from '../assets/larvae7.jpeg'
 
 const larvalStages = [
   {
-    id: 'veliger',
-    name: 'Veliger Larva (D-Stage)',
+    id: 'stage0',
+    name: 'Early Veliger (Day 2 – 3)',
     description:
-      'The early shell-bearing larval stage. The shell is transparent and has a distinct straight-hinge shape resembling a capital letter D. At this stage, they drift with ocean currents and feed using a ciliated organ called the velum.',
-    size: '110 – 150 µm',
-    age: '2 – 5 days post-spawning',
-    image: larvaVeliger,
+      'The newly formed straight-hinge D-stage shell. The larva begins active swimming and filter-feeding on phytoplankton in the water column.',
+    size: '110 – 120 µm',
+    age: '2 – 3 days post-spawning',
+    image: larvae0,
+    style: {
+      position: 'absolute',
+      width: '330.5px',
+      height: '440.6px',
+      left: '-13.1px',
+      top: '-23.9px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
   },
   {
-    id: 'umbonate',
-    name: 'Umbonate Larva',
+    id: 'stage1',
+    name: 'Mid Veliger (Day 4 – 5)',
     description:
-      'As the larva grows, the shell develops a prominent hinge bulge called the umbo, shifting the shape from D-like to asymmetric and rounded. This stage requires high metabolic activity as they build their calcified shell.',
-    size: '150 – 250 µm',
-    age: '6 – 12 days post-spawning',
-    image: larvaUmbonate,
+      'The shell grows rapidly, and the internal organs—including the digestive tract and ciliated velum—start to become more distinct.',
+    size: '125 – 145 µm',
+    age: '4 – 5 days post-spawning',
+    image: larvae1,
+    style: {
+      position: 'absolute',
+      width: '253.5px',
+      height: '338.0px',
+      left: '0.8px',
+      top: '-77.9px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
   },
   {
-    id: 'pediveliger',
-    name: 'Pediveliger Larva',
+    id: 'stage2',
+    name: 'Early Umbonate (Day 6 – 8)',
     description:
-      'The final larval stage before settlement. They develop a functional, ciliated foot that allows them to crawl over hard surfaces like shells and rocks, testing them to find the perfect substrate for permanent cementation.',
-    size: '250 – 300+ µm',
-    age: '14 – 20+ days post-spawning',
-    image: larvaPediveliger,
+      'The shell transitions from the straight D-hinge to an asymmetric shape as the umbo (hinge bulge) begins to form.',
+    size: '150 – 175 µm',
+    age: '6 – 8 days post-spawning',
+    image: larvae2,
+    style: {
+      position: 'absolute',
+      width: '288.3px',
+      height: '384.5px',
+      left: '-12.3px',
+      top: '-113.2px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
+  },
+  {
+    id: 'stage3',
+    name: 'Mid Umbonate (Day 9 – 11)',
+    description:
+      'The shell thickness and opacity increase. The larva exhibits high metabolic activity as it calcifies its growing protective shell.',
+    size: '180 – 210 µm',
+    age: '9 – 11 days post-spawning',
+    image: larvae3,
+    style: {
+      position: 'absolute',
+      width: '291.3px',
+      height: '388.4px',
+      left: '1.1px',
+      top: '-96.0px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
+  },
+  {
+    id: 'stage4',
+    name: 'Late Umbonate (Day 12 – 13)',
+    description:
+      'The shell is almost fully rounded. The larva\'s internal organs are highly developed, preparing for the transition to the crawler phase.',
+    size: '220 – 245 µm',
+    age: '12 – 13 days post-spawning',
+    image: larvae4,
+    style: {
+      position: 'absolute',
+      width: '288.7px',
+      height: '385.0px',
+      left: '-0.5px',
+      top: '-94.8px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
+  },
+  {
+    id: 'stage5',
+    name: 'Early Pediveliger (Day 14 – 16)',
+    description:
+      'Sensory eyespots and the early development of a muscular, ciliated foot become visible under the microscope.',
+    size: '250 – 275 µm',
+    age: '14 – 16 days post-spawning',
+    image: larvae5,
+    style: {
+      position: 'absolute',
+      width: '396.4px',
+      height: '528.5px',
+      left: '-33.6px',
+      top: '-168.5px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
+  },
+  {
+    id: 'stage6',
+    name: 'Late Pediveliger (Day 17 – 19)',
+    description:
+      'The larva alternates between swimming and using its muscular foot to crawl and search for hard, calcium-rich settlement substrates.',
+    size: '280 – 300 µm',
+    age: '17 – 19 days post-spawning',
+    image: larvae6,
+    style: {
+      position: 'absolute',
+      width: '307.5px',
+      height: '410.0px',
+      left: '-8.0px',
+      top: '-64.7px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
+  },
+  {
+    id: 'stage7',
+    name: 'Pre-Settlement / Spat Transition (Day 20+)',
+    description:
+      'The final larval stage. Once a suitable substrate is selected, the larva cements itself permanently and begins its transformation into a juvenile spat.',
+    size: '300+ µm',
+    age: '20+ days post-spawning',
+    image: larvae7,
+    style: {
+      position: 'absolute',
+      width: '323.0px',
+      height: '430.6px',
+      left: '-67.1px',
+      top: '-93.9px',
+      maxWidth: 'none',
+      maxHeight: 'none',
+    }
   },
 ]
 
@@ -139,11 +261,7 @@ export default function LarvaeObservation() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
+                  style={currentStage.style}
                 />
               </AnimatePresence>
 
