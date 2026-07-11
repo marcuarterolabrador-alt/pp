@@ -8,6 +8,11 @@ import spatScallopImg from '../assets/spat_scallop.jpeg'
 import coupellesImg from '../assets/coupelles.png'
 import pasteSubstratesImg from '../assets/paste_substrates.jpeg'
 import paste2Img from '../assets/paste2.jpeg'
+import tilesImg from '../assets/tiles.jpeg'
+import tilesSpatImg from '../assets/tiles_spat.jpeg'
+import coupellesSpatImg from '../assets/spat_coupelles1.jpeg'
+import reefBallImg from '../assets/reef_ball.jpg'
+import limestoneImg from '../assets/limestone.avif'
 
 const spatDetails = {
   native: {
@@ -31,7 +36,7 @@ export default function SubstrateGrid() {
   const [selectedSpat, setSelectedSpat] = useState('native')
   const [answers, setAnswers] = useState({ native: '', saddle: '' })
   const [expandedSubstrate, setExpandedSubstrate] = useState(null)
-  const [scallopTab, setScallopTab] = useState('substrate')
+  const [modalTab, setModalTab] = useState('substrate')
 
   useEffect(() => {
     if (expandedSubstrate) {
@@ -138,11 +143,42 @@ export default function SubstrateGrid() {
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
                          <img src={coupellesImg} alt="Coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                       </div>
+                    ) : s.id === 'roof-tiles' ? (
+                      <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                         <img src={tilesImg} alt="Roof Tiles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                    ) : s.id === 'limestone' ? (
+                      <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                         <img src={limestoneImg} alt="Limestone" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                    ) : s.id === 'biomodules' ? (
+                      <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', position: 'relative' }}>
+                        <img src={reefBallImg} alt="Biomodules" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            bottom: '0px',
+                            left: '0px',
+                            right: '0px',
+                            background: 'rgba(15, 23, 42, 0.65)',
+                            padding: '3px 6px',
+                            fontSize: '0.62rem',
+                            color: '#ffffff',
+                            textAlign: 'center',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis'
+                          }}
+                          title="Image credit: Louisiana Sea Grant College Program, LSU / CC BY 2.0"
+                        >
+                          Image credit: Louisiana Sea Grant College Program, LSU / CC BY 2.0
+                        </div>
+                      </div>
                     ) : (
                       <Icon />
                     )}
                   </div>
-                  <h3 style={{ textAlign: 'center', marginTop: (s.id === 'scallop-shell' || s.id === 'chinese-hats') ? '12px' : '0' }}>{s.name}</h3>
+                  <h3 style={{ textAlign: 'center', marginTop: (s.id === 'scallop-shell' || s.id === 'chinese-hats' || s.id === 'roof-tiles' || s.id === 'biomodules' || s.id === 'limestone') ? '12px' : '0' }}>{s.name}</h3>
                   {s.latin && s.id !== 'scallop-shell' && (
                     <p style={{ textAlign: 'center', fontStyle: 'italic', color: 'var(--text-dim)', fontSize: '0.8rem' }}>
                       {s.latin}
@@ -198,6 +234,74 @@ export default function SubstrateGrid() {
                       </div>
                       <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
                         Scallop shells, a by-product of scallop fisheries, can be easily deployed and serves as substrate for the native oyster to settle.
+                      </p>
+                      
+                      {/* Learn More Button */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedSubstrate(s);
+                        }}
+                        style={{
+                          marginTop: 'auto',
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--cyan)',
+                          fontSize: '0.76rem',
+                          fontWeight: '600',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '4px',
+                          cursor: 'pointer',
+                          padding: '4px 0 0 0',
+                          alignSelf: 'center'
+                        }}
+                      >
+                        Learn More <Maximize2 size={11} />
+                      </button>
+                    </>
+                  ) : s.id === 'roof-tiles' ? (
+                    <>
+                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
+                        <img src={tilesSpatImg} alt="Spat on roof tiles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                        Clay roof tiles provide heavy profile and high hydrodynamic stability, resisting currents while offering excellent settlement surfaces.
+                      </p>
+                      
+                      {/* Learn More Button */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedSubstrate(s);
+                        }}
+                        style={{
+                          marginTop: 'auto',
+                          background: 'none',
+                          border: 'none',
+                          color: 'var(--cyan)',
+                          fontSize: '0.76rem',
+                          fontWeight: '600',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '4px',
+                          cursor: 'pointer',
+                          padding: '4px 0 0 0',
+                          alignSelf: 'center'
+                        }}
+                      >
+                        Learn More <Maximize2 size={11} />
+                      </button>
+                    </>
+                  ) : s.id === 'chinese-hats' ? (
+                    <>
+                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
+                        <img src={coupellesSpatImg} alt="Spat on coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                      </div>
+                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                        Lime-coated coupelles nesting cones provide very high settlement efficiency, although peeling spat is labour-intensive.
                       </p>
                       
                       {/* Learn More Button */}
@@ -505,14 +609,14 @@ export default function SubstrateGrid() {
           e.stopPropagation();
           const prevIndex = (currentIndex - 1 + substrates.length) % substrates.length;
           setExpandedSubstrate(substrates[prevIndex]);
-          setScallopTab('substrate');
+          setModalTab('substrate');
         };
         
         const handleNext = (e) => {
           e.stopPropagation();
           const nextIndex = (currentIndex + 1) % substrates.length;
           setExpandedSubstrate(substrates[nextIndex]);
-          setScallopTab('substrate');
+          setModalTab('substrate');
         };
 
         const getSettlementPercent = (val) => {
@@ -591,14 +695,14 @@ export default function SubstrateGrid() {
                     <>
                       <div className="image-tabs-container">
                         <button 
-                          className={`image-tab-btn ${scallopTab === 'substrate' ? 'active' : ''}`}
-                          onClick={() => setScallopTab('substrate')}
+                          className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
+                          onClick={() => setModalTab('substrate')}
                         >
                           Substrate
                         </button>
                         <button 
-                          className={`image-tab-btn ${scallopTab === 'recruitment' ? 'active' : ''}`}
-                          onClick={() => setScallopTab('recruitment')}
+                          className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
+                          onClick={() => setModalTab('recruitment')}
                         >
                           Spat Recruitment
                         </button>
@@ -613,19 +717,114 @@ export default function SubstrateGrid() {
                         boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
                       }}>
                         <img 
-                          src={scallopTab === 'substrate' ? scallopsImg : spatScallopImg} 
-                          alt={scallopTab === 'substrate' ? "Scallop Shells" : "Spat on scallop shell"} 
+                          src={modalTab === 'substrate' ? scallopsImg : spatScallopImg} 
+                          alt={modalTab === 'substrate' ? "Scallop Shells" : "Spat on scallop shell"} 
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                         />
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
-                        {scallopTab === 'substrate' 
+                        {modalTab === 'substrate' 
                           ? "Scallop shells (Pecten maximus) are an abundant, organic by-product of regional fisheries."
                           : "Native oyster spat (Ostrea edulis) successfully recruited and growing on a collector scallop shell."
                         }
                       </p>
                     </>
+                  ) : s.id === 'roof-tiles' ? (
+                    <>
+                      <div className="image-tabs-container">
+                        <button 
+                          className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
+                          onClick={() => setModalTab('substrate')}
+                        >
+                          Substrate
+                        </button>
+                        <button 
+                          className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
+                          onClick={() => setModalTab('recruitment')}
+                        >
+                          Spat Recruitment
+                        </button>
+                      </div>
+                      
+                      <div style={{ 
+                        width: '100%', 
+                        height: '240px', 
+                        borderRadius: '12px', 
+                        overflow: 'hidden', 
+                        border: '1px solid var(--panel-border)', 
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
+                      }}>
+                        <img 
+                          src={modalTab === 'substrate' ? tilesImg : tilesSpatImg} 
+                          alt={modalTab === 'substrate' ? "Roof Tiles" : "Spat on roof tiles"} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        />
+                      </div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
+                        {modalTab === 'substrate' 
+                          ? "Clay roof tiles deployed on the seabed serve as high-stability recruitment substrate."
+                          : "Native oyster spat (Ostrea edulis) successfully settled on the underside of a roof tile."
+                        }
+                      </p>
+                    </>
                   ) : s.id === 'chinese-hats' ? (
+                    <>
+                      <div className="image-tabs-container">
+                        <button 
+                          className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
+                          onClick={() => setModalTab('substrate')}
+                        >
+                          Substrate
+                        </button>
+                        <button 
+                          className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
+                          onClick={() => setModalTab('recruitment')}
+                        >
+                          Spat Recruitment
+                        </button>
+                      </div>
+                      
+                      <div style={{ 
+                        width: '100%', 
+                        height: '240px', 
+                        borderRadius: '12px', 
+                        overflow: 'hidden', 
+                        border: '1px solid var(--panel-border)', 
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
+                      }}>
+                        <img 
+                          src={modalTab === 'substrate' ? coupellesImg : coupellesSpatImg} 
+                          alt={modalTab === 'substrate' ? "Coupelles" : "Spat on coupelles"} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        />
+                      </div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
+                        {modalTab === 'substrate' 
+                          ? "Textured, lime-coated coupelles nesting cones, designed to maximize larval attachment surface area."
+                          : "Native oyster spat successfully attached and growing on lime-coated coupelles."
+                        }
+                      </p>
+                    </>
+                  ) : s.id === 'biomodules' ? (
+                    <>
+                      <div style={{ 
+                        width: '100%', 
+                        height: '240px', 
+                        borderRadius: '12px', 
+                        overflow: 'hidden', 
+                        border: '1px solid var(--panel-border)', 
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                        marginTop: '2.5rem',
+                        position: 'relative'
+                      }}>
+                        <img src={reefBallImg} alt="Biomodules" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                      </div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
+                        Designed concrete biomodules / reef balls providing larval attachment surface area.<br />
+                        <span style={{ fontSize: '0.72rem', display: 'block', marginTop: '4px' }}>Image credit: Louisiana Sea Grant College Program, LSU / CC BY 2.0</span>
+                      </p>
+                    </>
+                  ) : s.id === 'limestone' ? (
                     <>
                       <div style={{ 
                         width: '100%', 
@@ -636,10 +835,10 @@ export default function SubstrateGrid() {
                         boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                         marginTop: '2.5rem'
                       }}>
-                        <img src={coupellesImg} alt="Coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src={limestoneImg} alt="Limestone" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
-                        Textured, lime-coated coupelles nesting cones, designed to maximize larval attachment surface area.
+                        Natural limestone rocks used as a restoration substrate.
                       </p>
                     </>
                   ) : (
