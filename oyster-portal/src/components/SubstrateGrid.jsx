@@ -64,15 +64,33 @@ export default function SubstrateGrid() {
   }
 
   const currentVal = answers[selectedSpat]
-  const isCorrect = selectedSpat === 'native' ? currentVal === '1' : currentVal === '9'
+  const isCorrect = selectedSpat === 'native' ? currentVal === '2' : currentVal === '9'
 
   const toggle = (id) => setFlipped((f) => ({ ...f, [id]: !f[id] }))
 
   return (
-    <div>
-      <p style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--text)', fontSize: '1rem', lineHeight: '1.6' }}>
-        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement. Flip each card for more information:
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <p style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text)', fontSize: '1rem', lineHeight: '1.6' }}>
+        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement.
       </p>
+
+      <div style={{
+        border: '1px solid var(--panel-border)',
+        borderRadius: '12px',
+        padding: '0.75rem 1.25rem',
+        background: 'var(--panel)',
+        backdropFilter: 'blur(8px)',
+        textAlign: 'center',
+        maxWidth: '100%',
+        width: 'fit-content',
+        margin: '0 auto 2rem',
+        boxShadow: 'var(--glow)',
+        alignSelf: 'center'
+      }}>
+        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+          Flip each card for more information:
+        </p>
+      </div>
 
       <div className="grid-auto">
         {substrates.map((s) => {
@@ -447,7 +465,7 @@ export default function SubstrateGrid() {
               style={{
                 position: 'absolute',
                 bottom: '0.5rem',
-                left: '0.75rem',
+                right: '0.75rem',
                 color: '#ffffff',
                 fontSize: '0.7rem',
                 textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)',
@@ -485,7 +503,7 @@ export default function SubstrateGrid() {
               style={{
                 position: 'absolute',
                 left: '69%',
-                top: '61%',
+                top: '73%',
                 transform: 'translate(-50%, -50%)',
                 width: '16px',
                 height: '16px',
