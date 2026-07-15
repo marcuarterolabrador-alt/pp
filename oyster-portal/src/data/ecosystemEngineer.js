@@ -1,29 +1,47 @@
 export const ecosystemHotspots = [
   {
-    id: 'niche-diversification',
-    title: 'Niche Diversification',
-    emoji: '🦀',
-    x: 48,
-    y: 52,
+    id: 'habitat-complexity',
+    title: 'Three-Dimensional Habitat',
+    emoji: '🪸',
+    x: 45,
+    y: 50,
     description:
-      'Reef interstitial spaces act as vital refuges from wave action and predators, helping sustain high-abundance macroinvertebrate communities.',
+      'As gregarious builders, young oysters settle on older generations, creating elevated, structurally complex biogenic reefs over large areas. This raised vertical relief provides essential crevices, shelter, and foraging grounds for hundreds of marine fish and invertebrate species.',
   },
   {
-    id: 'benthic-pelagic',
-    title: 'Benthic-Pelagic Coupling',
-    emoji: '🤝',
-    x: 22,
-    y: 38,
+    id: 'water-filtration',
+    title: 'Water Quality & Filtration',
+    emoji: '💧',
+    x: 25,
+    y: 35,
     description:
-      'Oysters filter plankton from the water column and deposit organic nutrients onto the sediment, enriching the surrounding food web.',
+      'Oysters are highly efficient filter feeders. A single native oyster can filter up to 240 liters of water per day, removing excess algae, organic matter, and nutrients. This natural filtration significantly increases water clarity and quality in coastal environments.',
   },
   {
-    id: 'coastal-stabilization',
-    title: 'Coastal Stabilization',
+    id: 'seagrass-benefit',
+    title: 'Nearby Habitat Support',
+    emoji: '🌱',
+    x: 65,
+    y: 70,
+    description:
+      'By clearing the water column of suspended solids, oyster reefs allow more sunlight to penetrate the seabed. This increased light availability directly promotes the growth of critical adjacent habitats, such as underwater eelgrass and seagrass beds.',
+  },
+  {
+    id: 'nursery-grounds',
+    title: 'Fish Nursery & Food Webs',
+    emoji: '🐟',
+    x: 55,
+    y: 60,
+    description:
+      'The reef structure attracts colonizers like mussels, barnacles, and anemones, establishing an abundant food supply. This makes oyster beds ideal, safe nursery habitats for the juvenile stages of recreationally and commercially valuable fish species.',
+  },
+  {
+    id: 'coastal-protection',
+    title: 'Storm & Erosion Protection',
     emoji: '🛡️',
-    x: 74,
-    y: 65,
+    x: 80,
+    y: 40,
     description:
-      'Biogenic structures absorb wave energy and bind sediments, reducing shoreline erosion and fostering seagrass colonization nearby.',
+      'Healthy oyster reefs function as living natural barriers to storms and tides. By breaking wave energy before it reaches the shoreline, they mitigate coastal erosion, stabilize the seabed, and fortify fragile wetlands and productive estuaries.',
   },
 ]

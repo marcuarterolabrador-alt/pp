@@ -35,12 +35,81 @@
 
 "Oyster reefs are often referred to as the temperate functional equivalent of coral reefs (Ritter von Hamm1881), forming elevated three-dimensional structures over largeareas (Williams 1837; zu Ermgassen et al. 2012)" ( https://doi.org/10.1111/conl.13068)
 
-O. edulis are large-scale biogenic reef builders.
+O. edulis are large-scale biogenic reef builders, oyster reefs are often referred to as the temperate functional equivalent of coral reefs (Ritter von Hamm1881), forming elevated three-dimensional structures over large areas and physically transform the seafloor, shifting it from flat sediment to a rich, three-dimensional landscape that interacts dynamically with the surrounding marine environment.
+
 
 Reef-building species demonstrate three-dimensional structural complexity, vertical relief, and a gregarious
 nature, and include bivalves, annelids and corals, among other taxa. These biogenic structures typically support
 a plethora of other life. They also influence their surrounding environment through their filter feeding and the
 presence of a solid, raised habitat that provides shelter and food for other species.
+
+European Oysters have a fascinating biology and ecology. A single oyster can filter up to 240 litres of water a day
+(equivalent to 1½ full bathtubs) – resulting in increased water quality and clarity, which can benefit nearby habitats
+such as seagrass. Young oysters prefer to settle on other oysters, which means that over time, they form biogenic
+reefs. This living habitat supports a unique and highly diverse community of fish and invertebrate marine species,
+providing food and shelter for fish nursery grounds. Oyster reefs benefit the environment as well as humans through
+a suite of ecosystem services. 
+(https://noraeurope.eu/wp-content/uploads/nora-docs-download/NORA-Oyster-Factsheet-UN-Decade.pdf)
+
+
+Oyster reefs create important habitat for hundreds of species. Organisms like mussels, barnacles, and sea anemones settle on them, creating abundant food sources for commercially valuable fish. Oyster reefs provide habitat to forage fish, invertebrates, and other shellfish. They also provide a safe nursery for commercially valuable species 
+
+Oysters are a crucial component of global ocean health. These animals filter and clean the surrounding water and provide habitat, food, and jobs. In some places, oyster reefs can serve as barriers to storms and tides, preventing erosion and protecting productive estuary waters.
+
+Ongoing threats to oysters mean that, unless deliberate efforts are made to protect and restore them, we are in danger of losing the benefits oyster reefs provide. When oyster reefs are only used as a place to harvest commercial oyster meat, they can become degraded. When they are restored and managed as a sustainable resource, oyster reefs and the habitat they provide can contribute billions of dollars in value to the economy.
+
+Habitat for Other Species
+The structure that oyster reefs create provide crevices that fish and crabs use to hide from predators. Oyster reefs are also a great place for smaller forage species to live. Many of the species that spend time around oyster reefs are recreationally and commercially valuable.
+
+Water Quality
+Besides being seafood, oysters make waters healthier. Because oysters feed by filtering algae from the water, they function as a natural filter and improve water overloaded with nutrients. Under certain conditions, a single oyster can filter up to 50 gallons of water per day. The clearer, cleaner water can support plentiful underwater grasses, which—like the oyster reef—create a stable bottom and a safe, nurturing habitat for juvenile crabs, scallops, and fish.
+
+Storm Protection
+In some locations, oyster reefs can protect underwater vegetation and waterfront communities from some effects of waves, floods, and tides. Well-established eelgrass beds help stabilize the bottom, providing additional resilience against wave action. Healthy reefs and established vegetation protect valuable habitat. Depending on where the reefs are located, they may also be able to reduce wave energy, prevent erosion, and fortify wetlands as a protective barrier.
+
+Seafood
+Oyster cultivation and harvest provide significant economic value to regional coastal communities. Farmed oysters, clams, and mussels account for about two-thirds of total U.S. marine aquaculture production. In some areas, there is a wild fishery for oysters as well. Research has shown that restored oyster reefs can provide significant economic benefits as well.
+
+
+
+
+
+Ostrea edulis is a large-scale biogenic reef builder. Often referred to as the temperate functional equivalent of coral reefs (Ritter von Hamm, 1881), these oysters form elevated, three-dimensional structures over large areas. By physically transforming the seafloor from flat sediment into a complex, living landscape, they drive key ecological processes and interact dynamically with the entire surrounding marine environment.
+
+Click on the emojis in the image below to explore the diverse ecosystem functions provided by this biogenic habitat.
+
+
+id: 'habitat-complexity'
+
+Name: Three-Dimensional Habitat
+
+Description: As gregarious builders, young oysters settle on older generations, creating elevated, structurally complex biogenic reefs over large areas. This raised vertical relief provides essential crevices, shelter, and foraging grounds for hundreds of marine fish and invertebrate species.
+
+id: 'water-filtration'
+
+Name: Water Quality & Filtration
+
+Description: Oysters are highly efficient filter feeders. A single native oyster can filter up to 240 liters of water per day, removing excess algae, organic matter, and nutrients. This natural filtration significantly increases water clarity and quality in coastal environments.
+
+id: 'seagrass-benefit'
+
+Name: Nearby Habitat Support
+
+Description: By clearing the water column of suspended solids, oyster reefs allow more sunlight to penetrate the seabed. This increased light availability directly promotes the growth of critical adjacent habitats, such as underwater eelgrass and seagrass beds.
+
+id: 'nursery-grounds'
+
+Name: Fish Nursery & Food Webs
+
+Description: The reef structure attracts colonizers like mussels, barnacles, and anemones, establishing an abundant food supply. This makes oyster beds ideal, safe nursery habitats for the juvenile stages of recreationally and commercially valuable fish species.
+
+id: 'coastal-protection'
+
+Name: Storm & Erosion Protection
+
+Description: Healthy oyster reefs function as living natural barriers to storms and tides. By breaking wave energy before it reaches the shoreline, they mitigate coastal erosion, stabilize the seabed, and fortify fragile wetlands and productive estuaries.
+
+
 
 #### Conservation status
 

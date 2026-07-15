@@ -33,136 +33,159 @@ export default function MapSection() {
   const points = useMemo(() => restorationPoints, [])
 
   return (
-    <div className="map-section-grid">
-      <div className="glass map-container-wrapper">
-        <MapContainer
-          center={[53.32, -9.43]}
-          zoom={10}
-          scrollWheelZoom={false}
-          style={{ height: '100%', width: '100%' }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; OpenStreetMap contributors'
-            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
+      <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', fontSize: '1.05rem', color: 'var(--text-dim)', lineHeight: '1.6' }}>
+        Connemara, in northern Galway Bay, hosts remnant populations of <em>Ostrea edulis</em> within the sheltered waters of Kilkieran (Cill Chiaráin) and Bertraghbui (Beirtreach Buí) bays. These surviving oyster beds co-exist alongside vital seagrass meadows and maerl beds, forming a rich ecological mosaic of high conservation value.
+      </p>
 
-          {bays.map((bay) => (
-            <Polygon
-              key={bay.id}
-              positions={bay.polygon}
-              pathOptions={{ color: bay.color, weight: 1.5, fillOpacity: 0.12 }}
-              eventHandlers={{ click: () => setSelected({ type: 'bay', data: bay }) }}
-            >
-              <Tooltip sticky>{bay.name}</Tooltip>
-            </Polygon>
-          ))}
-
-          <Marker
-            position={mfrc.position}
-            icon={mfrcIcon}
-            eventHandlers={{ click: () => setSelected({ type: 'mfrc', data: mfrc }) }}
-          >
-            <Tooltip>{mfrc.name}</Tooltip>
-          </Marker>
-
-          {points.map((pt) => (
-            <Marker
-              key={pt.id}
-              position={[pt.lat, pt.lon]}
-              icon={bayIcon(pt.bay)}
-              eventHandlers={{ click: () => setSelected({ type: 'point', data: pt }) }}
-            >
-              <Tooltip>{`#${pt.id} ${pt.name}`}</Tooltip>
-            </Marker>
-          ))}
-        </MapContainer>
+      <div style={{
+        border: '1px solid var(--panel-border)',
+        borderRadius: '12px',
+        padding: '0.75rem 1.25rem',
+        background: 'var(--panel)',
+        backdropFilter: 'blur(8px)',
+        textAlign: 'center',
+        maxWidth: '100%',
+        width: 'fit-content',
+        margin: '0 auto 0.5rem',
+        boxShadow: 'var(--glow)'
+      }}>
+        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+          Use the map below to explore these two bays and their specific study points.
+        </p>
       </div>
 
-      <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        {selected.type === 'mfrc' && (
-          <>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <Building2 size={20} color="var(--coral)" />
-              <span className="pill coral">Institution</span>
-            </div>
-            <h3>{selected.data.name}</h3>
-            <p style={{ color: 'var(--text-dim)' }}>{selected.data.description}</p>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
-              {selected.data.position[0].toFixed(3)}, {selected.data.position[1].toFixed(3)}
-            </p>
-            <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
-              <img
-                src={mfrcImg}
-                alt="MFRC Building"
-                style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-            <span style={{ fontSize: '0.62rem', color: 'var(--text-dim)', display: 'block', marginTop: '2px' }}>
-              Image source: IMBRSea / Atlantic Technological University (ATU)
-            </span>
-          </>
-        )}
+      <div className="map-section-grid">
+        <div className="glass map-container-wrapper">
+          <MapContainer
+            center={[53.32, -9.43]}
+            zoom={10}
+            scrollWheelZoom={false}
+            style={{ height: '100%', width: '100%' }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; OpenStreetMap contributors'
+              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+            />
 
-        {selected.type === 'bay' && (
-          <>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <Waves size={20} color={selected.data.color} />
-              <span className="pill">Bay</span>
-            </div>
-            <h3>{selected.data.name}</h3>
-            <p style={{ color: 'var(--text-dim)' }}>{selected.data.dms}</p>
+            {bays.map((bay) => (
+              <Polygon
+                key={bay.id}
+                positions={bay.polygon}
+                pathOptions={{ color: bay.color, weight: 1.5, fillOpacity: 0.12 }}
+                eventHandlers={{ click: () => setSelected({ type: 'bay', data: bay }) }}
+              >
+                <Tooltip sticky>{bay.name}</Tooltip>
+              </Polygon>
+            ))}
 
-            {selected.data.id === 'bertraghboy' && (
+            <Marker
+              position={mfrc.position}
+              icon={mfrcIcon}
+              eventHandlers={{ click: () => setSelected({ type: 'mfrc', data: mfrc }) }}
+            >
+              <Tooltip>{mfrc.name}</Tooltip>
+            </Marker>
+
+            {points.map((pt) => (
+              <Marker
+                key={pt.id}
+                position={[pt.lat, pt.lon]}
+                icon={bayIcon(pt.bay)}
+                eventHandlers={{ click: () => setSelected({ type: 'point', data: pt }) }}
+              >
+                <Tooltip>{`#${pt.id} ${pt.name}`}</Tooltip>
+              </Marker>
+            ))}
+          </MapContainer>
+        </div>
+
+        <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {selected.type === 'mfrc' && (
+            <>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <Building2 size={20} color="var(--coral)" />
+                <span className="pill coral">Institution</span>
+              </div>
+              <h3>{selected.data.name}</h3>
+              <p style={{ color: 'var(--text-dim)' }}>{selected.data.description}</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
+                {selected.data.position[0].toFixed(3)}, {selected.data.position[1].toFixed(3)}
+              </p>
               <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
                 <img
-                  src={bertraImg}
-                  alt="Bertraghboy Bay overview"
+                  src={mfrcImg}
+                  alt="MFRC Building"
                   style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
                 />
               </div>
-            )}
+              <span style={{ fontSize: '0.62rem', color: 'var(--text-dim)', display: 'block', marginTop: '2px' }}>
+                Image source: IMBRSea / Atlantic Technological University (ATU)
+              </span>
+            </>
+          )}
 
-            {selected.data.id === 'kilkieran' && (
-              <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
-                <img
-                  src={kkImg}
-                  alt="Kilkieran Bay overview"
-                  style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', objectPosition: 'bottom', display: 'block' }}
-                />
+          {selected.type === 'bay' && (
+            <>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <Waves size={20} color={selected.data.color} />
+                <span className="pill">Bay</span>
               </div>
-            )}
-          </>
-        )}
+              <h3>{selected.data.name}</h3>
+              <p style={{ color: 'var(--text-dim)' }}>{selected.data.dms}</p>
 
-        {selected.type === 'point' && (
-          <>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <MapPin size={20} color="var(--cyan)" />
-              <span className="pill">Restoration Point #{selected.data.id}</span>
-            </div>
-            <h3>{selected.data.name}</h3>
-            <dl style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-dim)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--panel-border)' }}>
-                <dt>Bay</dt>
-                <dd style={{ margin: 0, color: 'var(--text)' }}>
-                  {selected.data.bay === 'kilkieran' ? 'Kilkieran Bay' : 'Bertraghboy Bay'}
-                </dd>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
-                <dt>Coordinates</dt>
-                <dd style={{ margin: 0, color: 'var(--text)' }}>
-                  {selected.data.lat.toFixed(5)}, {selected.data.lon.toFixed(5)}
-                </dd>
-              </div>
-            </dl>
-          </>
-        )}
+              {selected.data.id === 'bertraghboy' && (
+                <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
+                  <img
+                    src={bertraImg}
+                    alt="Bertraghboy Bay overview"
+                    style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+              )}
 
-        {selected.type !== 'mfrc' && (
-          <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 'auto' }}>
-            Bay boundaries are illustrative overlays derived from sampling point clusters.
-          </p>
-        )}
+              {selected.data.id === 'kilkieran' && (
+                <div style={{ marginTop: '0.5rem', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)' }}>
+                  <img
+                    src={kkImg}
+                    alt="Kilkieran Bay overview"
+                    style={{ width: '100%', height: 'auto', maxHeight: '180px', objectFit: 'cover', objectPosition: 'bottom', display: 'block' }}
+                  />
+                </div>
+              )}
+            </>
+          )}
+
+          {selected.type === 'point' && (
+            <>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <MapPin size={20} color="var(--cyan)" />
+                <span className="pill">Restoration Point #{selected.data.id}</span>
+              </div>
+              <h3>{selected.data.name}</h3>
+              <dl style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-dim)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--panel-border)' }}>
+                  <dt>Bay</dt>
+                  <dd style={{ margin: 0, color: 'var(--text)' }}>
+                    {selected.data.bay === 'kilkieran' ? 'Kilkieran Bay' : 'Bertraghboy Bay'}
+                  </dd>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
+                  <dt>Coordinates</dt>
+                  <dd style={{ margin: 0, color: 'var(--text)' }}>
+                    {selected.data.lat.toFixed(5)}, {selected.data.lon.toFixed(5)}
+                  </dd>
+                </div>
+              </dl>
+            </>
+          )}
+
+          {selected.type !== 'mfrc' && (
+            <p style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: 'auto' }}>
+              Bay boundaries are illustrative overlays derived from sampling point clusters.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   )

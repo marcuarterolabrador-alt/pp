@@ -1,14 +1,14 @@
 export const substrates = [
   {
     id: 'scallop-shell',
-    name: 'Scallop Shell',
+    name: 'Scallop Shells',
     latin: 'Pecten maximus',
     settlement: 'High',
     stability: 'Low',
     logistics: 'Light, easily bagged',
     status: 'Tested',
-    pros: 'Cheap, abundant by-product of scallop fisheries, easy to deploy in bags.',
-    cons: 'Prone to siltation and burial on muddy beds; low hydrodynamic stability.',
+    pros: 'Excellent biological attraction. The natural calcium carbonate releases chemical cues that highly stimulate wild oyster larvae (spat) to settle, without the need for coating.',
+    cons: 'Easily buried in sediment, which prevents spat from settling, and can create an anoxic environment without water flux around settled spat.',
   },
   {
     id: 'chinese-hats',
@@ -18,19 +18,19 @@ export const substrates = [
     stability: 'Medium',
     logistics: 'High effort (manual peeling/handling)',
     status: 'Tested',
-    pros: 'Textured, lime-coated nesting cones give very high settlement efficiency.',
-    cons: 'Labour-intensive to handle and peel spat off for further grow-out.',
+    pros: 'High surface area and hydrodynamics. Their stacked, nested design maximizes settlement space while high water flow prevents silt from suffocating the larvae.',
+    cons: 'Plastic pollution risk. In rough waters, these plastic collectors can break apart, degrading into marine litter and microplastics.',
   },
   {
     id: 'roof-tiles',
-    name: 'Roof Tiles',
+    name: 'Tiles',
     latin: null,
     settlement: 'High',
     stability: 'High',
     logistics: 'Heavy to deploy',
-    status: 'Tested',
-    pros: 'Heavy profile resists currents, giving high hydrodynamic stability.',
-    cons: 'Heavy and cumbersome for field crews to transport and deploy.',
+    status: 'Future Trial',
+    pros: 'Easy to separate the oysters from the substrate. The brittle lime-sand coating allows growers to easily separate undamaged, perfectly shaped oysters.',
+    cons: 'Labor-intensive. Coating, curing, placing, and manually scraping the tiles requires physical labor, which can be costly.',
   },
   {
     id: 'limestone',
@@ -40,19 +40,18 @@ export const substrates = [
     stability: 'Pending',
     logistics: 'Pending',
     status: 'Future Trial',
-    pros: 'Natural stone texture, locally sourced.',
-    cons: 'Specs to be determined upon experimental deployment.',
+    pros: 'Promotes "single" oysters. Its structured surface limits overcrowded clumping, preventing oysters from stacking on top of each other, which yields highly uniform shapes ideal for commercial trade.',
+    cons: 'Poor reef-building capacity. Because it prevents dense, multi-layered clumping, it is inefficient at forming the complex, three-dimensional vertical reef structures required for ecological restoration.'
   },
   {
     id: 'biomodules',
     name: 'Biomodules',
-    latin: 'Lollipop biomodule',
     settlement: 'Pending',
     stability: 'Pending',
     logistics: 'Pending',
     status: 'Future Trial',
-    pros: 'Custom concrete/organic mock-up designed for larval attachment.',
-    cons: 'Specs to be determined upon experimental deployment.',
+    pros: 'Predator mitigation. Elevating the settling substrate off the seabed on a vertical post prevents benthic predators like starfish from reaching the spat, the wooden stick is after degradated naturally and the reef falls in the seabed..',
+    cons: 'Structural instability. Elevated structures with a narrow base are highly vulnerable to being tipped over or damaged by strong currents and wave action.'
   },
 ]
 

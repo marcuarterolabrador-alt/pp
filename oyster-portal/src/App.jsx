@@ -90,7 +90,7 @@ function App() {
             <EcosystemEngineer />
           </div>
           <div>
-            <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Timeline of Decline &amp; Recovery</h3>
+            <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Timeline of the history of native oysters in Conamara:</h3>
             <DeclineTimeline />
           </div>
           <div>
@@ -112,6 +112,9 @@ function App() {
       title: 'Environmental Characterisation',
       content: (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <p style={{ color: 'var(--text-dim)', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto', maxWidth: '800px', textAlign: 'center' }}>
+            To accurately locate, map, and assess both active and historical native oyster beds, as well as suitable spots for the oyster reefs, a diverse number of characterization tools are used:
+          </p>
           <MethodologyPipeline />
           <TEKCard />
         </div>

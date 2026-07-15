@@ -1,30 +1,30 @@
 export const timelineEras = [
   {
-    id: 'pre-industrial',
-    era: 'Pre-Industrial Era',
-    title: 'Wild Abundance',
+    id: 'widespread-abundance',
+    era: 'Up to the Early 1900s',
+    title: 'Widespread Abundance',
     description:
-      'Ostrea edulis beds occurred in high abundance along Irish and NE Atlantic coasts, forming extensive biogenic reefs on firm mud, rock and gravel substrata.',
+      'For centuries, native oysters were naturally abundant and widespread across Conamara, forming large-scale, three-dimensional biogenic reefs that carpeted the floors of clean, nutrient-rich coastal bays.',
   },
   {
-    id: 'overexploitation',
-    era: 'Overexploitation Era',
-    title: 'Rapid Decline from Dredging',
+    id: 'overfishing-decline',
+    era: 'Early to Mid-20th Century',
+    title: 'Decline Due to Overfishing',
     description:
-      'Bottom trawling and dredging intensified with the Industrial Revolution, causing sharp, poorly-documented declines in wild oyster populations and habitat structure.',
+      'Following years of unsustainable commercial dredging and heavy wild harvesting, most of these natural populations disappeared, stripping the seafloor of the established reef structures.',
   },
   {
-    id: 'disease-epizootic',
-    era: 'Disease Epizootic Era',
-    title: 'Decimation by Bonamia ostreae',
+    id: 'bonamia-crisis',
+    era: 'Late 20th Century',
+    title: 'The Bonamia Disease',
     description:
-      'The lethal haplosporidian parasite Bonamia ostreae spread through remaining stocks, causing microcell disease and decimating populations already weakened by exploitation.',
+      'The remaining native oyster stocks faced a catastrophic biological threat with the arrival of Bonamia ostreae, a lethal parasite that caused widespread mortality.',
   },
   {
-    id: 'modern-recovery',
-    era: 'Modern Recovery Era',
-    title: 'Restoration Programs',
+    id: 'restoration-sanctuaries',
+    era: 'Currently',
+    title: 'Restoration Efforts',
     description:
-      'Critically endangered wild beds remain in Connemara (Kilkieran and Bertraghboy Bays). Restoration programs such as OISRE and BRICONS now work to reintroduce O. edulis to formerly populated grounds.',
+      "Today, Conamara's bays serve as critical sanctuaries, where conservation and research initiatives are actively working to restore native oyster reefs.",
   },
 ]

@@ -12,9 +12,9 @@ export default function AnatomicalViewer() {
     <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 300px' }}>
-          <h3 style={{ color: 'var(--teal)', marginBottom: '0.5rem' }}>Ostrea edulis</h3>
+          <h3 style={{ color: 'var(--teal)', marginBottom: '0.5rem', fontStyle: 'italic' }}>Ostrea edulis</h3>
           <p style={{ margin: 0, color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-            <em>Ostrea edulis</em>, commonly known as the European flat oyster or native oyster, is a marine bivalve mollusc native to Europe. Highly prized as a delicacy, this species is a key ecosystem engineer, forming complex biogenic reefs that stabilize seabeds, filter coastal waters, and provide critical shelter and nursery habitats for a diverse array of marine species.
+            <em>Ostrea edulis</em>, commonly known as the European flat oyster or native oyster, is a marine bivalve mollusc native to Europe. Characterized by its thick, oval-round shell with concentric foliaceous layers that can reach up to 20 cm in diameter, this species can live up to 20 years. It also has a long history of human consumption, holding deep cultural significance and remaining an important commercial seafood species across Europe.
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', flexShrink: 0, margin: '0 auto' }}>
@@ -29,6 +29,29 @@ export default function AnatomicalViewer() {
 
       <div className="grid-2" style={{ alignItems: 'center' }}>
         <div style={{ position: 'relative' }}>
+          <p
+            style={{
+              position: 'absolute',
+              top: '12px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              margin: 0,
+              zIndex: 10,
+              pointerEvents: 'none',
+              fontSize: '0.75rem',
+              color: 'var(--text-dim)',
+              background: 'rgba(255, 255, 255, 0.8)',
+              backdropFilter: 'blur(4px)',
+              padding: '4px 12px',
+              borderRadius: '20px',
+              border: '1px solid var(--panel-border)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+              textAlign: 'center',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Hover or click the hotspots to explore <em>Ostrea edulis</em> anatomy.
+          </p>
           <figure style={{ margin: 0 }}>
             <svg viewBox="0 200 433 377" style={{ width: '100%', maxWidth: 580, margin: '0 auto', display: 'block' }}>
               <image
@@ -62,9 +85,6 @@ export default function AnatomicalViewer() {
               Image from Dr. José M. Fariñas-Franco
             </figcaption>
           </figure>
-          <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-dim)', marginTop: '0.5rem', marginBottom: 0 }}>
-            Hover or click the hotspots to explore <em>Ostrea edulis</em> anatomy.
-          </p>
         </div>
 
         <div>

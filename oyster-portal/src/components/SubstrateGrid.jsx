@@ -16,14 +16,14 @@ import limestoneImg from '../assets/limestone.avif'
 
 const spatDetails = {
   native: {
-    title: 'Native Oyster Spat (Ostrea edulis)',
+    title: 'Native Oyster Spat',
     scientific: 'Ostrea edulis',
     abundance: 'Target Species',
     description:
       'The primary target of restoration efforts. These juvenile oysters settle on the clean calcified surfaces of the cultch. Over 1, 2, or more years, they build their permanent shells, forming the base of the biogenic reef matrix.',
   },
   saddle: {
-    title: 'Saddle Oyster Spat (Anomia ephippium)',
+    title: 'Saddle Oyster Spat',
     scientific: 'Anomia ephippium',
     abundance: 'Competitor Species',
     description:
@@ -71,13 +71,20 @@ export default function SubstrateGrid() {
   return (
     <div>
       <p style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--text)', fontSize: '1rem', lineHeight: '1.6' }}>
-        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement. Flip each card for more information: 
+        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement. Flip each card for more information:
       </p>
 
       <div className="grid-auto">
         {substrates.map((s) => {
           const Icon = substrateIcons[s.id]
           const isFlipped = !!flipped[s.id]
+          const spatImage = s.id === 'scallop-shell'
+            ? spatScallopImg
+            : s.id === 'chinese-hats'
+              ? coupellesSpatImg
+              : s.id === 'roof-tiles'
+                ? tilesSpatImg
+                : null
           return (
             <div
               key={s.id}
@@ -93,7 +100,7 @@ export default function SubstrateGrid() {
                   >
                     {s.status}
                   </span>
-                  
+
                   {/* Maximize Button Front */}
                   <button
                     onClick={(e) => {
@@ -137,19 +144,19 @@ export default function SubstrateGrid() {
                   <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
                     {s.id === 'scallop-shell' ? (
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                         <img src={scallopsImg} alt="Scallop Shells" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                        <img src={scallopsImg} alt="Scallop Shells" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                       </div>
                     ) : s.id === 'chinese-hats' ? (
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                         <img src={coupellesImg} alt="Coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                        <img src={coupellesImg} alt="Coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                       </div>
                     ) : s.id === 'roof-tiles' ? (
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                         <img src={tilesImg} alt="Roof Tiles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                        <img src={tilesImg} alt="Roof Tiles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                       </div>
                     ) : s.id === 'limestone' ? (
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                         <img src={limestoneImg} alt="Limestone" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                        <img src={limestoneImg} alt="Limestone" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                       </div>
                     ) : s.id === 'biomodules' ? (
                       <div style={{ width: '100%', height: '150px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', position: 'relative' }}>
@@ -185,8 +192,8 @@ export default function SubstrateGrid() {
                     </p>
                   )}
                 </div>
-                
-                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+
+                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'flex-start', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
                   {/* Maximize Button Back */}
                   <button
                     onClick={(e) => {
@@ -227,146 +234,44 @@ export default function SubstrateGrid() {
                     <Maximize2 size={13} />
                   </button>
 
-                  {s.id === 'scallop-shell' ? (
-                    <>
-                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
-                        <img src={spatScallopImg} alt="Spat on scallop shell" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                      </div>
-                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
-                        Scallop shells, a by-product of scallop fisheries, can be easily deployed and serves as substrate for the native oyster to settle.
-                      </p>
-                      
-                      {/* Learn More Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedSubstrate(s);
-                        }}
-                        style={{
-                          marginTop: 'auto',
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--cyan)',
-                          fontSize: '0.76rem',
-                          fontWeight: '600',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '4px',
-                          cursor: 'pointer',
-                          padding: '4px 0 0 0',
-                          alignSelf: 'center'
-                        }}
-                      >
-                        Learn More <Maximize2 size={11} />
-                      </button>
-                    </>
-                  ) : s.id === 'roof-tiles' ? (
-                    <>
-                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
-                        <img src={tilesSpatImg} alt="Spat on roof tiles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                      </div>
-                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
-                        Clay roof tiles provide heavy profile and high hydrodynamic stability, resisting currents while offering excellent settlement surfaces.
-                      </p>
-                      
-                      {/* Learn More Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedSubstrate(s);
-                        }}
-                        style={{
-                          marginTop: 'auto',
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--cyan)',
-                          fontSize: '0.76rem',
-                          fontWeight: '600',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '4px',
-                          cursor: 'pointer',
-                          padding: '4px 0 0 0',
-                          alignSelf: 'center'
-                        }}
-                      >
-                        Learn More <Maximize2 size={11} />
-                      </button>
-                    </>
-                  ) : s.id === 'chinese-hats' ? (
-                    <>
-                      <div style={{ width: '100%', height: '110px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
-                        <img src={coupellesSpatImg} alt="Spat on coupelles" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                      </div>
-                      <p style={{ fontSize: '0.76rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
-                        Lime-coated coupelles nesting cones provide very high settlement efficiency, although peeling spat is labour-intensive.
-                      </p>
-                      
-                      {/* Learn More Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedSubstrate(s);
-                        }}
-                        style={{
-                          marginTop: 'auto',
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--cyan)',
-                          fontSize: '0.76rem',
-                          fontWeight: '600',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '4px',
-                          cursor: 'pointer',
-                          padding: '4px 0 0 0',
-                          alignSelf: 'center'
-                        }}
-                      >
-                        Learn More <Maximize2 size={11} />
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <dl style={{ margin: 0, fontSize: '0.82rem' }}>
-                        <Row label="Settlement" value={s.settlement} />
-                        <Row label="Stability" value={s.stability} />
-                        <Row label="Logistics" value={s.logistics} />
-                      </dl>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--teal)', marginTop: 10, marginBottom: 2 }}>Pros</p>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.pros}</p>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--coral)', marginTop: 10, marginBottom: 2 }}>Cons</p>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0 }}>{s.cons}</p>
-                      
-                      {/* Learn More Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedSubstrate(s);
-                        }}
-                        style={{
-                          marginTop: 'auto',
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--cyan)',
-                          fontSize: '0.76rem',
-                          fontWeight: '600',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '4px',
-                          cursor: 'pointer',
-                          padding: '4px 0 0 0',
-                          alignSelf: 'center'
-                        }}
-                      >
-                        Learn More <Maximize2 size={11} />
-                      </button>
-                    </>
+                  {spatImage && (
+                    <div style={{ width: '100%', height: '90px', borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--panel-border)', boxShadow: '0 2px 6px rgba(0,0,0,0.06)', marginBottom: '0.5rem', flexShrink: 0 }}>
+                      <img src={spatImage} alt={`Spat recruitment on ${s.name}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                    </div>
                   )}
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', padding: '0.25rem 0' }}>
+                    <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                      <strong style={{ color: 'var(--teal)' }}>Advantage: </strong>{s.pros}
+                    </p>
+                    <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                      <strong style={{ color: 'var(--coral)' }}>Disadvantage: </strong>{s.cons}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpandedSubstrate(s);
+                    }}
+                    style={{
+                      marginTop: 'auto',
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--cyan)',
+                      fontSize: '0.76rem',
+                      fontWeight: '600',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '4px',
+                      cursor: 'pointer',
+                      padding: '4px 0 0 0',
+                      alignSelf: 'center'
+                    }}
+                  >
+                    Learn More <Maximize2 size={11} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -407,14 +312,14 @@ export default function SubstrateGrid() {
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer'
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
-            }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+              }}
             >
               <img
                 src={pasteSubstratesImg}
@@ -432,14 +337,14 @@ export default function SubstrateGrid() {
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer'
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
-            }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+              }}
             >
               <img
                 src={paste2Img}
@@ -457,7 +362,7 @@ export default function SubstrateGrid() {
           <span className="pill">Cultch Effectiveness Monitoring</span>
           <h3 style={{ marginTop: '0.75rem', marginBottom: '0.75rem' }}>Oyster Spat Recruitment Evaluation</h3>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-            To measure how well different substrates perform, scientists conduct long-term monitoring. The settled oyster spat (larvae that have successfully attached and metamorphosed) are counted on the cultch after 1, 2, or more years of field deployment.
+            To measure how well different substrates perform, a long-term monitoring is performed. The settled oyster spat (larvae that have successfully attached and metamorphosed) are counted on part of the cultch after 1, 2, or more years of deployment.
           </p>
         </div>
 
@@ -516,7 +421,7 @@ export default function SubstrateGrid() {
                 )}
               </div>
             </div>
-            
+
             <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', margin: '0.5rem 0 0 0', fontStyle: 'italic' }}>
               * Click on the labels overlaying the image to inspect and identify each species on the collector tiles.
             </p>
@@ -580,7 +485,7 @@ export default function SubstrateGrid() {
               style={{
                 position: 'absolute',
                 left: '69%',
-                top: '58%',
+                top: '61%',
                 transform: 'translate(-50%, -50%)',
                 width: '16px',
                 height: '16px',
@@ -604,14 +509,14 @@ export default function SubstrateGrid() {
         const s = expandedSubstrate;
         const Icon = substrateIcons[s.id];
         const currentIndex = substrates.findIndex((sub) => sub.id === s.id);
-        
+
         const handlePrev = (e) => {
           e.stopPropagation();
           const prevIndex = (currentIndex - 1 + substrates.length) % substrates.length;
           setExpandedSubstrate(substrates[prevIndex]);
           setModalTab('substrate');
         };
-        
+
         const handleNext = (e) => {
           e.stopPropagation();
           const nextIndex = (currentIndex + 1) % substrates.length;
@@ -619,31 +524,15 @@ export default function SubstrateGrid() {
           setModalTab('substrate');
         };
 
-        const getSettlementPercent = (val) => {
-          if (val === 'Very High') return 100;
-          if (val === 'High') return 75;
-          if (val === 'Medium') return 50;
-          if (val === 'Low') return 25;
-          return 0;
-        };
-
-        const getStabilityPercent = (val) => {
-          if (val === 'High') return 80;
-          if (val === 'Medium') return 50;
-          if (val === 'Low') return 20;
-          return 0;
-        };
-
-        const settlementPercent = getSettlementPercent(s.settlement);
-        const stabilityPercent = getStabilityPercent(s.stability);
+        // Ratings percent calculations removed (unused after removing Performance Profile metrics)
 
         return (
-          <div 
+          <div
             className="modal-backdrop"
             onClick={() => setExpandedSubstrate(null)}
           >
             {/* Desktop Side Navigation Chevrons */}
-            <button 
+            <button
               className="modal-nav-btn prev"
               onClick={handlePrev}
               title="Previous substrate"
@@ -651,7 +540,7 @@ export default function SubstrateGrid() {
               <ChevronLeft size={24} />
             </button>
 
-            <button 
+            <button
               className="modal-nav-btn next"
               onClick={handleNext}
               title="Next substrate"
@@ -660,13 +549,13 @@ export default function SubstrateGrid() {
             </button>
 
             {/* Modal Box */}
-            <div 
+            <div
               className="modal-container glass glass-panel"
               onClick={(e) => e.stopPropagation()}
               style={{ padding: '2rem' }}
             >
               {/* Close Button */}
-              <button 
+              <button
                 className="modal-close-btn"
                 onClick={() => setExpandedSubstrate(null)}
                 title="Close overlay"
@@ -694,36 +583,36 @@ export default function SubstrateGrid() {
                   {s.id === 'scallop-shell' ? (
                     <>
                       <div className="image-tabs-container">
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
                           onClick={() => setModalTab('substrate')}
                         >
                           Substrate
                         </button>
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
                           onClick={() => setModalTab('recruitment')}
                         >
                           Spat Recruitment
                         </button>
                       </div>
-                      
-                      <div style={{ 
-                        width: '100%', 
-                        height: '240px', 
-                        borderRadius: '12px', 
-                        overflow: 'hidden', 
-                        border: '1px solid var(--panel-border)', 
-                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
+
+                      <div style={{
+                        width: '100%',
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--panel-border)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
                       }}>
-                        <img 
-                          src={modalTab === 'substrate' ? scallopsImg : spatScallopImg} 
-                          alt={modalTab === 'substrate' ? "Scallop Shells" : "Spat on scallop shell"} 
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        <img
+                          src={modalTab === 'substrate' ? scallopsImg : spatScallopImg}
+                          alt={modalTab === 'substrate' ? "Scallop Shells" : "Spat on scallop shell"}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
-                        {modalTab === 'substrate' 
+                        {modalTab === 'substrate'
                           ? "Scallop shells (Pecten maximus) are an abundant, organic by-product of regional fisheries."
                           : "Native oyster spat (Ostrea edulis) successfully recruited and growing on a collector scallop shell."
                         }
@@ -732,36 +621,36 @@ export default function SubstrateGrid() {
                   ) : s.id === 'roof-tiles' ? (
                     <>
                       <div className="image-tabs-container">
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
                           onClick={() => setModalTab('substrate')}
                         >
                           Substrate
                         </button>
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
                           onClick={() => setModalTab('recruitment')}
                         >
                           Spat Recruitment
                         </button>
                       </div>
-                      
-                      <div style={{ 
-                        width: '100%', 
-                        height: '240px', 
-                        borderRadius: '12px', 
-                        overflow: 'hidden', 
-                        border: '1px solid var(--panel-border)', 
-                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
+
+                      <div style={{
+                        width: '100%',
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--panel-border)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
                       }}>
-                        <img 
-                          src={modalTab === 'substrate' ? tilesImg : tilesSpatImg} 
-                          alt={modalTab === 'substrate' ? "Roof Tiles" : "Spat on roof tiles"} 
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        <img
+                          src={modalTab === 'substrate' ? tilesImg : tilesSpatImg}
+                          alt={modalTab === 'substrate' ? "Roof Tiles" : "Spat on roof tiles"}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
-                        {modalTab === 'substrate' 
+                        {modalTab === 'substrate'
                           ? "Clay roof tiles deployed on the seabed serve as high-stability recruitment substrate."
                           : "Native oyster spat (Ostrea edulis) successfully settled on the underside of a roof tile."
                         }
@@ -770,36 +659,36 @@ export default function SubstrateGrid() {
                   ) : s.id === 'chinese-hats' ? (
                     <>
                       <div className="image-tabs-container">
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'substrate' ? 'active' : ''}`}
                           onClick={() => setModalTab('substrate')}
                         >
                           Substrate
                         </button>
-                        <button 
+                        <button
                           className={`image-tab-btn ${modalTab === 'recruitment' ? 'active' : ''}`}
                           onClick={() => setModalTab('recruitment')}
                         >
                           Spat Recruitment
                         </button>
                       </div>
-                      
-                      <div style={{ 
-                        width: '100%', 
-                        height: '240px', 
-                        borderRadius: '12px', 
-                        overflow: 'hidden', 
-                        border: '1px solid var(--panel-border)', 
-                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)' 
+
+                      <div style={{
+                        width: '100%',
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--panel-border)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)'
                       }}>
-                        <img 
-                          src={modalTab === 'substrate' ? coupellesImg : coupellesSpatImg} 
-                          alt={modalTab === 'substrate' ? "Coupelles" : "Spat on coupelles"} 
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                        <img
+                          src={modalTab === 'substrate' ? coupellesImg : coupellesSpatImg}
+                          alt={modalTab === 'substrate' ? "Coupelles" : "Spat on coupelles"}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
-                        {modalTab === 'substrate' 
+                        {modalTab === 'substrate'
                           ? "Textured, lime-coated coupelles nesting cones, designed to maximize larval attachment surface area."
                           : "Native oyster spat successfully attached and growing on lime-coated coupelles."
                         }
@@ -807,12 +696,12 @@ export default function SubstrateGrid() {
                     </>
                   ) : s.id === 'biomodules' ? (
                     <>
-                      <div style={{ 
-                        width: '100%', 
-                        height: '240px', 
-                        borderRadius: '12px', 
-                        overflow: 'hidden', 
-                        border: '1px solid var(--panel-border)', 
+                      <div style={{
+                        width: '100%',
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--panel-border)',
                         boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                         marginTop: '2.5rem',
                         position: 'relative'
@@ -826,12 +715,12 @@ export default function SubstrateGrid() {
                     </>
                   ) : s.id === 'limestone' ? (
                     <>
-                      <div style={{ 
-                        width: '100%', 
-                        height: '240px', 
-                        borderRadius: '12px', 
-                        overflow: 'hidden', 
-                        border: '1px solid var(--panel-border)', 
+                      <div style={{
+                        width: '100%',
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        border: '1px solid var(--panel-border)',
                         boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                         marginTop: '2.5rem'
                       }}>
@@ -856,73 +745,25 @@ export default function SubstrateGrid() {
                 </div>
 
                 {/* Right Column: Specifications & Pros/Cons */}
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', borderBottom: '1px solid var(--panel-border)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>
-                      Performance Profile
-                    </h3>
-
-                    {/* Settlement Rating */}
-                    <div className="metric-row">
-                      <div className="metric-header">
-                        <span>Settlement Efficiency</span>
-                        <span style={{ color: s.settlement === 'Pending' ? 'var(--text-dim)' : 'var(--teal)' }}>
-                          {s.settlement}
-                        </span>
-                      </div>
-                      <div className="metric-bar-bg">
-                        <div 
-                          className={`metric-bar-fill ${s.settlement === 'Pending' ? 'pending' : (settlementPercent >= 75 ? 'teal' : 'cyan')}`}
-                          style={{ width: `${s.settlement === 'Pending' ? 100 : settlementPercent}%` }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Stability Rating */}
-                    <div className="metric-row">
-                      <div className="metric-header">
-                        <span>Hydrodynamic Stability</span>
-                        <span style={{ color: s.stability === 'Pending' ? 'var(--text-dim)' : 'var(--cyan)' }}>
-                          {s.stability}
-                        </span>
-                      </div>
-                      <div className="metric-bar-bg">
-                        <div 
-                          className={`metric-bar-fill ${s.stability === 'Pending' ? 'pending' : (stabilityPercent >= 80 ? 'teal' : (stabilityPercent >= 50 ? 'cyan' : 'coral'))}`}
-                          style={{ width: `${s.stability === 'Pending' ? 100 : stabilityPercent}%` }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Logistics Detail */}
-                    <div style={{ marginTop: '1.25rem' }}>
-                      <span style={{ fontSize: '0.82rem', fontWeight: '600', color: 'var(--text-h)', display: 'block', marginBottom: '0.25rem' }}>
-                        Logistical Profile
-                      </span>
-                      <p style={{ fontSize: '0.82rem', color: 'var(--text-dim)', margin: 0, background: 'rgba(255, 255, 255, 0.3)', padding: '0.5rem 0.75rem', borderRadius: '8px', border: '1px solid rgba(148, 163, 184, 0.08)' }}>
-                        {s.logistics}
-                      </p>
-                    </div>
-                  </div>
-
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   {/* Pros & Cons Callouts */}
-                  <div className="pros-cons-grid">
-                    <div className="callout-box pro">
-                      <div style={{ display: 'flex', gap: '0.35rem', alignItems: 'flex-start', color: 'var(--teal)', fontWeight: '600', marginBottom: '0.25rem' }}>
-                        <CheckCircle2 size={14} style={{ marginTop: '2px', flexShrink: 0 }} />
-                        <span>Key Advantages</span>
+                  <div className="pros-cons-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                    <div className="callout-box pro" style={{ padding: '1.25rem', borderRadius: '12px', border: '1px solid rgba(20, 184, 166, 0.2)', background: 'rgba(20, 184, 166, 0.04)' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--teal)', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
+                        <CheckCircle2 size={16} style={{ flexShrink: 0 }} />
+                        <span>Advantage</span>
                       </div>
-                      <div style={{ color: 'var(--text)', fontSize: '0.78rem' }}>
+                      <div style={{ color: 'var(--text)', fontSize: '0.88rem', lineHeight: '1.5' }}>
                         {s.pros}
                       </div>
                     </div>
 
-                    <div className="callout-box con">
-                      <div style={{ display: 'flex', gap: '0.35rem', alignItems: 'flex-start', color: 'var(--coral)', fontWeight: '600', marginBottom: '0.25rem' }}>
-                        <XCircle size={14} style={{ marginTop: '2px', flexShrink: 0 }} />
-                        <span>Challenges & Limitations</span>
+                    <div className="callout-box con" style={{ padding: '1.25rem', borderRadius: '12px', border: '1px solid rgba(225, 29, 72, 0.2)', background: 'rgba(225, 29, 72, 0.04)' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'var(--coral)', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
+                        <XCircle size={16} style={{ flexShrink: 0 }} />
+                        <span>Disadvantage</span>
                       </div>
-                      <div style={{ color: 'var(--text)', fontSize: '0.78rem' }}>
+                      <div style={{ color: 'var(--text)', fontSize: '0.88rem', lineHeight: '1.5' }}>
                         {s.cons}
                       </div>
                     </div>
@@ -939,20 +780,20 @@ export default function SubstrateGrid() {
                 paddingTop: '1.25rem',
                 borderTop: '1px solid var(--panel-border)'
               }}>
-                <button 
-                  onClick={handlePrev} 
+                <button
+                  onClick={handlePrev}
                   className="modal-footer-nav-btn"
                   title="Previous substrate"
                 >
                   <ChevronLeft size={16} /> Prev
                 </button>
-                
+
                 <span style={{ fontSize: '0.82rem', color: 'var(--text-dim)', fontWeight: '600', letterSpacing: '0.5px' }}>
                   {currentIndex + 1} / {substrates.length}
                 </span>
-                
-                <button 
-                  onClick={handleNext} 
+
+                <button
+                  onClick={handleNext}
                   className="modal-footer-nav-btn"
                   title="Next substrate"
                 >

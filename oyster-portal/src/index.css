@@ -140,6 +140,12 @@ section {
   gap: 2rem;
 }
 
+.grid-2-custom {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 2rem;
+}
+
 .grid-auto {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -147,7 +153,8 @@ section {
 }
 
 @media (max-width: 860px) {
-  .grid-2 {
+  .grid-2,
+  .grid-2-custom {
     grid-template-columns: 1fr;
   }
 
@@ -224,12 +231,12 @@ button {
   gap: 1rem;
   align-items: center;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 6px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-toggle {
@@ -258,8 +265,8 @@ button {
     gap: 0.75rem !important;
     margin-bottom: 1rem !important;
     width: fit-content !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     padding: 6px 12px !important;
     border-radius: 8px !important;
     align-items: center !important;
@@ -802,6 +809,13 @@ canvas.particle-bg {
   .modal-container {
     max-height: 95vh;
     border-radius: 16px;
+  }
+}
+
+/* Scaling up text sizes globally on computer/desktop viewports */
+@media (min-width: 1024px) {
+  :root {
+    font-size: 18px;
   }
 }
 

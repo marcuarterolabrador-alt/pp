@@ -9,17 +9,17 @@ const pillars = [
   {
     icon: Shell,
     title: "Species Knowledge",
-    text: "Generating and integrating knowledge on the native oyster (Ostrea edulis) to better adapt restoration methodologies.",
+    text: "Gathering comprehensive data on native oyster biology, ecology, and life cycles to establish a strong scientific foundation. Alongside this, conducting baseline mapping of both current and historical oyster beds across Connemara to determine their locations, extent, and status.",
   },
   {
-    icon: Shell,
+    icon: Leaf,
+    title: "Oyster Reefs as a Habitat",
+    text: "Quantifying the biodiversity supported by native oyster beds to demonstrate the ecological value of these habitats. This involves assessing how these biogenic habitats function as nurseries, shelters, and foraging grounds for a wide range of marine species.",
+  },
+  {
+    icon: TrendingUp,
     title: "Restoration Measures",
-    text: "Designing and implementing ecological restoration actions to recover degraded habitats and improve ecosystem functionality.",
-  },
-  {
-    icon: Shell,
-    title: "Restoration Success Assessment",
-    text: "Monitoring and analysing the outcomes of restoration actions to evaluate their effectiveness.",
+    text: "Designing and implementing targeted restoration measures, including the deployment of appropriate cultch materials, to enhance native oyster populations and promote the development of self-sustaining reefs. Evaluating systematically the efficiency and success of these strategies.",
   },
 ];
 
@@ -79,12 +79,28 @@ export default function Hero() {
         </p>
       </motion.div>
 
+      <motion.p
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15 }}
+        style={{
+          marginTop: '3rem',
+          fontSize: '1.05rem',
+          color: '#cbd5e1',
+          maxWidth: 780,
+          lineHeight: '1.6',
+          textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
+        }}
+      >
+        The native oyster restoration projects run by the Biogenic Habitats Research Group within the Marine and Freshwater Research Centre (MFRC) are structured around three main objectives:
+      </motion.p>
+
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.25 }}
         className="grid-auto"
-        style={{ marginTop: '3rem' }}
+        style={{ marginTop: '1.5rem' }}
       >
         {pillars.map(({ icon: Icon, title, text }) => (
           <div key={title} className="glass glass-panel">
@@ -94,19 +110,6 @@ export default function Hero() {
           </div>
         ))}
       </motion.div>
-      <span
-        style={{
-          position: 'absolute',
-          bottom: '1.25rem',
-          left: '1.5rem',
-          color: 'rgba(255, 255, 255, 0.75)',
-          fontSize: '0.75rem',
-          textShadow: '0 1px 4px rgba(0, 0, 0, 0.6)',
-          zIndex: 10,
-        }}
-      >
-        Picture generated with AI (Gemini)
-      </span>
     </section>
   )
 }
