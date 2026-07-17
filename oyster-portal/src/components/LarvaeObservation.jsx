@@ -31,10 +31,10 @@ const larvalStages = [
     image: larvae0,
     style: {
       position: 'absolute',
-      width: '330.5px',
-      height: '440.6px',
-      left: '-13.1px',
-      top: '-23.9px',
+      width: 'calc(330.5 * var(--lens-size) / 280)',
+      height: 'calc(440.6 * var(--lens-size) / 280)',
+      left: 'calc(-13.1 * var(--lens-size) / 280)',
+      top: 'calc(-23.9 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -48,10 +48,10 @@ const larvalStages = [
     image: larvae1,
     style: {
       position: 'absolute',
-      width: '253.5px',
-      height: '338.0px',
-      left: '-20.0px',
-      top: '-60.0px',
+      width: 'calc(253.5 * var(--lens-size) / 280)',
+      height: 'calc(338.0 * var(--lens-size) / 280)',
+      left: 'calc(-20.0 * var(--lens-size) / 280)',
+      top: 'calc(-60.0 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -65,10 +65,10 @@ const larvalStages = [
     image: larvae2,
     style: {
       position: 'absolute',
-      width: '288.3px',
-      height: '384.5px',
-      left: '-12.3px',
-      top: '-113.2px',
+      width: 'calc(288.3 * var(--lens-size) / 280)',
+      height: 'calc(384.5 * var(--lens-size) / 280)',
+      left: 'calc(-12.3 * var(--lens-size) / 280)',
+      top: 'calc(-113.2 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -82,10 +82,10 @@ const larvalStages = [
     image: larvae3,
     style: {
       position: 'absolute',
-      width: '291.3px',
-      height: '388.4px',
-      left: '1.1px',
-      top: '-96.0px',
+      width: 'calc(291.3 * var(--lens-size) / 280)',
+      height: 'calc(388.4 * var(--lens-size) / 280)',
+      left: 'calc(1.1 * var(--lens-size) / 280)',
+      top: 'calc(-96.0 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -99,10 +99,10 @@ const larvalStages = [
     image: larvae4,
     style: {
       position: 'absolute',
-      width: '288.7px',
-      height: '385.0px',
-      left: '-0.5px',
-      top: '-94.8px',
+      width: 'calc(288.7 * var(--lens-size) / 280)',
+      height: 'calc(385.0 * var(--lens-size) / 280)',
+      left: 'calc(-0.5 * var(--lens-size) / 280)',
+      top: 'calc(-94.8 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -116,10 +116,10 @@ const larvalStages = [
     image: larvae5,
     style: {
       position: 'absolute',
-      width: '396.4px',
-      height: '528.5px',
-      left: '-33.6px',
-      top: '-168.5px',
+      width: 'calc(396.4 * var(--lens-size) / 280)',
+      height: 'calc(528.5 * var(--lens-size) / 280)',
+      left: 'calc(-33.6 * var(--lens-size) / 280)',
+      top: 'calc(-168.5 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -133,10 +133,10 @@ const larvalStages = [
     image: larvae6,
     style: {
       position: 'absolute',
-      width: '307.5px',
-      height: '410.0px',
-      left: '-8.0px',
-      top: '-64.7px',
+      width: 'calc(307.5 * var(--lens-size) / 280)',
+      height: 'calc(410.0 * var(--lens-size) / 280)',
+      left: 'calc(-8.0 * var(--lens-size) / 280)',
+      top: 'calc(-64.7 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }
@@ -150,10 +150,10 @@ const larvalStages = [
     image: larvae7,
     style: {
       position: 'absolute',
-      width: '323.0px',
-      height: '430.6px',
-      left: '-30.0px',
-      top: '-93.9px',
+      width: 'calc(323.0 * var(--lens-size) / 280)',
+      height: 'calc(430.6 * var(--lens-size) / 280)',
+      left: 'calc(-30.0 * var(--lens-size) / 280)',
+      top: 'calc(-93.9 * var(--lens-size) / 280)',
       maxWidth: 'none',
       maxHeight: 'none',
     }

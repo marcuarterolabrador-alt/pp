@@ -214,8 +214,9 @@ button {
 }
 
 .microscope-lens-container {
-  width: 280px;
-  height: 280px;
+  --lens-size: 280px;
+  width: var(--lens-size);
+  height: var(--lens-size);
 }
 
 .nav-desktop {
@@ -413,8 +414,9 @@ canvas.particle-bg {
 @media (max-width: 480px) {
   /* Ultra responsive overrides for small phones */
   .microscope-lens-container {
-    width: 200px !important;
-    height: 200px !important;
+    --lens-size: 200px !important;
+    width: var(--lens-size) !important;
+    height: var(--lens-size) !important;
     border-width: 8px !important;
   }
 
@@ -466,7 +468,7 @@ canvas.particle-bg {
 .mobile-module-dropdown {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), var(--glow);
-  background: var(--panel);
+  background: #ffffff;
   border: 1px solid var(--panel-border);
   margin-top: 0.5rem;
 }
