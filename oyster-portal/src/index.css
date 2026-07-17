@@ -818,4 +818,40 @@ canvas.particle-bg {
     font-size: 18px;
   }
 }
+
+.anatomy-guide {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 10;
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .anatomy-guide {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto 0.75rem;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+
 

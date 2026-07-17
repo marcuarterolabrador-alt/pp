@@ -15,11 +15,11 @@ import larvae7 from '../assets/larvae7.jpeg'
 const larvalStages = [
   {
     id: 'stage0',
-    name: 'Early Veliger (Day 2 – 3)',
+    name: '',
     description:
-      'The newly formed straight-hinge D-stage shell. The larva begins active swimming and filter-feeding on phytoplankton in the water column.',
-    size: '110 – 120 µm',
-    age: '2 – 3 days post-spawning',
+      "This image displays the fertilized larvae being brooded within the female's mantle cavity. They retain the eggs internally until fertilization and larval development are complete, right before the spawning or swarming release.",
+    size: '',
+    age: '',
     image: larvae0,
     style: {
       position: 'absolute',
@@ -33,11 +33,10 @@ const larvalStages = [
   },
   {
     id: 'stage1',
-    name: 'Mid Veliger (Day 4 – 5)',
-    description:
-      'The shell grows rapidly, and the internal organs—including the digestive tract and ciliated velum—start to become more distinct.',
-    size: '125 – 145 µm',
-    age: '4 – 5 days post-spawning',
+    name: '',
+    description: '15 May, Bertraghboy',
+    size: '',
+    age: '',
     image: larvae1,
     style: {
       position: 'absolute',
@@ -51,11 +50,10 @@ const larvalStages = [
   },
   {
     id: 'stage2',
-    name: 'Early Umbonate (Day 6 – 8)',
-    description:
-      'The shell transitions from the straight D-hinge to an asymmetric shape as the umbo (hinge bulge) begins to form.',
-    size: '150 – 175 µm',
-    age: '6 – 8 days post-spawning',
+    name: '',
+    description: '15 May, Bertraghboy',
+    size: '',
+    age: '',
     image: larvae2,
     style: {
       position: 'absolute',
@@ -69,11 +67,10 @@ const larvalStages = [
   },
   {
     id: 'stage3',
-    name: 'Mid Umbonate (Day 9 – 11)',
-    description:
-      'The shell thickness and opacity increase. The larva exhibits high metabolic activity as it calcifies its growing protective shell.',
-    size: '180 – 210 µm',
-    age: '9 – 11 days post-spawning',
+    name: '',
+    description: '24 May, Kilkieran',
+    size: '',
+    age: '',
     image: larvae3,
     style: {
       position: 'absolute',
@@ -87,11 +84,10 @@ const larvalStages = [
   },
   {
     id: 'stage4',
-    name: 'Late Umbonate (Day 12 – 13)',
-    description:
-      'The shell is almost fully rounded. The larva\'s internal organs are highly developed, preparing for the transition to the crawler phase.',
-    size: '220 – 245 µm',
-    age: '12 – 13 days post-spawning',
+    name: '',
+    description: '25 May, Bertraghboy',
+    size: '',
+    age: '',
     image: larvae4,
     style: {
       position: 'absolute',
@@ -105,11 +101,10 @@ const larvalStages = [
   },
   {
     id: 'stage5',
-    name: 'Early Pediveliger (Day 14 – 16)',
-    description:
-      'Sensory eyespots and the early development of a muscular, ciliated foot become visible under the microscope.',
-    size: '250 – 275 µm',
-    age: '14 – 16 days post-spawning',
+    name: '',
+    description: '10 June, Bertraghboy',
+    size: '',
+    age: '',
     image: larvae5,
     style: {
       position: 'absolute',
@@ -123,11 +118,10 @@ const larvalStages = [
   },
   {
     id: 'stage6',
-    name: 'Late Pediveliger (Day 17 – 19)',
-    description:
-      'The larva alternates between swimming and using its muscular foot to crawl and search for hard, calcium-rich settlement substrates.',
-    size: '280 – 300 µm',
-    age: '17 – 19 days post-spawning',
+    name: '',
+    description: '10 June, Bertraghboy',
+    size: '',
+    age: '',
     image: larvae6,
     style: {
       position: 'absolute',
@@ -141,11 +135,10 @@ const larvalStages = [
   },
   {
     id: 'stage7',
-    name: 'Pre-Settlement / Spat Transition (Day 20+)',
-    description:
-      'The final larval stage. Once a suitable substrate is selected, the larva cements itself permanently and begins its transformation into a juvenile spat.',
-    size: '300+ µm',
-    age: '20+ days post-spawning',
+    name: '',
+    description: '11 June, Kilkieran',
+    size: '',
+    age: '',
     image: larvae7,
     style: {
       position: 'absolute',
@@ -178,11 +171,8 @@ export default function LarvaeObservation() {
         <div>
           <span className="pill">Larvae Sampling Protocol</span>
           <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>Zooplankton Mesh Net Towing</h3>
-          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized **zooplankton net with a fine 100 µm mesh** is towed horizontally or obliquely at low speeds behind a research vessel.
-          </p>
-          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-            This specific mesh size allows seawater and fine mud particles to escape while capturing delicate bivalve larvae. A mechanical flowmeter mounted in the mouth of the net calculates the exact volume of filtered water, standardizing the larval density counts (larvae/m³) across the bays of Kilkieran and Bertraghboy.
+          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed.
           </p>
         </div>
 
@@ -190,10 +180,10 @@ export default function LarvaeObservation() {
           <div className="glass" style={{ padding: '1.25rem', borderLeft: '4px solid var(--cyan)' }}>
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
               <Compass size={18} color="var(--cyan)" />
-              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Flowmeter Calibration</h4>
+              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Flowmeter</h4>
             </div>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0 }}>
-              Enables quantitative assessments of larval abundance by calculating water volume passing through the net.
+            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+              A mechanical flowmeter mounted in the mouth of the net calculates the volume of filtered water, standardizing the larval density counts (larvae/m³) across the different samplings.
             </p>
           </div>
 
@@ -202,8 +192,8 @@ export default function LarvaeObservation() {
               <Shield size={18} color="var(--teal)" />
               <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Mesh Selectivity</h4>
             </div>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0 }}>
-              The 100 µm weave keeps veliger and pediveliger larvae safe in the cod-end bottle without clogging the net.
+            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+              This specific mesh size allows seawater and fine mud particles to escape while capturing bivalve larvae and other zooplankton.
             </p>
           </div>
         </div>
@@ -214,8 +204,11 @@ export default function LarvaeObservation() {
         <div style={{ textAlign: 'center', maxWidth: 620 }}>
           <span className="pill">Microscope Observation</span>
           <h3 style={{ marginTop: '0.75rem', marginBottom: '0.5rem' }}>Larval Development Stages</h3>
-          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: 0 }}>
-            Use the carousel controls to view microscope photographs of the oysters in their planktonic development phases.
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: '0 0 0.75rem 0', lineHeight: '1.6' }}>
+            After the sampling, the number of bivalve larvae in 1ml of each sample was counted using a Sedgewick Rafter Counting Chamber under a microscope, and their sizes were also measured to study the size distribution across the season in each bay and identify the best moment to deploy cultch.
+          </p>
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: 0, fontStyle: 'italic', lineHeight: '1.6' }}>
+            Use the carousel controls to view microscope photographs of the bivalve larvaes taken after the different larvae samplings at the start of the season.
           </p>
         </div>
 
@@ -256,7 +249,7 @@ export default function LarvaeObservation() {
                 <motion.img
                   key={currentStage.id}
                   src={currentStage.image}
-                  alt={currentStage.name}
+                  alt={currentStage.name || 'Larval Stage'}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.05 }}
@@ -397,31 +390,41 @@ export default function LarvaeObservation() {
               textAlign: 'center',
             }}
           >
-            <h4 style={{ margin: '0 0 0.5rem 0', color: 'var(--teal)', fontSize: '1.1rem' }}>
-              {currentStage.name}
-            </h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-dim)', margin: '0 0 1rem 0', lineHeight: '1.5' }}>
+            {currentStage.name && (
+              <h4 style={{ margin: '0 0 0.5rem 0', color: 'var(--teal)', fontSize: '1.1rem' }}>
+                {currentStage.name}
+              </h4>
+            )}
+            <p style={{
+              fontSize: (currentStage.size && currentStage.age) || stageIndex === 0 ? '0.85rem' : '1.05rem',
+              color: (currentStage.size && currentStage.age) || stageIndex === 0 ? '#94a3b8' : '#f8fafc',
+              fontWeight: (currentStage.size && currentStage.age) || stageIndex === 0 ? 'normal' : '600',
+              margin: (currentStage.size && currentStage.age) ? '0 0 1rem 0' : '0',
+              lineHeight: '1.5'
+            }}>
               {currentStage.description}
             </p>
 
-            <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid rgba(148,163,184,0.1)', paddingTop: '0.75rem' }}>
-              <div>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                  Approx. Size
-                </span>
-                <span style={{ fontSize: '0.88rem', color: 'var(--text-h)', fontWeight: '600' }}>
-                  {currentStage.size}
-                </span>
+            {currentStage.size && currentStage.age && (
+              <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid rgba(148,163,184,0.1)', paddingTop: '0.75rem' }}>
+                <div>
+                  <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Approx. Size
+                  </span>
+                  <span style={{ fontSize: '0.88rem', color: 'var(--text-h)', fontWeight: '600' }}>
+                    {currentStage.size}
+                  </span>
+                </div>
+                <div>
+                  <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Larval Age
+                  </span>
+                  <span style={{ fontSize: '0.88rem', color: 'var(--text-h)', fontWeight: '600' }}>
+                    {currentStage.age}
+                  </span>
+                </div>
               </div>
-              <div>
-                <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                  Larval Age
-                </span>
-                <span style={{ fontSize: '0.88rem', color: 'var(--text-h)', fontWeight: '600' }}>
-                  {currentStage.age}
-                </span>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

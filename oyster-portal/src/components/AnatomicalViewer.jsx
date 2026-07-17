@@ -28,28 +28,8 @@ export default function AnatomicalViewer() {
       </div>
 
       <div className="grid-2" style={{ alignItems: 'center' }}>
-        <div style={{ position: 'relative' }}>
-          <p
-            style={{
-              position: 'absolute',
-              top: '12px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              margin: 0,
-              zIndex: 10,
-              pointerEvents: 'none',
-              fontSize: '0.75rem',
-              color: 'var(--text-dim)',
-              background: 'rgba(255, 255, 255, 0.8)',
-              backdropFilter: 'blur(4px)',
-              padding: '4px 12px',
-              borderRadius: '20px',
-              border: '1px solid var(--panel-border)',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-              textAlign: 'center',
-              whiteSpace: 'nowrap',
-            }}
-          >
+        <div style={{ position: 'relative', minWidth: 0, width: '100%' }}>
+          <p className="anatomy-guide">
             Hover or click the hotspots to explore <em>Ostrea edulis</em> anatomy.
           </p>
           <figure style={{ margin: 0 }}>

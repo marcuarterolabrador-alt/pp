@@ -71,7 +71,7 @@ export default function SubstrateGrid() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <p style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text)', fontSize: '1rem', lineHeight: '1.6' }}>
-        Different types of substrate have been and will be deployed in the study bays to promote oyster settlement.
+        In order to recuperate the flat oyster populations, the availability of hard substrate is crucial for initial settlement and reef development. Different types of substrate, known as cultch, have been and will be deployed in the study bays to promote oyster settlement.
       </p>
 
       <div style={{
@@ -87,7 +87,7 @@ export default function SubstrateGrid() {
         boxShadow: 'var(--glow)',
         alignSelf: 'center'
       }}>
-        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem' }}>
           Flip each card for more information:
         </p>
       </div>

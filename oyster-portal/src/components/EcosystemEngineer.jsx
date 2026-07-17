@@ -25,7 +25,7 @@ export default function EcosystemEngineer() {
           boxShadow: 'var(--glow)',
           alignSelf: 'center'
         }}>
-          <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+          <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem' }}>
             Click on the emojis in the image below to explore the diverse ecosystem functions provided by this biogenic habitat.
           </p>
         </div>

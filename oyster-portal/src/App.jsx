@@ -123,13 +123,13 @@ function App() {
     {
       id: 'substrates',
       kicker: 'Module 4',
-      title: 'Cultch & Settlement Substrates',
+      title: 'Cultch',
       content: <SubstrateGrid />
     },
     {
       id: 'larvae-sampling',
       kicker: 'Module 5',
-      title: 'Larvae Sampling & Observation',
+      title: 'Larvae Sampling',
       content: <LarvaeObservation />
     },
     {

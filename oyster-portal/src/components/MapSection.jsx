@@ -50,7 +50,7 @@ export default function MapSection() {
         margin: '0 auto 0.5rem',
         boxShadow: 'var(--glow)'
       }}>
-        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem', whiteSpace: 'nowrap' }}>
+        <p style={{ margin: 0, fontStyle: 'italic', color: '#000000', fontWeight: 'normal', fontSize: '0.92rem' }}>
           Use the map below to explore these two bays and their specific study points.
         </p>
       </div>
