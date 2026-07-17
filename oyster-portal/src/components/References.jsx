@@ -19,33 +19,183 @@ import { BookOpen, Globe, FileText, ExternalLink, Search, Bookmark } from 'lucid
 const referencesData = [
   {
     id: 'ref-1',
-    title: 'Native Oyster Restoration in Connemara: A Multi-Decadal Assessment',
-    authors: 'Dr. Jane Smith, MFRC Research Group',
-    source: 'Journal of Marine Environmental Science',
-    year: '2025',
-    type: 'article', // options: 'article' (Journal Article), 'website' (Web Page), 'report' (Technical Report)
-    url: 'https://example.com/native-oyster-restoration-connemara',
-    description: 'A comprehensive study tracking the historical decline and modern restoration efforts of Ostrea edulis in Bertraghbouy and Kilkieran Bays.'
+    title: 'Ostra, ostra plana (Ostrea edulis)',
+    authors: 'Canal Mar Menor',
+    source: 'Inventario Ecológico, Comunidad Autónoma de la Región de Murcia',
+    year: 'n.d.',
+    type: 'website',
+    url: 'https://canalmarmenor.carm.es/inventario-ecologico/fauna/aguamala-acalefo-azul-rhizostoma-pulmo-19/',
+    citation: (
+      <span>
+        Canal Mar Menor. (n.d.). <em style={{ fontStyle: 'italic' }}>Ostra, ostra plana (Ostrea edulis)</em>. Inventario Ecológico, Comunidad Autónoma de la Región de Murcia.
+      </span>
+    ),
+    description: 'Ecological inventory datasheet for the European flat oyster (Ostrea edulis) in the Mar Menor lagoon, detailing its morphology, protandric hermaphroditic life cycle, and distribution.'
   },
   {
     id: 'ref-2',
-    title: 'Connemara Oyster Habitat Mapping Study & GIS Dataset',
-    authors: 'Marine Institute Ireland & ATU Galway',
-    source: 'Technical Report & GIS Portal',
-    year: '2026',
-    type: 'report',
-    url: 'https://example.com/connemara-oyster-habitat-gis',
-    description: 'Detailed seafloor survey and substrate characterisation dataset detailing suitable spat settlement areas across Galway and Connemara coastal regions.'
+    title: 'Missing native oyster (Ostrea edulis L.) beds in a European Marine Protected Area: Should there be widespread restorative management?',
+    authors: 'Fariñas-Franco, J. M., Pearce, B., Mair, J. M., Harries, D. B., MacPherson, R. C., Porter, J. S., Reimer, P. J., & Sanderson, W. G.',
+    source: 'Biological Conservation, 221, 293–311',
+    year: '2018',
+    type: 'article',
+    url: 'https://www.sciencedirect.com/science/article/pii/S0006320717308030',
+    citation: (
+      <span>
+        Fariñas-Franco, J. M., Pearce, B., Mair, J. M., Harries, D. B., MacPherson, R. C., Porter, J. S., Reimer, P. J., & Sanderson, W. G. (2018). Missing native oyster (<em style={{ fontStyle: 'italic' }}>Ostrea edulis</em> L.) beds in a European Marine Protected Area: Should there be widespread restorative management? <em style={{ fontStyle: 'italic' }}>Biological Conservation</em>, <em style={{ fontStyle: 'italic' }}>221</em>, 293–311.
+      </span>
+    ),
+    description: 'A key study assessing the historical presence and loss of native oyster beds within a Marine Protected Area, exploring the feasibility and necessity of proactive restorative management.'
   },
   {
     id: 'ref-3',
-    title: 'NORA European Oyster Restoration Network Guidelines',
-    authors: 'Native Oyster Restoration Alliance (NORA)',
-    source: 'nora-europe.eu',
-    year: '2024',
+    title: 'Early faunal successional patterns in artificial reefs used for restoration of impacted biogenic habitats',
+    authors: 'Fariñas-Franco, J. M., & Roberts, D.',
+    source: 'Hydrobiologia, 727(1), 75–94',
+    year: '2014',
+    type: 'article',
+    url: 'https://link.springer.com/article/10.1007/s10750-013-1788-y',
+    citation: (
+      <span>
+        Fariñas-Franco, J. M., & Roberts, D. (2014). Early faunal successional patterns in artificial reefs used for restoration of impacted biogenic habitats. <em style={{ fontStyle: 'italic' }}>Hydrobiologia</em>, <em style={{ fontStyle: 'italic' }}>727</em>(1), 75–94.
+      </span>
+    ),
+    description: 'Investigates how marine animal communities establish and develop over time on artificial structures deployed for restoring damaged biogenic habitats.'
+  },
+  {
+    id: 'ref-4',
+    title: 'Ostrea edulis (Linnaeus, 1758)',
+    authors: 'Food and Agriculture Organization (FAO)',
+    source: 'Programa de información sobre especies acuáticas cultivadas, FAO Departamento de Pesca y Acuicultura',
+    year: 'n.d.',
+    type: 'report',
+    url: 'https://www.fao.org/fishery/docs/CDrom/aquaculture/I1129m/file/es/es_europeanflatoyster.htm',
+    citation: (
+      <span>
+        Food and Agriculture Organization. (n.d.). <em style={{ fontStyle: 'italic' }}>Ostrea edulis (Linnaeus, 1758)</em>. Programa de información sobre especies acuáticas cultivadas. FAO Departamento de Pesca y Acuicultura.
+      </span>
+    ),
+    description: 'Species datasheet detailing the taxonomy, habitat, biology, historical background, and global cultivation practices of the European flat oyster.'
+  },
+  {
+    id: 'ref-5',
+    title: 'Economic Valuation of Ecosystem Services Provided by Oyster Reefs',
+    authors: 'Grabowski, J. H., Brumbaugh, R. D., Conrad, R. F., Keeler, A. G., Opaluch, J. J., Peterson, C. H., Piehler, M. F., Powers, S. P., & Smyth, A. R.',
+    source: 'BioScience, 62(10), 900–909',
+    year: '2012',
+    type: 'article',
+    url: 'https://www.researchgate.net/publication/250615516_Economic_Valuation_of_Ecosystem_Services_Provided_by_Oyster_Reefs',
+    citation: (
+      <span>
+        Grabowski, J. H., Brumbaugh, R. D., Conrad, R. F., Keeler, A. G., Opaluch, J. J., Peterson, C. H., Piehler, M. F., Powers, S. P., & Smyth, A. R. (2012). Economic valuation of ecosystem services provided by oyster reefs. <em style={{ fontStyle: 'italic' }}>BioScience</em>, <em style={{ fontStyle: 'italic' }}>62</em>(10), 900–909.
+      </span>
+    ),
+    description: 'A landmark study quantifying the economic benefits of non-fishery services provided by oyster reefs, including water filtration and habitat enhancement.'
+  },
+  {
+    id: 'ref-6',
+    title: 'Hatchery cultivation of bivalve molluscs: a practical manual',
+    authors: 'Helm, M. M., Bourne, N., & Lovatelli, A.',
+    source: 'FAO Fisheries Technical Paper No. 471, Food and Agriculture Organization of the United Nations',
+    year: '2004',
+    type: 'report',
+    url: 'http://www.fao.org/3/y5720e/y5720e00.htm',
+    citation: (
+      <span>
+        Helm, M. M., Bourne, N., & Lovatelli, A. (2004). <em style={{ fontStyle: 'italic' }}>Hatchery cultivation of bivalve molluscs: A practical manual</em> (FAO Fisheries Technical Paper No. 471). Food and Agriculture Organization of the United Nations.
+      </span>
+    ),
+    description: 'A comprehensive practical manual outlining hatchery culture techniques, algal food production, spawning, larvae rearing, and spat setting protocols for bivalves.'
+  },
+  {
+    id: 'ref-7',
+    title: 'The European oyster, Ostrea edulis L., in Maine and Eastern Canada',
+    authors: 'Hidu, H., & Lavoie, R.',
+    source: 'In W. Menzel (Ed.), Estuarine and Marine Bivalve Mollusk Culture (pp. 36–46). CRC Press',
+    year: '1991',
+    type: 'report',
+    url: 'https://scholar.google.com/scholar?q=The+European+oyster,+Ostrea+edulis+L.,+in+Maine+and+Eastern+Canada',
+    citation: (
+      <span>
+        Hidu, H., & Lavoie, R. (1991). The European oyster, <em style={{ fontStyle: 'italic' }}>Ostrea edulis</em> L., in Maine and Eastern Canada. In W. Menzel (Ed.), <em style={{ fontStyle: 'italic' }}>Estuarine and marine bivalve mollusk culture</em> (pp. 36–46). CRC Press.
+      </span>
+    ),
+    description: 'Book chapter analyzing the historical introduction, aquaculture trials, and ecological establishment of the European native oyster along the Atlantic coasts of Maine and Canada.'
+  },
+  {
+    id: 'ref-8',
+    title: 'The native oyster Ostrea edulis in Ireland: Its Past, Challenges and Future Prospects',
+    authors: 'Lynch, S., & Culloty, S.',
+    source: 'In J. Roney & M. Beekey (Eds.), Coastal Environment in the West of Ireland: Sea, Land, and Spirit (pp. 219–237). ResearchGate',
+    year: '2022',
+    type: 'article',
+    url: 'https://www.researchgate.net/publication/365838138_The_native_oyster_Ostrea_edulis_in_Ireland_Its_Past_Challenges_and_Future_Prospects',
+    citation: (
+      <span>
+        Lynch, S., & Culloty, S. (2022). The native oyster <em style={{ fontStyle: 'italic' }}>Ostrea edulis</em> in Ireland: Its past, challenges and future prospects. In J. Roney & M. Beekey (Eds.), <em style={{ fontStyle: 'italic' }}>Coastal environment in the west of Ireland: Sea, land, and spirit</em> (pp. 219–237). University College Cork / ResearchGate.
+      </span>
+    ),
+    description: 'A review of the historical exploitation of Ostrea edulis in Ireland, its subsequent collapse due to fishing and disease, and modern prospects for its restoration.'
+  },
+  {
+    id: 'ref-9',
+    title: 'Marine and Freshwater Research Centre',
+    authors: 'Marine and Freshwater Research Centre (MFRC)',
+    source: 'Atlantic Technological University (ATU)',
+    year: 'n.d.',
     type: 'website',
-    url: 'https://nora-europe.eu',
-    description: 'Official best practices, environmental guidelines, and restoration protocols for native oyster reefs across European estuaries and coastal bays.'
+    url: 'https://mfrc-atu.ie/',
+    citation: (
+      <span>
+        Marine and Freshwater Research Centre. (n.d.). <em style={{ fontStyle: 'italic' }}>Marine and Freshwater Research Centre</em>. Atlantic Technological University.
+      </span>
+    ),
+    description: 'Official portal of the Marine and Freshwater Research Centre at ATU, providing information on fisheries management, aquaculture, and aquatic biodiversity research.'
+  },
+  {
+    id: 'ref-10',
+    title: 'Ireland: OISRE-Conamara – Oyster Information and Scientific Restoration of Ecosystems of Conamara',
+    authors: 'Native Oyster Restoration Alliance (NORA)',
+    source: 'noraeurope.eu',
+    year: 'n.d.',
+    type: 'website',
+    url: 'https://noraeurope.eu/ireland-oisre-conamara-oyster-information-and-scientific-restoration-of-ecosystems-of-conamara/',
+    citation: (
+      <span>
+        Native Oyster Restoration Alliance. (n.d.). <em style={{ fontStyle: 'italic' }}>Ireland: OISRE-Conamara – Oyster Information and Scientific Restoration of Ecosystems of Conamara</em>.
+      </span>
+    ),
+    description: 'Overview of the OISRE-Conamara project, detailing the mapping and ecological restoration efforts for remnant native oyster beds in Kilkieran and Bertraghbouy Bays.'
+  },
+  {
+    id: 'ref-11',
+    title: 'History and Ecology of the Oyster',
+    authors: 'Trinity Centre for Environmental Humanities (TCEH)',
+    source: 'Food Smart Dublin, Trinity College Dublin',
+    year: 'n.d.',
+    type: 'website',
+    url: 'https://www.tcd.ie/tceh/projects/foodsmartdublin/recipes/Sept_Oyster/HistoryEcology_oyster.php',
+    citation: (
+      <span>
+        Trinity Centre for Environmental Humanities. (n.d.). <em style={{ fontStyle: 'italic' }}>History and ecology of the oyster</em>. Food Smart Dublin, Trinity College Dublin.
+      </span>
+    ),
+    description: 'Explores the historical and ecological role of native oysters (Ostrea edulis) in Dublin Bay, combining archaeological findings and archival culinary history.'
+  },
+  {
+    id: 'ref-12',
+    title: 'European native oyster reef ecosystems are universally collapsed',
+    authors: 'Zu Ermgassen, P. S. E., McCormick, H., Debney, A., Fariñas‐Franco, J. M., Gamble, C., Gillies, C., Hancock, B., Laugen, A. T., Pouvreau, S., Preston, J., Sanderson, W. G., Strand, Å., & Thurstan, R. H.',
+    source: 'Conservation Letters, 18(1), e13068',
+    year: '2025',
+    type: 'article',
+    url: 'https://scholar.google.com/citations?view_op=view_citation&hl=ca&user=O498OnQAAAAJ&citation_for_view=O498OnQAAAAJ:KUbvn5osdkgC',
+    citation: (
+      <span>
+        Zu Ermgassen, P. S. E., McCormick, H., Debney, A., Fariñas‐Franco, J. M., Gamble, C., Gillies, C., Hancock, B., Laugen, A. T., Pouvreau, S., Preston, J., Sanderson, W. G., Strand, Å., & Thurstan, R. H. (2025). European native oyster reef ecosystems are universally collapsed. <em style={{ fontStyle: 'italic' }}>Conservation Letters</em>, <em style={{ fontStyle: 'italic' }}>18</em>(1), e13068.
+      </span>
+    ),
+    description: 'Assesses the conservation status of Ostrea edulis reef ecosystems across Europe using the IUCN Red List of Ecosystems Framework, concluding that they are widely collapsed.'
   }
 ]
 
@@ -58,8 +208,7 @@ export default function References() {
       const matchesSearch = 
         ref.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         ref.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        ref.source.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        ref.description.toLowerCase().includes(searchTerm.toLowerCase())
+        ref.source.toLowerCase().includes(searchTerm.toLowerCase())
       
       const matchesType = selectedType === 'all' || ref.type === selectedType
 
@@ -243,15 +392,17 @@ export default function References() {
 
                 {/* Reference Body */}
                 <div>
-                  <h3 style={{ margin: '0 0 0.4rem 0', fontSize: '1.15rem', color: 'var(--text-h)', lineHeight: 1.4 }}>
-                    {ref.title}
-                  </h3>
-                  <span style={{ fontSize: '0.88rem', color: 'var(--text-dim)', fontWeight: 500, display: 'block', marginBottom: '0.75rem' }}>
-                    {ref.authors} &bull; <em style={{ fontStyle: 'italic' }}>{ref.source}</em>
-                  </span>
-                  <p style={{ color: 'var(--text-dim)', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                    {ref.description}
-                  </p>
+                  <div 
+                    style={{ 
+                      color: 'var(--text-h)', 
+                      fontSize: '1rem', 
+                      lineHeight: '1.6', 
+                      paddingLeft: '1.75rem',
+                      textIndent: '-1.75rem'
+                    }}
+                  >
+                    {ref.citation}
+                  </div>
                 </div>
               </motion.div>
             ))
