@@ -35,7 +35,7 @@ export default function MapSection() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
       <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', fontSize: '1.05rem', color: 'var(--text-dim)', lineHeight: '1.6' }}>
-        Connemara, in northern Galway Bay, hosts remnant populations of <em>Ostrea edulis</em> within the sheltered waters of Kilkieran (Cill Chiaráin) and Bertraghbui (Beirtreach Buí) bays. These surviving oyster beds co-exist alongside vital seagrass meadows and maerl beds, forming a rich ecological mosaic of high conservation value.
+        Connemara, in northern Galway Bay, hosts remnant populations of <em>Ostrea edulis</em> within the sheltered waters of Kilkieran (Cill Chiaráin) and Bertraghbui (Beirtreach Buí) bays. These surviving oyster beds co-exist alongside seagrass meadows and maerl beds, forming a rich ecological mosaic of high conservation value.
       </p>
 
       <div style={{
