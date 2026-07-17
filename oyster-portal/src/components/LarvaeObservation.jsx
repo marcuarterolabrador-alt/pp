@@ -12,13 +12,20 @@ import larvae5 from '../assets/larvae5.jpeg'
 import larvae6 from '../assets/larvae6.jpeg'
 import larvae7 from '../assets/larvae7.jpeg'
 import hobo from '../assets/hobo-removebg-preview.png'
+import netImage from '../assets/net-removebg-preview.png'
 
 const larvalStages = [
   {
     id: 'stage0',
     name: '',
-    description:
-      "This image displays the fertilized larvae being brooded within the female's mantle cavity. They retain the eggs internally until fertilization and larval development are complete, right before the spawning or swarming release.",
+    description: (
+      <>
+        <span style={{ display: 'block', color: '#f8fafc', fontWeight: '600', fontSize: '0.95rem', marginBottom: '0.5rem' }}>
+          Brooded Larvae inside the Mantle Cavity
+        </span>
+        Captured straight from the maternal mantle cavity, this image shows fertilized larvae right before spawning. Unlike broadcast spawners, <em>Ostrea edulis</em> broods its young internally until they reach the <strong>D-shaped veliger</strong> stage.
+      </>
+    ),
     size: '',
     age: '',
     image: larvae0,
@@ -155,6 +162,8 @@ const larvalStages = [
 
 export default function LarvaeObservation() {
   const [stageIndex, setStageIndex] = useState(0)
+  const [activeEquipment, setActiveEquipment] = useState(null)
+  const [hoveredSpot, setHoveredSpot] = useState(null)
   const currentStage = larvalStages[stageIndex]
 
   const nextStage = () => {
@@ -165,45 +174,234 @@ export default function LarvaeObservation() {
     setStageIndex((prev) => (prev - 1 + larvalStages.length) % larvalStages.length)
   }
 
+  const hotspots = [
+    {
+      id: 'ctd',
+      label: 'Deployable CTD',
+      x: '7.5%',
+      y: '17.5%',
+      color: 'var(--coral)',
+    },
+    {
+      id: 'flowmeter',
+      label: 'Flowmeter',
+      x: '37.5%',
+      y: '67.5%',
+      color: 'var(--cyan)',
+    },
+    {
+      id: 'net',
+      label: 'Zooplankton Net',
+      x: '65%',
+      y: '72%',
+      color: 'var(--teal)',
+    }
+  ]
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
       {/* Step 1: Net Tow Explanation */}
       <div className="grid-2 glass glass-panel" style={{ alignItems: 'center' }}>
-        <div>
+        <div onClick={() => setActiveEquipment(null)} style={{ cursor: 'default' }}>
           <span className="pill">Larvae Sampling Protocol</span>
           <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>Zooplankton Mesh Net Towing</h3>
-          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 1.5rem 0' }}>
             To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed, with a handheld deployable CTD attached to the net to record depth, salinity, and temperature.
           </p>
+
+          {/* Interactive Net Diagram */}
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              overflow: 'hidden',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '1.5rem',
+            }}
+            onClick={(e) => {
+              // Reset selection when clicking the background of the image container
+              e.stopPropagation()
+              setActiveEquipment(null)
+            }}
+          >
+            <div style={{ position: 'relative', width: '100%', maxWidth: '500px' }}>
+              <img
+                src={netImage}
+                alt="Zooplankton mesh net towing diagram"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  userSelect: 'none',
+                }}
+              />
+
+              {/* Hotspots */}
+              {hotspots.map((spot) => {
+                const isActive = activeEquipment === spot.id
+                const isHovered = hoveredSpot === spot.id
+                const isVisible = isActive || isHovered
+
+                return (
+                  <button
+                    key={spot.id}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setActiveEquipment(isActive ? null : spot.id)
+                    }}
+                    onMouseEnter={() => setHoveredSpot(spot.id)}
+                    onMouseLeave={() => setHoveredSpot(null)}
+                    style={{
+                      position: 'absolute',
+                      left: spot.x,
+                      top: spot.y,
+                      transform: 'translate(-50%, -50%)',
+                      border: 'none',
+                      background: 'none',
+                      padding: 0,
+                      cursor: 'pointer',
+                      outline: 'none',
+                      zIndex: isActive ? 10 : 5,
+                    }}
+                  >
+                    {/* Main Dot */}
+                    <motion.div
+                      whileHover={{ scale: 1.3 }}
+                      animate={{
+                        scale: isActive ? 1.25 : 1,
+                        boxShadow: isActive
+                          ? `0 0 16px 6px ${spot.color}`
+                          : `0 0 8px 2px ${spot.color}80`,
+                      }}
+                      style={{
+                        width: '14px',
+                        height: '14px',
+                        borderRadius: '50%',
+                        background: '#ffffff',
+                        border: `3px solid ${spot.color}`,
+                        position: 'relative',
+                        zIndex: 2,
+                      }}
+                    />
+
+                    {/* Tooltip/Label */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '24px',
+                        left: '50%',
+                        transform: isVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(4px)',
+                        opacity: isVisible ? 1 : 0,
+                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                        border: `1px solid ${spot.color}`,
+                        borderRadius: '6px',
+                        padding: '4px 8px',
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        color: '#ffffff',
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                        transformOrigin: 'bottom center',
+                        transition: 'opacity 0.2s ease, transform 0.2s ease-out, visibility 0.2s',
+                        pointerEvents: 'none',
+                        visibility: isVisible ? 'visible' : 'hidden',
+                      }}
+                    >
+                      {spot.label}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <div className="glass" style={{ padding: '1.25rem', borderLeft: '4px solid var(--cyan)' }}>
+          {/* Card 1: Flowmeter */}
+          <div
+            className="glass"
+            onClick={(e) => {
+              e.stopPropagation()
+              setActiveEquipment(activeEquipment === 'flowmeter' ? null : 'flowmeter')
+            }}
+            style={{
+              padding: '1.25rem',
+              borderLeft: '4px solid var(--cyan)',
+              cursor: 'pointer',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backgroundColor: activeEquipment === 'flowmeter' ? 'rgba(2, 132, 199, 0.08)' : 'var(--panel)',
+              boxShadow: activeEquipment === 'flowmeter' ? 'var(--glow), 0 0 16px rgba(2, 132, 199, 0.2)' : 'var(--glow), 0 4px 12px rgba(0, 0, 0, 0.05)',
+              transform: activeEquipment === 'flowmeter' ? 'translateX(6px)' : 'none',
+              borderTop: activeEquipment === 'flowmeter' ? '1px solid rgba(2, 132, 199, 0.3)' : '1px solid var(--panel-border)',
+              borderRight: activeEquipment === 'flowmeter' ? '1px solid rgba(2, 132, 199, 0.3)' : '1px solid var(--panel-border)',
+              borderBottom: activeEquipment === 'flowmeter' ? '1px solid rgba(2, 132, 199, 0.3)' : '1px solid var(--panel-border)',
+            }}
+          >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
               <Compass size={18} color="var(--cyan)" />
-              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Flowmeter</h4>
+              <h4 style={{ margin: 0, fontSize: '0.95rem', color: activeEquipment === 'flowmeter' ? 'var(--cyan)' : 'var(--text-h)' }}>Flowmeter</h4>
             </div>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+            <p style={{ color: activeEquipment === 'flowmeter' ? 'var(--text)' : 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
               A mechanical flowmeter mounted in the mouth of the net calculates the volume of filtered water, standardizing the larval density counts (larvae/m³) across the different samplings.
             </p>
           </div>
 
-          <div className="glass" style={{ padding: '1.25rem', borderLeft: '4px solid var(--coral)' }}>
+          {/* Card 2: Deployable CTD */}
+          <div
+            className="glass"
+            onClick={(e) => {
+              e.stopPropagation()
+              setActiveEquipment(activeEquipment === 'ctd' ? null : 'ctd')
+            }}
+            style={{
+              padding: '1.25rem',
+              borderLeft: '4px solid var(--coral)',
+              cursor: 'pointer',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backgroundColor: activeEquipment === 'ctd' ? 'rgba(225, 29, 72, 0.08)' : 'var(--panel)',
+              boxShadow: activeEquipment === 'ctd' ? 'var(--glow), 0 0 16px rgba(225, 29, 72, 0.2)' : 'var(--glow), 0 4px 12px rgba(0, 0, 0, 0.05)',
+              transform: activeEquipment === 'ctd' ? 'translateX(6px)' : 'none',
+              borderTop: activeEquipment === 'ctd' ? '1px solid rgba(225, 29, 72, 0.3)' : '1px solid var(--panel-border)',
+              borderRight: activeEquipment === 'ctd' ? '1px solid rgba(225, 29, 72, 0.3)' : '1px solid var(--panel-border)',
+              borderBottom: activeEquipment === 'ctd' ? '1px solid rgba(225, 29, 72, 0.3)' : '1px solid var(--panel-border)',
+            }}
+          >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
               <Activity size={18} color="var(--coral)" />
-              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Deployable CTD</h4>
+              <h4 style={{ margin: 0, fontSize: '0.95rem', color: activeEquipment === 'ctd' ? 'var(--coral)' : 'var(--text-h)' }}>Deployable CTD</h4>
             </div>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+            <p style={{ color: activeEquipment === 'ctd' ? 'var(--text)' : 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
               Attached to the net, a handheld deployable CTD sensor records depth, salinity, and temperature during each tow.
             </p>
           </div>
 
-          <div className="glass" style={{ padding: '1.25rem', borderLeft: '4px solid var(--teal)' }}>
+          {/* Card 3: Zooplankton Net */}
+          <div
+            className="glass"
+            onClick={(e) => {
+              e.stopPropagation()
+              setActiveEquipment(activeEquipment === 'net' ? null : 'net')
+            }}
+            style={{
+              padding: '1.25rem',
+              borderLeft: '4px solid var(--teal)',
+              cursor: 'pointer',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backgroundColor: activeEquipment === 'net' ? 'rgba(13, 148, 136, 0.08)' : 'var(--panel)',
+              boxShadow: activeEquipment === 'net' ? 'var(--glow), 0 0 16px rgba(13, 148, 136, 0.2)' : 'var(--glow), 0 4px 12px rgba(0, 0, 0, 0.05)',
+              transform: activeEquipment === 'net' ? 'translateX(6px)' : 'none',
+              borderTop: activeEquipment === 'net' ? '1px solid rgba(13, 148, 136, 0.3)' : '1px solid var(--panel-border)',
+              borderRight: activeEquipment === 'net' ? '1px solid rgba(13, 148, 136, 0.3)' : '1px solid var(--panel-border)',
+              borderBottom: activeEquipment === 'net' ? '1px solid rgba(13, 148, 136, 0.3)' : '1px solid var(--panel-border)',
+            }}
+          >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
               <Shield size={18} color="var(--teal)" />
-              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Mesh Selectivity</h4>
+              <h4 style={{ margin: 0, fontSize: '0.95rem', color: activeEquipment === 'net' ? 'var(--teal)' : 'var(--text-h)' }}>Zooplankton Net (Mesh Selectivity)</h4>
             </div>
-            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+            <p style={{ color: activeEquipment === 'net' ? 'var(--text)' : 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
               This specific mesh size allows seawater and fine mud particles to escape while capturing bivalve larvae and other zooplankton.
             </p>
           </div>
