@@ -47,7 +47,7 @@ export const bays = [
 export const restorationPoints = [
   { id: 1, name: 'Leckeen', bay: 'kilkieran', lon: -9.659690, lat: 53.370393, altitude: 7.75 },
   { id: 2, name: 'Duilicin', bay: 'kilkieran', lon: -9.661488, lat: 53.345062, altitude: 0.47 },
-  { id: 3, name: 'Point 3', bay: 'kilkieran', lon: -9.653333, lat: 53.329140, altitude: 0.45 },
+  { id: 3, name: 'Camus', bay: 'kilkieran', lon: -9.653333, lat: 53.329140, altitude: 0.45 },
   { id: 4, name: 'Casheen', bay: 'kilkieran', lon: -9.722282, lat: 53.256506, altitude: 10.62 },
   { id: 5, name: 'Greeve Island', bay: 'kilkieran', lon: -9.699839, lat: 53.329240, altitude: 30.71 },
   { id: 6, name: 'Oyster Bank', bay: 'bertraghboy', lon: -9.826062, lat: 53.406491, altitude: 6.91 },

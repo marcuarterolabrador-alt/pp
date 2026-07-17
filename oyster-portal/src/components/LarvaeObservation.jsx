@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Compass, Shield } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Compass, Shield, Activity } from 'lucide-react'
 
 // Import microscope photography of larvae
 import larvae0 from '../assets/larvae0.jpeg'
@@ -11,7 +11,7 @@ import larvae4 from '../assets/larvae4.jpeg'
 import larvae5 from '../assets/larvae5.jpeg'
 import larvae6 from '../assets/larvae6.jpeg'
 import larvae7 from '../assets/larvae7.jpeg'
-import hobo from '../assets/hobo.jpg'
+import hobo from '../assets/hobo-removebg-preview.png'
 
 const larvalStages = [
   {
@@ -173,7 +173,7 @@ export default function LarvaeObservation() {
           <span className="pill">Larvae Sampling Protocol</span>
           <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>Zooplankton Mesh Net Towing</h3>
           <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed.
+            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed, with a handheld deployable CTD attached to the net to record depth, salinity, and temperature.
           </p>
         </div>
 
@@ -185,6 +185,16 @@ export default function LarvaeObservation() {
             </div>
             <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
               A mechanical flowmeter mounted in the mouth of the net calculates the volume of filtered water, standardizing the larval density counts (larvae/m³) across the different samplings.
+            </p>
+          </div>
+
+          <div className="glass" style={{ padding: '1.25rem', borderLeft: '4px solid var(--coral)' }}>
+            <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
+              <Activity size={18} color="var(--coral)" />
+              <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Deployable CTD</h4>
+            </div>
+            <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', margin: 0, lineHeight: '1.5' }}>
+              Attached to the net, a handheld deployable CTD sensor records depth, salinity, and temperature during each tow.
             </p>
           </div>
 
@@ -440,18 +450,18 @@ export default function LarvaeObservation() {
           </p>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
           <img
             src={hobo}
             alt="HoboLogger deployed on the seafloor"
             style={{
               width: '100%',
               maxWidth: '380px',
-              borderRadius: '12px',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
-              border: '2px solid var(--panel-border)',
             }}
           />
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontStyle: 'italic', textAlign: 'center' }}>
+            Image: Alpha Omega Electronics / Onset HOBO
+          </span>
         </div>
       </div>
     </div>
