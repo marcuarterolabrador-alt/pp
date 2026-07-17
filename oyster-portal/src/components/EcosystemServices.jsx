@@ -1,4 +1,4 @@
-import { Sparkles, Fish } from 'lucide-react'
+import { Sparkles, Fish, Shrimp } from 'lucide-react'
 
 import sedimentReef from '../assets/sediment_macrofauna_reef.png'
 import sedimentMud from '../assets/sediment_macrofauna_mud.png'
@@ -6,12 +6,21 @@ import sedimentMud from '../assets/sediment_macrofauna_mud.png'
 export default function EcosystemServices() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+      <p style={{ color: 'var(--text-dim)', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto', maxWidth: '800px', textAlign: 'center' }}>
+        To assess the ecological importance of oyster reefs as habitats in both bays, biodiversity surveys were conducted across oyster beds environments and compared against close mud flats as controls.
+      </p>
+
       {/* Introduction text */}
       <div className="glass glass-panel" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-        <span className="pill">Ecosystem Engineering</span>
-        <h3 style={{ marginTop: '0.75rem', marginBottom: '1rem' }}>Benthic Species Diversity &amp; Habitat Complexity</h3>
-        <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-          To determine and study the importance of the Oyster Reef as an habitat in the two bays, sediment samples from both, an oyster reef and a mud control had been taken, and the sorting and identification of the macroinvertebrates in the samples its been processed, using red bengel, to avoid missing individuals.
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+          <Shrimp size={24} color="var(--teal)" />
+          <h3 style={{ margin: 0 }}>Macroinvertebrate Diversity</h3>
+        </div>
+        <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+          Sediment samples were collected from oyster beds and control muddy beds in both bays. Macroinvertebrates within the samples are currently being sorted and identified, utilizing Rose Bengal staining to ensure no specimens are overlooked.
+        </p>
+        <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', fontStyle: 'italic', lineHeight: '1.6', margin: 0 }}>
+          This following illustrations show the primary differences found when sorting macroinvertebrates from the control samples versus the oyster beds
         </p>
       </div>
 

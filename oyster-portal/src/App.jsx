@@ -18,6 +18,7 @@ import LarvaeObservation from './components/LarvaeObservation'
 import EcosystemServices from './components/EcosystemServices'
 import FoldableSection from './components/FoldableSection'
 import References from './components/References'
+import TeamSection from './components/TeamSection'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -94,7 +95,14 @@ function App() {
             <DeclineTimeline />
           </div>
           <div>
-            <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Active Restoration Projects</h3>
+            <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Team</h3>
+            <TeamSection />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <h3 style={{ textAlign: 'center', margin: 0 }}>Active Restoration Projects</h3>
+            <p style={{ color: 'var(--text-dim)', fontSize: '1.05rem', lineHeight: '1.6', margin: '0 auto', maxWidth: '800px', textAlign: 'center' }}>
+              The restoration actions of native oysters in Connemara is being delivered as part of three collaborative projects:
+            </p>
             <ProjectPortal />
           </div>
         </div>

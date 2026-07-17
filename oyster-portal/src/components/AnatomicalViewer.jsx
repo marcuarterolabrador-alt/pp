@@ -93,7 +93,11 @@ export default function AnatomicalViewer() {
               transition={{ duration: 0.25 }}
             >
               <h3 style={{ color: 'var(--teal)' }}>{active.name}</h3>
-              <p style={{ color: 'var(--text)' }}>{active.function}</p>
+              <p style={{ color: 'var(--text)' }}>
+                {active.function.split('*').map((part, index) =>
+                  index % 2 === 1 ? <em key={index}>{part}</em> : part
+                )}
+              </p>
             </motion.div>
           </AnimatePresence>
         </div>

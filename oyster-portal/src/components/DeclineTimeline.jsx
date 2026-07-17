@@ -38,7 +38,11 @@ export default function DeclineTimeline() {
           <div className="glass glass-panel">
             <span className="pill">{era.era}</span>
             <h3 style={{ marginTop: 8 }}>{era.title}</h3>
-            <p style={{ color: 'var(--text-dim)', margin: 0 }}>{era.description}</p>
+            <p style={{ color: 'var(--text-dim)', margin: 0 }}>
+              {era.description.split('*').map((part, index) =>
+                index % 2 === 1 ? <em key={index}>{part}</em> : part
+              )}
+            </p>
           </div>
         </motion.div>
       ))}

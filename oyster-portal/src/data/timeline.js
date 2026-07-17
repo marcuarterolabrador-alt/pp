@@ -25,6 +25,6 @@ export const timelineEras = [
     era: 'Currently',
     title: 'Restoration Efforts',
     description:
-      "Today, Conamara's bays serve as critical sanctuaries, where conservation and research initiatives are actively working to restore native oyster reefs.",
+      'Today, although *Ostrea edulis* reefs are considered functionally extinct in Ireland, in Conamara\'s bays there are some remaining populations, and these bays serve as critical sanctuaries, where conservation and research initiatives are actively working to restore this native oyster reefs.',
   },
 ]
