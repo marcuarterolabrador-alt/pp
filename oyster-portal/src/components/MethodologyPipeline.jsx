@@ -23,7 +23,7 @@ const steps = [
     id: 'bathymetry',
     icon: WavesIcon,
     title: '3D Multibeam Bathymetry',
-    text: 'High-resolution multibeam sonar surveys map seafloor topography and depth contours across the bay. This high-resolution data helps identify suitable firm-bottom habitats for oyster settlement and maps adjacent biotopes, such as seaweed beds.',
+    text: 'High-resolution multibeam sonar surveys map seafloor topography and depth contours across the bay. This data helps identify suitable firm-bottom habitats for oyster settlement and maps adjacent biotopes, such as seaweed beds.',
   },
 ]
 
