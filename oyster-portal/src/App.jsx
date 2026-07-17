@@ -135,13 +135,13 @@ function App() {
     {
       id: 'biodiversity',
       kicker: 'Module 6',
-      title: 'Macroinvertebrates & Ecosystem Services',
+      title: 'Biodiversity Assessment',
       content: <EcosystemServices />
     },
     {
       id: 'references',
       kicker: 'Module 7',
-      title: 'References & Sources',
+      title: 'References',
       content: <References />
     }
   ]
@@ -155,7 +155,7 @@ function App() {
 
       {isMobile ? (
         <div id="mobile-module-container" className="mobile-module-selector-wrapper">
-          <div 
+          <div
             className="mobile-module-banner glass"
             onClick={() => setMenuExpandedMobile(!menuExpandedMobile)}
           >
@@ -167,7 +167,7 @@ function App() {
                 {activeModuleObj.title}
               </h3>
             </div>
-            <div 
+            <div
               style={{
                 transform: menuExpandedMobile ? 'rotate(180deg)' : 'rotate(0deg)',
                 transition: 'transform 0.25s ease',

@@ -11,6 +11,7 @@ import larvae4 from '../assets/larvae4.jpeg'
 import larvae5 from '../assets/larvae5.jpeg'
 import larvae6 from '../assets/larvae6.jpeg'
 import larvae7 from '../assets/larvae7.jpeg'
+import hobo from '../assets/hobo.jpg'
 
 const larvalStages = [
   {
@@ -426,6 +427,31 @@ export default function LarvaeObservation() {
               </div>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Step 3: HoboLoggers Telemetry Info */}
+      <div className="grid-2 glass glass-panel" style={{ alignItems: 'center' }}>
+        <div>
+          <span className="pill">Microclimate Monitoring</span>
+          <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>HoboLoggers</h3>
+          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+            In each study site, HoboLoggers are deployed to record the temperature and light intensity every 10 minutes. This data will be used to associate the abundance and size of larvae with temperature and light variations, as marine heat waves are thought to induce spawning in native oyster populations.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <img
+            src={hobo}
+            alt="HoboLogger deployed on the seafloor"
+            style={{
+              width: '100%',
+              maxWidth: '380px',
+              borderRadius: '12px',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
+              border: '2px solid var(--panel-border)',
+            }}
+          />
         </div>
       </div>
     </div>
