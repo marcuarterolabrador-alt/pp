@@ -18,7 +18,7 @@ export const substrates = [
     stability: 'Medium',
     logistics: 'High effort (manual peeling/handling)',
     status: 'Tested',
-    pros: 'High surface area and hydrodynamics. Their stacked, nested design maximizes settlement space while high water flow prevents silt from suffocating the larvae.',
+    pros: 'Their design maximizes settlement surface availability while their vertical disposition allow a very high water flow.',
     cons: 'Plastic pollution risk. In rough waters, these plastic collectors can break apart, degrading into marine litter and microplastics.',
   },
   {
@@ -29,7 +29,7 @@ export const substrates = [
     stability: 'High',
     logistics: 'Heavy to deploy',
     status: 'Future Trial',
-    pros: 'Easy to separate the oysters from the substrate. The brittle lime-sand coating allows growers to easily separate undamaged, perfectly shaped oysters.',
+    pros: 'Large tiles or interconnected tile systems are heavy, uniform, and hydrodynamically stable.',
     cons: 'Labor-intensive. Coating, curing, placing, and manually scraping the tiles requires physical labor, which can be costly.',
   },
   {
