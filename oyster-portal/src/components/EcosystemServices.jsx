@@ -1,4 +1,4 @@
-import { Shield, Sparkles } from 'lucide-react'
+import { Sparkles, Fish } from 'lucide-react'
 
 import sedimentReef from '../assets/sediment_macrofauna_reef.png'
 import sedimentMud from '../assets/sediment_macrofauna_mud.png'
@@ -87,6 +87,38 @@ export default function EcosystemServices() {
           <div style={{ width: '100%', textAlign: 'left' }}>
             <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
               On the other hand, under the oyster reef, the sediment is usually richer in species, with abundance of amphipods, small decapods, chitons, and britle stars and other bivalves apart from the polychaetes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Additional Studies */}
+      <div className="grid-2">
+        {/* Future Fish Diversity Study */}
+        <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'space-between' }}>
+          <div>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <Fish size={22} color="var(--teal)" />
+              <h4 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-h)' }}>Fish Diversity Monitoring</h4>
+            </div>
+            <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
+              In the future, research will also study the fish diversity present in the remaining oyster reefs. This will be carried out using underwater visual census transects and Baited Remote Underwater Video stations (BRUVs) to document how these reef habitats support fish communities.
+            </p>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <span className="pill coral">Future Research</span>
+          </div>
+        </div>
+
+        {/* Epifauna Biodiversity Study */}
+        <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <Sparkles size={22} color="var(--teal)" />
+              <h4 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-h)' }}>Epifauna Diversity</h4>
+            </div>
+            <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
+              The epifauna biodiversity present directly on some of the sampled oysters has also been studied. This research quantifies the community of organisms living on the oyster shells, highlighting their role in enhancing overall biodiversity.
             </p>
           </div>
         </div>
