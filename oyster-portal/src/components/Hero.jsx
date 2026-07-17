@@ -75,7 +75,7 @@ export default function Hero() {
           A science communication platform for the restoration of native oyster (<em>Ostrea edulis</em>) populations across Kilkieran and Bertraghboy Bays, Connemara, Ireland.
         </p>
         <p style={{ fontSize: '0.92rem', color: '#cbd5e1', maxWidth: 620, marginTop: '0.75rem', textShadow: '0 1px 6px rgba(0, 0, 0, 0.3)', opacity: 0.9, lineHeight: '1.5', margin: '0.75rem 0 0' }}>
-          Developed as a Master's degree project following an internship with the Biogenic Habitat group (MFRC), led by Dr. José M. Fariñas-Franco.
+          This platform was developed by Mar Cuartero Labrador to showcase her IMBRSea Professional Practice within the Biogenic Habitat Group (MFRC-ATU), supervised by Dr. José M. Fariñas-Franco.
         </p>
       </motion.div>
 
