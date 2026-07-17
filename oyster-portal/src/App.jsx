@@ -195,7 +195,7 @@ function App() {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.25, ease: 'easeInOut' }}
-                  className="mobile-module-dropdown glass"
+                  className="mobile-module-dropdown"
                   style={{ overflow: 'hidden', position: 'absolute', top: 8, left: 0, right: 0, zIndex: 100 }}
                 >
                   <div style={{ padding: '0.5rem 0' }}>

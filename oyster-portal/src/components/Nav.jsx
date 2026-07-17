@@ -43,7 +43,7 @@ export default function Nav({ onNavigate }) {
         borderTop: 'none',
         borderLeft: 'none',
         borderRight: 'none',
-        background: open ? 'rgba(10, 25, 47, 1)' : (scrolled ? 'rgba(10, 25, 47, 0.85)' : 'rgba(10, 25, 47, 0.4)'),
+        background: scrolled ? 'rgba(10, 25, 47, 0.85)' : 'rgba(10, 25, 47, 0.4)',
       }}
     >
       <div

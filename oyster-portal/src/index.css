@@ -468,7 +468,7 @@ canvas.particle-bg {
 .mobile-module-dropdown {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), var(--glow);
-  background: #ffffff;
+  background: #ffffff !important;
   border: 1px solid var(--panel-border);
   margin-top: 0.5rem;
 }
