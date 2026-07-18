@@ -7,7 +7,7 @@ const links = [
   { id: 'map', label: 'Study Location' },
   { id: 'methodology', label: 'Environmental Characterisation' },
   { id: 'substrates', label: 'Cultch' },
-  { id: 'larvae-sampling', label: 'Larvae Sampling' },
+  { id: 'larvae-sampling', label: 'Larval Sampling' },
   { id: 'biodiversity', label: 'Biodiversity' },
   { id: 'references', label: 'References' },
 ]

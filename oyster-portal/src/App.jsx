@@ -137,7 +137,7 @@ function App() {
     {
       id: 'larvae-sampling',
       kicker: 'Module 5',
-      title: 'Larvae Sampling',
+      title: 'Larval Sampling',
       content: <LarvaeObservation />
     },
     {

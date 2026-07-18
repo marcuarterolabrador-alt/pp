@@ -203,7 +203,7 @@ export default function LarvaeObservation() {
       {/* Step 1: Net Tow Explanation */}
       <div className="grid-2 glass glass-panel" style={{ alignItems: 'center' }}>
         <div onClick={() => setActiveEquipment(null)} style={{ cursor: 'default' }}>
-          <span className="pill">Larvae Sampling Protocol</span>
+          <span className="pill">Larval Sampling Protocol</span>
           <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>Zooplankton Mesh Net Towing</h3>
           <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 1.5rem 0' }}>
             To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed, with a handheld deployable CTD attached to the net to record depth, salinity, and temperature.
@@ -417,7 +417,7 @@ export default function LarvaeObservation() {
             After the sampling, the number of bivalve larvae in 1ml of each sample was counted using a Sedgewick Rafter Counting Chamber under a microscope, and their sizes were also measured to study the size distribution across the season in each bay and identify the best moment to deploy cultch.
           </p>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: 0, fontStyle: 'italic', lineHeight: '1.6' }}>
-            Use the carousel controls to view microscope photographs of the bivalve larvaes taken after the different larvae samplings at the start of the season.
+            Use the carousel controls to view microscope photographs of the bivalve larvaes taken after the different larval samplings at the start of the season.
           </p>
         </div>
 
