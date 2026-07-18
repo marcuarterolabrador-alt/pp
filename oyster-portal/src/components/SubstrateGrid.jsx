@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { substrates, enhancementCues } from '../data/substrates'
 import { substrateIcons } from './SubstrateIcons'
-import { Maximize2, X, ChevronLeft, ChevronRight, CheckCircle2, XCircle } from 'lucide-react'
+import { Maximize2, X, ChevronLeft, ChevronRight, CheckCircle2, XCircle, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react'
 import spatImg from '../assets/spat_native_oyster_tiles.jpeg'
 import scallopsImg from '../assets/scallops.jpeg'
 import spatScallopImg from '../assets/spat_scallop.jpeg'
@@ -37,6 +37,109 @@ export default function SubstrateGrid() {
   const [answers, setAnswers] = useState({ native: '', saddle: '' })
   const [expandedSubstrate, setExpandedSubstrate] = useState(null)
   const [modalTab, setModalTab] = useState('substrate')
+
+  const [zoomLevel, setZoomLevel] = useState(1)
+  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 })
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    if (zoomLevel === 1) {
+      setPanOffset({ x: 0, y: 0 })
+      return
+    }
+    if (containerRef.current) {
+      const W = containerRef.current.clientWidth
+      const H = containerRef.current.clientHeight
+      const maxPanX = ((zoomLevel - 1) * W) / 2
+      const maxPanY = ((zoomLevel - 1) * H) / 2
+      setPanOffset((prev) => ({
+        x: Math.max(-maxPanX, Math.min(maxPanX, prev.x)),
+        y: Math.max(-maxPanY, Math.min(maxPanY, prev.y)),
+      }))
+    }
+  }, [zoomLevel])
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const handleWheel = (e) => {
+      e.preventDefault()
+      const zoomFactor = 0.25
+      setZoomLevel((z) => {
+        const next = e.deltaY < 0 ? Math.min(z + zoomFactor, 4) : Math.max(z - zoomFactor, 1)
+        if (next === 1) {
+          setPanOffset({ x: 0, y: 0 })
+        }
+        return next
+      })
+    }
+
+    container.addEventListener('wheel', handleWheel, { passive: false })
+    return () => {
+      container.removeEventListener('wheel', handleWheel)
+    }
+  }, [])
+
+  const handleMouseDown = (e) => {
+    if (zoomLevel === 1) return
+    setIsDragging(true)
+    setDragStart({ x: e.clientX - panOffset.x, y: e.clientY - panOffset.y })
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || zoomLevel === 1) return
+    const newX = e.clientX - dragStart.x
+    const newY = e.clientY - dragStart.y
+
+    if (containerRef.current) {
+      const W = containerRef.current.clientWidth
+      const H = containerRef.current.clientHeight
+      const maxPanX = ((zoomLevel - 1) * W) / 2
+      const maxPanY = ((zoomLevel - 1) * H) / 2
+      const clampedX = Math.max(-maxPanX, Math.min(maxPanX, newX))
+      const clampedY = Math.max(-maxPanY, Math.min(maxPanY, newY))
+      setPanOffset({ x: clampedX, y: clampedY })
+    }
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseLeave = () => {
+    setIsDragging(false)
+  }
+
+  const handleTouchStart = (e) => {
+    if (zoomLevel === 1 || e.touches.length !== 1) return
+    setIsDragging(true)
+    const touch = e.touches[0]
+    setDragStart({ x: touch.clientX - panOffset.x, y: touch.clientY - panOffset.y })
+  }
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || zoomLevel === 1 || e.touches.length !== 1) return
+    const touch = e.touches[0]
+    const newX = touch.clientX - dragStart.x
+    const newY = touch.clientY - dragStart.y
+
+    if (containerRef.current) {
+      const W = containerRef.current.clientWidth
+      const H = containerRef.current.clientHeight
+      const maxPanX = ((zoomLevel - 1) * W) / 2
+      const maxPanY = ((zoomLevel - 1) * H) / 2
+      const clampedX = Math.max(-maxPanX, Math.min(maxPanX, newX))
+      const clampedY = Math.max(-maxPanY, Math.min(maxPanY, newY))
+      setPanOffset({ x: clampedX, y: clampedY })
+    }
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+  }
 
   useEffect(() => {
     if (expandedSubstrate) {
@@ -447,6 +550,14 @@ export default function SubstrateGrid() {
 
           {/* Interactive photo with hotspots */}
           <div
+            ref={containerRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{
               position: 'relative',
               borderRadius: '12px',
@@ -454,13 +565,81 @@ export default function SubstrateGrid() {
               border: '1px solid rgba(148, 163, 184, 0.2)',
               boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
               display: 'flex',
+              cursor: zoomLevel > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+              userSelect: 'none',
+              touchAction: 'none'
             }}
           >
-            <img
-              src={spatImg}
-              alt="Oyster spat on collector tiles"
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
-            />
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative',
+                display: 'flex',
+                transform: `scale(${zoomLevel}) translate(${panOffset.x}px, ${panOffset.y}px)`,
+                transformOrigin: 'center center',
+                transition: isDragging ? 'none' : 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+            >
+              <img
+                src={spatImg}
+                alt="Oyster spat on collector tiles"
+                draggable="false"
+                style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block', pointerEvents: 'none' }}
+              />
+
+              {/* Hotspot 1: Ostrea edulis spat */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedSpat('native');
+                }}
+                style={{
+                  position: 'absolute',
+                  left: '45%',
+                  top: '45%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '50%',
+                  background: selectedSpat === 'native' ? 'var(--teal)' : 'rgba(15, 23, 42, 0.75)',
+                  border: `2px solid ${selectedSpat === 'native' ? '#ffffff' : 'var(--teal)'}`,
+                  boxShadow: selectedSpat === 'native' ? '0 0 12px var(--teal)' : 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s',
+                  zIndex: 10,
+                  padding: 0,
+                }}
+                title="Native Oyster Spat"
+              />
+
+              {/* Hotspot 2: Saddle oyster spat */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedSpat('saddle');
+                }}
+                style={{
+                  position: 'absolute',
+                  left: '69%',
+                  top: '73%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '50%',
+                  background: selectedSpat === 'saddle' ? 'var(--cyan)' : 'rgba(15, 23, 42, 0.75)',
+                  border: `2px solid ${selectedSpat === 'saddle' ? '#ffffff' : 'var(--cyan)'}`,
+                  boxShadow: selectedSpat === 'saddle' ? '0 0 12px var(--cyan)' : 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s',
+                  zIndex: 10,
+                  padding: 0,
+                }}
+                title="Saddle Oyster Spat"
+              />
+            </div>
+
+            {/* Credit overlay */}
             <span
               style={{
                 position: 'absolute',
@@ -470,54 +649,157 @@ export default function SubstrateGrid() {
                 fontSize: '0.7rem',
                 textShadow: '0 1px 3px rgba(0, 0, 0, 0.8)',
                 zIndex: 10,
+                pointerEvents: 'none'
               }}
             >
               Image taken by Tiffany Montfort
             </span>
 
-            {/* Hotspot 1: Ostrea edulis spat */}
-            <button
-              onClick={() => setSelectedSpat('native')}
-              style={{
-                position: 'absolute',
-                left: '45%',
-                top: '45%',
-                transform: 'translate(-50%, -50%)',
-                width: '16px',
-                height: '16px',
-                borderRadius: '50%',
-                background: selectedSpat === 'native' ? 'var(--teal)' : 'rgba(15, 23, 42, 0.75)',
-                border: `2px solid ${selectedSpat === 'native' ? '#ffffff' : 'var(--teal)'}`,
-                boxShadow: selectedSpat === 'native' ? '0 0 12px var(--teal)' : 'none',
-                cursor: 'pointer',
-                transition: 'all 0.25s',
-                zIndex: 10,
-                padding: 0,
-              }}
-              title="Native Oyster Spat"
-            />
+            {/* Drag to Pan Hint */}
+            {zoomLevel > 1 && (
+              <span
+                style={{
+                  position: 'absolute',
+                  bottom: '0.5rem',
+                  left: '0.75rem',
+                  color: '#ffffff',
+                  fontSize: '0.7rem',
+                  background: 'rgba(15, 23, 42, 0.65)',
+                  backdropFilter: 'blur(4px)',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  textShadow: '0 1px 3px rgba(0, 0, 0, 0.4)',
+                  pointerEvents: 'none',
+                  zIndex: 10,
+                }}
+              >
+                Drag to pan
+              </span>
+            )}
 
-            {/* Hotspot 2: Saddle oyster spat */}
-            <button
-              onClick={() => setSelectedSpat('saddle')}
+            {/* Zoom Controls Overlay */}
+            <div
               style={{
                 position: 'absolute',
-                left: '69%',
-                top: '73%',
-                transform: 'translate(-50%, -50%)',
-                width: '16px',
-                height: '16px',
-                borderRadius: '50%',
-                background: selectedSpat === 'saddle' ? 'var(--cyan)' : 'rgba(15, 23, 42, 0.75)',
-                border: `2px solid ${selectedSpat === 'saddle' ? '#ffffff' : 'var(--cyan)'}`,
-                boxShadow: selectedSpat === 'saddle' ? '0 0 12px var(--cyan)' : 'none',
-                cursor: 'pointer',
-                transition: 'all 0.25s',
-                zIndex: 10,
-                padding: 0,
+                top: '0.75rem',
+                left: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                background: 'rgba(15, 23, 42, 0.65)',
+                backdropFilter: 'blur(8px)',
+                padding: '4px 8px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                zIndex: 20,
               }}
-              title="Saddle Oyster Spat"
-            />
+            >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setZoomLevel((z) => Math.min(z + 0.5, 4));
+                }}
+                disabled={zoomLevel >= 4}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#ffffff',
+                  cursor: zoomLevel >= 4 ? 'not-allowed' : 'pointer',
+                  opacity: zoomLevel >= 4 ? 0.4 : 0.9,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '4px',
+                  borderRadius: '4px',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  if (zoomLevel < 4) e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'none';
+                }}
+                title="Zoom In"
+              >
+                <ZoomIn size={16} />
+              </button>
+              <span
+                style={{
+                  color: '#ffffff',
+                  fontSize: '0.75rem',
+                  fontWeight: '600',
+                  minWidth: '35px',
+                  textAlign: 'center',
+                  userSelect: 'none',
+                }}
+              >
+                {Math.round(zoomLevel * 100)}%
+              </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setZoomLevel((z) => {
+                    const next = Math.max(z - 0.5, 1);
+                    if (next === 1) setPanOffset({ x: 0, y: 0 });
+                    return next;
+                  });
+                }}
+                disabled={zoomLevel <= 1}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#ffffff',
+                  cursor: zoomLevel <= 1 ? 'not-allowed' : 'pointer',
+                  opacity: zoomLevel <= 1 ? 0.4 : 0.9,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '4px',
+                  borderRadius: '4px',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  if (zoomLevel > 1) e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'none';
+                }}
+                title="Zoom Out"
+              >
+                <ZoomOut size={16} />
+              </button>
+              {zoomLevel > 1 && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setZoomLevel(1);
+                    setPanOffset({ x: 0, y: 0 });
+                  }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#ffffff',
+                    cursor: 'pointer',
+                    opacity: 0.9,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '4px',
+                    borderRadius: '4px',
+                    transition: 'background 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'none';
+                  }}
+                  title="Reset Zoom"
+                >
+                  <RotateCcw size={14} />
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

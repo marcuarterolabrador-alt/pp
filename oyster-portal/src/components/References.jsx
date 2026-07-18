@@ -18,21 +18,6 @@ import { BookOpen, Globe, FileText, ExternalLink, Search, Bookmark } from 'lucid
 */
 const referencesData = [
   {
-    id: 'ref-1',
-    title: 'Ostra, ostra plana (Ostrea edulis)',
-    authors: 'Canal Mar Menor',
-    source: 'Inventario Ecológico, Comunidad Autónoma de la Región de Murcia',
-    year: 'n.d.',
-    type: 'website',
-    url: 'https://canalmarmenor.carm.es/inventario-ecologico/fauna/aguamala-acalefo-azul-rhizostoma-pulmo-19/',
-    citation: (
-      <span>
-        Canal Mar Menor. (n.d.). <em style={{ fontStyle: 'italic' }}>Ostra, ostra plana (Ostrea edulis)</em>. Inventario Ecológico, Comunidad Autónoma de la Región de Murcia.
-      </span>
-    ),
-    description: 'Ecological inventory datasheet for the European flat oyster (Ostrea edulis) in the Mar Menor lagoon, detailing its morphology, protandric hermaphroditic life cycle, and distribution.'
-  },
-  {
     id: 'ref-2',
     title: 'Missing native oyster (Ostrea edulis L.) beds in a European Marine Protected Area: Should there be widespread restorative management?',
     authors: 'Fariñas-Franco, J. M., Pearce, B., Mair, J. M., Harries, D. B., MacPherson, R. C., Porter, J. S., Reimer, P. J., & Sanderson, W. G.',
@@ -189,7 +174,7 @@ const referencesData = [
     source: 'Conservation Letters, 18(1), e13068',
     year: '2025',
     type: 'article',
-    url: 'https://scholar.google.com/citations?view_op=view_citation&hl=ca&user=O498OnQAAAAJ&citation_for_view=O498OnQAAAAJ:KUbvn5osdkgC',
+    url: 'https://conbio.onlinelibrary.wiley.com/doi/full/10.1111/conl.13068',
     citation: (
       <span>
         Zu Ermgassen, P. S. E., McCormick, H., Debney, A., Fariñas‐Franco, J. M., Gamble, C., Gillies, C., Hancock, B., Laugen, A. T., Pouvreau, S., Preston, J., Sanderson, W. G., Strand, Å., & Thurstan, R. H. (2025). European native oyster reef ecosystems are universally collapsed. <em style={{ fontStyle: 'italic' }}>Conservation Letters</em>, <em style={{ fontStyle: 'italic' }}>18</em>(1), e13068.
