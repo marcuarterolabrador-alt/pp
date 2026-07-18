@@ -631,7 +631,7 @@ export default function SubstrateGrid() {
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic', margin: '0.25rem 0 0 0', textAlign: 'center' }}>
                         {modalTab === 'substrate'
-                          ? "Scallop shells (Pecten maximus) are an abundant, organic by-product of regional fisheries."
+                          ? "Scallop shells are an abundant, organic by-product of regional fisheries."
                           : "Native oyster spat (Ostrea edulis) successfully recruited and growing on a collector scallop shell."
                         }
                       </p>

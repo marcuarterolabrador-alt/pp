@@ -2,7 +2,7 @@ export const substrates = [
   {
     id: 'scallop-shell',
     name: 'Scallop Shells',
-    latin: 'Pecten maximus',
+    latin: null,
     settlement: 'High',
     stability: 'Low',
     logistics: 'Light, easily bagged',
