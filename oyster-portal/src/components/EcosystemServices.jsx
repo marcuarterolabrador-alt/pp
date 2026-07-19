@@ -58,7 +58,7 @@ export default function EcosystemServices() {
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-              Primary results show that the control samples are usually dominated by small polychaetes, with high domination of few species.
+              Primary results reveal that control samples are typically dominated by small polychaetes, characterized by a high dominance of only a few species.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function EcosystemServices() {
 
           <div style={{ width: '100%', textAlign: 'left' }}>
             <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-              On the other hand, under the oyster reef, the sediment is usually richer in species, with abundance of amphipods, small decapods, chitons, and britle stars and other bivalves apart from the polychaetes.
+              On the other hand, the sediment under the oyster reef is usually richer in species. It features an abundance of amphipods, small decapods, chitons, brittle stars, and various bivalves in addition to polychaetes.
             </p>
           </div>
         </div>
