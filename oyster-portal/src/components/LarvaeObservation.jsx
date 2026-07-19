@@ -412,7 +412,7 @@ export default function LarvaeObservation() {
       <div className="glass glass-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
         <div style={{ textAlign: 'center', maxWidth: 620 }}>
           <span className="pill">Microscope Observation</span>
-          <h3 style={{ marginTop: '0.75rem', marginBottom: '0.5rem' }}>Larval Development Stages</h3>
+          <h3 style={{ marginTop: '0.75rem', marginBottom: '0.5rem' }}>Larval Counting and Measuring</h3>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: '0 0 0.75rem 0', lineHeight: '1.6' }}>
             After the sampling, the number of bivalve larvae in 1ml of each sample was counted using a Sedgewick Rafter Counting Chamber under a microscope, and their sizes were also measured to study the size distribution across the season in each bay and identify the best moment to deploy cultch.
           </p>
