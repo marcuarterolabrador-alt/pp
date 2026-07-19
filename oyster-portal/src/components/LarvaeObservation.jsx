@@ -206,7 +206,7 @@ export default function LarvaeObservation() {
           <span className="pill">Larval Sampling Protocol</span>
           <h3 style={{ marginTop: '0.75rem', color: 'var(--teal)' }}>Zooplankton Mesh Net Towing</h3>
           <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: '1.6', margin: '0 0 1.5rem 0' }}>
-            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 50 µm mesh is towed, with a handheld deployable CTD attached to the net to record depth, salinity, and temperature.
+            To monitor wild native oyster populations, scientists conduct plankton sampling during the summer spawning seasons. A specialized zooplankton net with a 100 µm mesh is towed, with a handheld deployable CTD attached to the net to record depth, salinity, and temperature.
           </p>
 
           {/* Interactive Net Diagram */}
