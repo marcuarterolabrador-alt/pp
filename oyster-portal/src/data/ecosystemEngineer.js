@@ -24,7 +24,7 @@ export const ecosystemHotspots = [
     x: 65,
     y: 70,
     description:
-      'By clearing the water column of suspended solids, oyster reefs allow more sunlight to penetrate the seabed. This increased light availability directly promotes the growth of critical adjacent habitats, such as underwater eelgrass and seagrass beds.',
+      'By clearing the water column of suspended solids, oyster reefs allow more sunlight to penetrate the seabed. This increased light availability directly promotes the growth of critical adjacent habitats, such as seagrass beds.',
   },
   {
     id: 'nursery-grounds',
@@ -33,7 +33,7 @@ export const ecosystemHotspots = [
     x: 55,
     y: 60,
     description:
-      'The reef structure attracts colonizers like mussels, barnacles, and anemones, establishing an abundant food supply. This makes oyster beds ideal, safe nursery habitats for the juvenile stages of recreationally and commercially valuable fish species.',
+      'The reef structure attracts colonizers like mussels, barnacles, and anemones, establishing an abundant food supply. This makes oyster beds ideal, safe nursery habitats for the juvenile stages of commercially valuable fish species.',
   },
   {
     id: 'coastal-protection',

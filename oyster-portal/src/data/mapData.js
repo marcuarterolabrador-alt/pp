@@ -5,7 +5,7 @@ export const mfrc = {
   name: 'Marine and Freshwater Research Centre (MFRC)',
   position: [53.278, -9.012],
   description:
-    'Research institute established in 2009, based at the Atlantic Technological University (ATU) Galway Campus. Whithin this institution, the Biogenic Habitats group, conducts research on restoration of seaweed meadows and shellfish reefs, including the the Native Oyster and the Horse mussel, Modiolus modiolus. To do so, they are working closely with the Galway & Aran Fishermen’s Co-operative.',
+    'Research institute established in 2009, based at the Atlantic Technological University (ATU) Galway Campus. Within the institute, multiple research groups focus on diverse marine and freshwater ecosystem challenges, ranging from the effects of microplastics on seaweed to acoustic monitoring of cetaceans. One of this research groups is the Biogenic Habitats research group.',
 }
 
 export const bays = [

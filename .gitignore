@@ -11,3 +11,5 @@ Thumbs.db
 # Project backups
 .backup/
 
+# Ignore custom structure and defence guide
+docs/estructura_projecte.md

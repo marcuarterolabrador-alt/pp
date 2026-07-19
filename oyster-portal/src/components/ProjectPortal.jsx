@@ -14,7 +14,11 @@ const projects = [
   {
     name: 'NORA - Native Oyster Restoration Alliance',
     url: 'https://noraeurope.eu/',
-    text: 'An international alliance and knowledge-sharing hub dedicated to overcoming barriers in the conservation and ecological restoration of the native European oyster (Ostrea edulis) across its current and historical ranges.',
+    text: (
+      <>
+        An international alliance and knowledge-sharing hub dedicated to overcoming barriers in the conservation and ecological restoration of the native European oyster (<em>Ostrea edulis</em>) across its current and historical ranges.
+      </>
+    ),
   }
 ]
 

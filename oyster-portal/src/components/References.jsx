@@ -190,11 +190,11 @@ export default function References() {
 
   const filteredReferences = useMemo(() => {
     return referencesData.filter(ref => {
-      const matchesSearch = 
+      const matchesSearch =
         ref.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         ref.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
         ref.source.toLowerCase().includes(searchTerm.toLowerCase())
-      
+
       const matchesType = selectedType === 'all' || ref.type === selectedType
 
       return matchesSearch && matchesType
@@ -229,11 +229,11 @@ export default function References() {
 
   if (referencesData.length === 0) {
     return (
-      <div 
-        className="glass glass-panel" 
-        style={{ 
-          textAlign: 'center', 
-          padding: '3rem 2rem', 
+      <div
+        className="glass glass-panel"
+        style={{
+          textAlign: 'center',
+          padding: '3rem 2rem',
           color: 'var(--text-dim)',
           border: '1px dashed var(--panel-border)',
           borderRadius: '16px'
@@ -244,8 +244,8 @@ export default function References() {
         </p>
         <p style={{ margin: 0, fontSize: '0.9rem' }}>
           To add your scientific publications and web links, populate the <code>referencesData</code> array in{' '}
-          <a 
-            href="file:///c:/Users/Usuario/Documents/antigravity_curs/oyster-portal/src/components/References.jsx" 
+          <a
+            href="file:///c:/Users/Usuario/Documents/antigravity_curs/oyster-portal/src/components/References.jsx"
             style={{ color: 'var(--cyan)', fontWeight: 600, textDecoration: 'underline' }}
           >
             References.jsx
@@ -257,24 +257,24 @@ export default function References() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      
+
       {/* Controls: Search and Tabs */}
-      <div 
-        style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          gap: '1rem', 
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '1rem',
           justifyContent: 'space-between',
           alignItems: 'center'
         }}
       >
         {/* Search Bar */}
-        <div 
-          className="glass" 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            padding: '0.5rem 1rem', 
+        <div
+          className="glass"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0.5rem 1rem',
             borderRadius: '999px',
             flex: '1 1 300px',
             maxWidth: '450px',
@@ -283,7 +283,7 @@ export default function References() {
           }}
         >
           <Search size={18} color="var(--text-dim)" />
-          <input 
+          <input
             type="text"
             placeholder="Search references by title, author, or source..."
             value={searchTerm}
@@ -355,9 +355,9 @@ export default function References() {
                     </span>
                   </div>
 
-                  <a 
-                    href={ref.url} 
-                    target="_blank" 
+                  <a
+                    href={ref.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="reference-link"
                     style={{
@@ -377,11 +377,11 @@ export default function References() {
 
                 {/* Reference Body */}
                 <div>
-                  <div 
-                    style={{ 
-                      color: 'var(--text-h)', 
-                      fontSize: '1rem', 
-                      lineHeight: '1.6', 
+                  <div
+                    style={{
+                      color: 'var(--text-h)',
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
                       paddingLeft: '1.75rem',
                       textIndent: '-1.75rem'
                     }}
