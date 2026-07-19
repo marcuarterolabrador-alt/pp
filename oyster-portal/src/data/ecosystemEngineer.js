@@ -6,7 +6,7 @@ export const ecosystemHotspots = [
     x: 45,
     y: 50,
     description:
-      'As gregarious builders, young oysters settle on older generations, creating elevated, structurally complex biogenic reefs over large areas. This raised vertical relief provides essential crevices, shelter, and foraging grounds for hundreds of marine fish and invertebrate species.',
+      'By settling directly onto older generations, young oysters form expansive biogenic reefs. This growth pattern increases the complexity and surface roughness of the seafloor, creating intricate crevices, shallow vertical relief, and micro-refuges that provide essential shelter and foraging grounds for hundreds of marine fish and invertebrate species.',
   },
   {
     id: 'water-filtration',

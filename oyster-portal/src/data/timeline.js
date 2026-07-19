@@ -18,7 +18,7 @@ export const timelineEras = [
     era: 'Late 20th Century',
     title: 'The Bonamia Disease',
     description:
-      'The remaining native oyster stocks faced a catastrophic biological threat with the arrival of Bonamia ostreae, a lethal parasite that caused widespread mortality.',
+      'The remaining native oyster stocks faced a catastrophic biological threat with the arrival of *Bonamia ostreae*, a lethal parasite that caused widespread mortality.',
   },
   {
     id: 'restoration-sanctuaries',
