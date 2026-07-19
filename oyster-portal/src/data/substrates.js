@@ -8,7 +8,7 @@ export const substrates = [
     logistics: 'Light, easily bagged',
     status: 'Tested',
     pros: 'Excellent biological attraction. The natural calcium carbonate releases chemical cues that highly stimulate wild oyster larvae (spat) to settle, without the need for coating.',
-    cons: 'Easily buried in sediment, which prevents spat from settling, and can create an anoxic environment without water flux around settled spat.',
+    cons: 'Easily buried in sediment: Loose sediment prevents spat from settling and can create an anoxic (oxygen-depleted) environment due to the lack of water flux around the settled spat.\n\nTracking and monitoring friction: Because loose scallops or small cultch fragments shift easily, it is incredibly difficult to "re-collect" and track the exact same individuals over time. This makes monitoring spat growth and mortality rates highly inefficient compared to using larger, fixed structures or substrates where you can mark specific positions and reliably follow the exact same cohort through time.',
   },
   {
     id: 'chinese-hats',

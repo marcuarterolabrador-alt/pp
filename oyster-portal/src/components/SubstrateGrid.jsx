@@ -314,7 +314,7 @@ export default function SubstrateGrid() {
                   )}
                 </div>
 
-                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'flex-start', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+                <div className="flip-card-back glass" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'flex-start', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflowY: 'auto' }}>
                   {/* Maximize Button Back */}
                   <button
                     onClick={(e) => {
@@ -365,7 +365,7 @@ export default function SubstrateGrid() {
                     <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
                       <strong style={{ color: 'var(--teal)' }}>Advantage: </strong>{s.pros}
                     </p>
-                    <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4' }}>
+                    <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', margin: 0, lineHeight: '1.4', whiteSpace: 'pre-line' }}>
                       <strong style={{ color: 'var(--coral)' }}>Disadvantage: </strong>{s.cons}
                     </p>
                   </div>
@@ -1063,7 +1063,7 @@ export default function SubstrateGrid() {
                         <XCircle size={16} style={{ flexShrink: 0 }} />
                         <span>Disadvantage</span>
                       </div>
-                      <div style={{ color: 'var(--text)', fontSize: '0.88rem', lineHeight: '1.5' }}>
+                      <div style={{ color: 'var(--text)', fontSize: '0.88rem', lineHeight: '1.5', whiteSpace: 'pre-line' }}>
                         {s.cons}
                       </div>
                     </div>
